@@ -10275,7 +10275,7 @@ typedef struct
 #define GPIO_SECCFGR_SEC10_Msk              (0x1UL << GPIO_SECCFGR_SEC10_Pos)       /*!< 0x00000400 */
 #define GPIO_SECCFGR_SEC10                  GPIO_SECCFGR_SEC10_Msk
 #define GPIO_SECCFGR_SEC11_Pos              (11UL)
-#define GPIO_SECCFGR_SEC11_Msk              (x1UL << GPIO_SECCFGR_SEC11_Pos)        /*!< 0x00000800 */
+#define GPIO_SECCFGR_SEC11_Msk              (0x1UL << GPIO_SECCFGR_SEC11_Pos)       /*!< 0x00000800 */
 #define GPIO_SECCFGR_SEC11                  GPIO_SECCFGR_SEC11_Msk
 #define GPIO_SECCFGR_SEC12_Pos              (12UL)
 #define GPIO_SECCFGR_SEC12_Msk              (0x1UL << GPIO_SECCFGR_SEC12_Pos)       /*!< 0x00001000 */

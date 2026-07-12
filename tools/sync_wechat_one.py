@@ -86,6 +86,21 @@ demo=`21`。I2C2 已在 NS；本机补上 **PH1=LPn/xshut** 移交与上电。
 
 原始日志：工程 `docs/superpowers/measured/demo21-com3.txt`。**多区测距需加载 ~84 KB ULD 固件**，仍待补。
 """,
+    "22": """
+## 上板实测记录（2026-07-12）
+
+demo=`22`。ADF1 已迁 NonSecure；板载 **MIC1** 走 PE9=CCK0 / PE10=SDI0。本机先做 **轮询采 1 个 PCM 样点**（`dma_used=0`），时钟按 ST BSP：PLL3Q≈11.4 MHz、CCK 分频 4→≈2.86 MHz。
+
+| 项 | 结果 |
+|----|------|
+| `adf_ready` | **1** |
+| `sample_ok` | **1**（`HAL_MDF_PollForAcq`） |
+| `sample` | 有符号 PCM 样点（VCP 按 u32 打印，会看到大数/变化值） |
+| 滤波 | SINC4，decimation=24 |
+| GPDMA 录音 / 双麦 | **未做** |
+
+原始日志：工程 `docs/superpowers/measured/demo22-com3.txt`。
+""",
 }
 
 
