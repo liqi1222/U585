@@ -93,6 +93,10 @@ void MX_GTZC_S_Init(void)
   {
     Error_Handler();
   }
+  if (HAL_GTZC_TZSC_ConfigPeriphAttributes(GTZC_PERIPH_DAC1, GTZC_TZSC_PERIPH_SEC|GTZC_TZSC_PERIPH_NPRIV) != HAL_OK)
+  {
+    Error_Handler();
+  }
   if (HAL_GTZC_TZSC_ConfigPeriphAttributes(GTZC_PERIPH_ADF1, GTZC_TZSC_PERIPH_SEC|GTZC_TZSC_PERIPH_NPRIV) != HAL_OK)
   {
     Error_Handler();

@@ -42,6 +42,22 @@ demo=`14`。ADC1（`GTZC_PERIPH_ADC12`）已迁 NonSecure；本机先做 **内�
 
 原始日志：工程 `docs/superpowers/measured/demo14-com3.txt`。外部模拟输入 + GPDMA 连续采样仍待补（DMA 搬运见 16 篇）。
 """,
+    "15": """
+## 上板实测记录（2026-07-12）
+
+demo=`15`。DAC1 已迁 NonSecure（`GTZC_PERIPH_DAC1` + PA4 SECCFGR）；本机先做 **直流码输出**（`dma_used=0`），按键可在 0 / 2048 / 4095 间切换。
+
+| 项 | 结果 |
+|----|------|
+| `dac_ready` | **1** |
+| 引脚 | **PA4** = DAC1_OUT1（与 STMod+ SPI1_NSS 共用） |
+| `code` / `dor` | **2048 / 2048**（DOR 回读一致） |
+| 期望电压 | ≈ VDDA/2（≈1.64 V @ 3.28 V） |
+| 万用表/示波器 | **待作者补测**（PA4 引出） |
+| TIM+DMA 波形 | **未做**（后续可接 GPDMA） |
+
+原始日志：工程 `docs/superpowers/measured/demo15-com3.txt`。
+""",
     "16": """
 ## 上板实测记录（2026-07-12）
 
