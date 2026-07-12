@@ -25,7 +25,7 @@ This project keeps article-facing test code under the NonSecure application laye
 | 10 | `10` | `exp10_tim_pwm_input_capture.c` | Measured: TIM2 IRQ software PWM |
 | 11 | `11` | `exp11_uart_printf_log.c` | Measured: NS USART1 printf |
 | 12 | `12` | `exp12_i2c_sensor_bus.c` | Measured: I2C2 scan found 7 addrs |
-| 13 | `13` | `exp13_spi_bus.c` | Shell |
+| 13 | `13` | `exp13_spi_bus.c` | Measured: SPI2 Mode0 NS xfer_ok=1 |
 | 14 | `14` | `exp14_adc_dma.c` | Shell |
 | 15 | `15` | `exp15_dac_output.c` | Shell |
 | 16 | `16` | `exp16_gpdma_transfer.c` | Shell |

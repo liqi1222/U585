@@ -127,7 +127,7 @@ int main(void)
   U585_Secure_Log_WriteLine("Secure world ready");
 
   /*
-   * Hand selected peripherals to NonSecure for article demos 08-11.
+   * Hand selected peripherals to NonSecure for article demos.
    * USART1 is released only after the Secure boot banner is printed.
    */
   (void)HAL_UART_DeInit(&huart1);
@@ -141,16 +141,26 @@ int main(void)
   (void)HAL_I2C_DeInit(&hi2c2);
   (void)HAL_GTZC_TZSC_ConfigPeriphAttributes(
       GTZC_PERIPH_I2C2, GTZC_TZSC_PERIPH_NSEC | GTZC_TZSC_PERIPH_NPRIV);
+  (void)HAL_SPI_DeInit(&hspi2);
+  (void)HAL_GTZC_TZSC_ConfigPeriphAttributes(
+      GTZC_PERIPH_SPI2, GTZC_TZSC_PERIPH_NSEC | GTZC_TZSC_PERIPH_NPRIV);
+  /* Keep SPI2 kernel clock available for NonSecure re-init. */
+  __HAL_RCC_SPI2_CLK_ENABLE();
 
   __HAL_RCC_GPIOA_CLK_ENABLE();
   GPIOA->SECCFGR &= ~(GPIO_SECCFGR_SEC9 | GPIO_SECCFGR_SEC10);
   __HAL_RCC_GPIOH_CLK_ENABLE();
   GPIOH->SECCFGR &= ~(GPIO_SECCFGR_SEC4 | GPIO_SECCFGR_SEC5);
+  __HAL_RCC_GPIOB_CLK_ENABLE();
+  GPIOB->SECCFGR &= ~(GPIO_SECCFGR_SEC12); /* SPI2 NSS */
+  __HAL_RCC_GPIOD_CLK_ENABLE();
+  GPIOD->SECCFGR &= ~(GPIO_SECCFGR_SEC1 | GPIO_SECCFGR_SEC3 | GPIO_SECCFGR_SEC4); /* SPI2 SCK/MISO/MOSI */
   CLEAR_BIT(EXTI->SECCFGR1, EXTI_SECCFGR1_SEC13);
 
   /* Route demo IRQs to NonSecure so TIM2/EXTI13 handlers in NS can run. */
   NVIC_SetTargetState(TIM2_IRQn);
   NVIC_SetTargetState(EXTI13_IRQn);
+  NVIC_SetTargetState(SPI2_IRQn);
   /* USER CODE END 2 */
 
   /*************** Setup and jump to non-secure *******************************/

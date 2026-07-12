@@ -35,11 +35,11 @@ try {
   $sp.DtrEnable = $true
   $sp.RtsEnable = $true
   $sp.Open()
-  Start-Sleep -Milliseconds 200
-  & $cli -c port=SWD freq=4000 mode=UR -hardRst | Out-Null
-  Start-Sleep -Milliseconds 800
-  # Drop leftover bytes from previous demo still in the host USB buffer.
+  # Drop leftover bytes from a previous demo before resetting into the new image.
+  Start-Sleep -Milliseconds 100
   try { [void]$sp.ReadExisting() } catch {}
+  & $cli -c port=SWD freq=4000 mode=UR -hardRst | Out-Null
+  Start-Sleep -Milliseconds 300
   $deadline = [DateTime]::UtcNow.AddSeconds($Seconds)
   while ([DateTime]::UtcNow -lt $deadline) {
     try {

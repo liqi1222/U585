@@ -1,0 +1,20 @@
+﻿# U585 demo 13 VCP capture
+# port=COM3 baud=115200 seconds=5
+# utc=2026-07-12T05:20:47.2937402Z
+
+[S] Secure world ready
+[NS] [U585][13] SPI2 bus (PD1=SCK PD4=MOSI PD3=MISO PB12=NSS)
+[NS] [U585][13] Mode0 8bit soft-NSS (WRLS/EMW3080 path)
+[NS] [U585][13] init_begin
+[NS] [U585][13] spi_ready=1
+[NS] [U585][13] mode=0
+[NS] [U585][13] datasize_bits=8
+[NS] [U585][13] cfg1=1342636039
+[NS] [U585][13] xfer_ok=1
+[NS] [U585][13] tx0=159
+[NS] [U585][13] rx0=11
+[NS] [U585][13] rx1=0
+[NS] [U585][13] rx2=0
+[NS] [U585][13] rx3=255
+[NS] [U585][13] heartbeat=4
+[NS] [U585][13] heartbeat=8

@@ -41,3 +41,9 @@ Raw logs: `docs/superpowers/measured/demoXX-com3.txt`
 | 19 | ISM330DHCX WHO_AM_I=0x6B ok; ax/ay/az/gx streaming |
 | 20 | IIS2MDC WHO_AM_I=0x40 ok; mx/my/mz streaming |
 
+## Phase D addendum (SPI / analog / DMA)
+
+| Demo | Key results |
+|------|-------------|
+| 13 | SPI2 NS Mode0 8-bit soft-NSS; `spi_ready=1` `xfer_ok=1`; tx0=0x9F, rx=[11,0,0,255] on WRLS path |
+
