@@ -1,0 +1,13 @@
+﻿# U585 demo 24 VCP capture
+# port=COM3 baud=115200 seconds=4
+# utc=2026-07-12T05:54:57.1981346Z
+
+[S] Secure world ready
+[NS] [U585][24] OCTOSPI1 APS6408 PSRAM @0x90000000
+[NS] [U585][24] mode=SPI write/read (octal/MM pending)
+[NS] [U585][24] ospi_psram_ready=1
+[NS] [U585][24] memtest_ok=0
+[NS] [U585][24] id_or_wrote=0
+[NS] [U585][24] readback=0
+[NS] [U585][24] heartbeat=4
+[NS] [U585][24] heartbeat=8
