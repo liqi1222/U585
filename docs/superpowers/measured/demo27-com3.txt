@@ -1,0 +1,55 @@
+﻿# U585 demo 27 VCP capture
+# port=COM3 baud=115200 seconds=8
+# utc=2026-07-12T06:06:32.4744543Z
+
+[S] Secure world ready
+[NS] [U585][27] EMW3080 bring-up (SPI2 + Chip_En/FLOW/NOTIFY)
+[NS] [U585][27] PF15=Chip_En PG15=FLOW PD14=NOTIFY
+[NS] [U585][27] mx_wifi / join-AP pending
+[NS] [U585][27] emw_ready=1
+[NS] [U585][27] spi_ready=1
+[NS] [U585][27] chip_en
+=1
+[NS] [U585][27] flow=0
+[NS] [U585][27] notify=0
+[NS] [U585][27] flow_ok=0
+[NS] [U585][27] xfer_ok=1
+[NS] [U585][27] rx0=0
+[NS] [U585][27] rx1=0
+[NS] [U585][27] rx2=0
+[NS] [U585][27] rx3=0
+[NS] [U585][27] chip_en=1
+[NS] [U585][27] flow=0
+[NS] [U585][27] notify=0
+[NS] [U585][27] flow_ok=0
+[NS] [U585][27] chip_en=1
+[NS] [U585][27] flow=0
+[NS] [U585][27] notify=0
+[NS] [U585][27] flow_ok=0
+[NS] [U585][27] chip_en=1
+[NS] [U585][27] flow=0
+[NS] [U585][27] notify=0
+[NS] [U585][27] flow_ok=0
+[NS] [U585][27] heartbeat=4
+[NS] [U585][27] chip_en=1
+[NS] [U585][27] flow=0
+[NS] [U585][27] notify=0
+[NS] [U585][27] flow_ok=0
+[NS] [U585][27] chip_en=1
+[NS] [U585][27] flow=0
+[NS] [U585][27] notify=0
+[NS] [U585][27] flow_ok=0
+[NS] [U585][27] heartbeat=8
+[NS] [U585][27] chip_en=1
+[NS] [U585][27] flow=0
+[NS] [U585][27] notify=0
+[NS] [U585][27] flow_ok=0
+[NS] [U585][27] chip_en=1
+[NS] [U585][27] flow=0
+[NS] [U585][27] notify=0
+[NS] [U585][27] flow_ok=0
+[NS] [U585][27] heartbeat=12
+[NS] [U585][27] chip_en=1
+[NS] [U585][27] flow=0
+[NS] [U585][27] notify=0
+[NS] [U585][27] flow_ok=0

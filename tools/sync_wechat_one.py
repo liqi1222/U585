@@ -158,6 +158,24 @@ demo=`26`。UCPD1 已迁 NonSecure（`GTZC_PERIPH_UCPD1` + PA15/PB15 SECCFGR）�
 
 原始日志：工程 `docs/superpowers/measured/demo26-com3.txt`。插上 Type-C 充电器或 Host 后应看到非零 VSTATE / `attached=1`；CDC 虚拟串口仍待接 USB Device 中间件。
 """,
+    "27": """
+## 上板实测记录（2026-07-12）
+
+demo=`27`。SPI2 已在 NS；本机补上 **EMW3080 控制脚**（UM2839 Table 14）移交与复位上电。未移植完整 `mx_wifi` / 连 AP。
+
+| 项 | 结果 |
+|----|------|
+| 引脚 | **PF15=Chip_En**、**PG15=FLOW**、**PD14=NOTIFY**；SPI2=PD1/PD3/PD4/**PB12** |
+| `emw_ready` | **1**（Chip_En 拉低 50 ms 后拉高，延时 1.2 s） |
+| `spi_ready` | **1** |
+| `chip_en` | **1** |
+| `flow` / `flow_ok` | **0 / 0**（模组未报 FLOW 就绪） |
+| `notify` | **0** |
+| `xfer_ok` | **1**（SPI 全双工 4 字节；`rx` 全 0，无 HCI 应答属预期） |
+| 连 AP / NetX | **未做** |
+
+原始日志：工程 `docs/superpowers/measured/demo27-com3.txt`。`flow=0` 常见于 **EMW3080 模组固件未刷或版本不匹配**（需 X-WIFI-EMW3080B + SW2 BOOT 更新）；完整 `mx_wifi` 握手与扫 AP 仍待补。
+""",
 }
 
 
