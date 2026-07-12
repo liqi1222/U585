@@ -25,7 +25,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
 # Select the article-mapped NonSecure experiment.
 # 3-31 map to the U585 article demos. TrustZone topics stay in Secure-side code.
 set(U585_ACTIVE_DEMO "3" CACHE STRING "Active U585 article demo")
-set_property(CACHE U585_ACTIVE_DEMO PROPERTY STRINGS 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31)
+set_property(CACHE U585_ACTIVE_DEMO PROPERTY STRINGS 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33)
 
 # Compiler options
 set(STM32_MCU_FLAGS  "-mcpu=cortex-m33 -mfpu=fpv4-sp-d16 -mfloat-abi=hard " )
@@ -108,6 +108,8 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     App/Src/exp29_mqtt_cloud.c
     App/Src/exp30_icache_fetch.c
     App/Src/exp31_rng_aes_pka.c
+    App/Src/exp32_trustzone_gtzc.c
+    App/Src/exp33_tfm_secure_boot.c
 )
 
 # Extra HAL modules required by Phase-B NonSecure peripherals.

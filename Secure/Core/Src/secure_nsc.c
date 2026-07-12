@@ -89,6 +89,26 @@ CMSE_NS_ENTRY void SECURE_UART1_WriteString(const char *text)
   }
 }
 
+CMSE_NS_ENTRY uint32_t SECURE_GetTzMagic(void)
+{
+  return 0xA5850032UL;
+}
+
+CMSE_NS_ENTRY uint32_t SECURE_GetSauRegionCount(void)
+{
+  return (SAU->TYPE & SAU_TYPE_SREGION_Msk) >> SAU_TYPE_SREGION_Pos;
+}
+
+CMSE_NS_ENTRY uint32_t SECURE_GetFlashSecureBase(void)
+{
+  return 0x0C000000UL;
+}
+
+CMSE_NS_ENTRY uint32_t SECURE_GetFlashNonSecureBase(void)
+{
+  return 0x08100000UL;
+}
+
 /**
   * @}
   */
