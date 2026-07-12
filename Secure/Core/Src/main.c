@@ -148,6 +148,8 @@ int main(void)
   __HAL_RCC_SPI2_CLK_ENABLE();
   (void)HAL_GTZC_TZSC_ConfigPeriphAttributes(
       GTZC_PERIPH_ADC12, GTZC_TZSC_PERIPH_NSEC | GTZC_TZSC_PERIPH_NPRIV);
+  (void)HAL_GTZC_TZSC_ConfigPeriphAttributes(
+      GTZC_PERIPH_GPDMA1, GTZC_TZSC_PERIPH_NSEC | GTZC_TZSC_PERIPH_NPRIV);
 
   __HAL_RCC_GPIOA_CLK_ENABLE();
   GPIOA->SECCFGR &= ~(GPIO_SECCFGR_SEC9 | GPIO_SECCFGR_SEC10);
@@ -163,6 +165,16 @@ int main(void)
   NVIC_SetTargetState(TIM2_IRQn);
   NVIC_SetTargetState(EXTI13_IRQn);
   NVIC_SetTargetState(SPI2_IRQn);
+  /* GPDMA1 CH0 must be NonSecure (channel + src/dest) before NS memcopy. */
+  {
+    DMA_HandleTypeDef hdma_ns_attr;
+    __HAL_RCC_GPDMA1_CLK_ENABLE();
+    hdma_ns_attr.Instance = GPDMA1_Channel0;
+    (void)HAL_DMA_ConfigChannelAttributes(
+        &hdma_ns_attr,
+        DMA_CHANNEL_NSEC | DMA_CHANNEL_PRIV | DMA_CHANNEL_SRC_NSEC | DMA_CHANNEL_DEST_NSEC);
+  }
+  NVIC_SetTargetState(GPDMA1_Channel0_IRQn);
   /* USER CODE END 2 */
 
   /*************** Setup and jump to non-secure *******************************/

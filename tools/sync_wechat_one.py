@@ -42,6 +42,20 @@ demo=`14`。ADC1（`GTZC_PERIPH_ADC12`）已迁 NonSecure；本机先做 **内�
 
 原始日志：工程 `docs/superpowers/measured/demo14-com3.txt`。外部模拟输入 + GPDMA 连续采样仍待补（DMA 搬运见 16 篇）。
 """,
+    "16": """
+## 上板实测记录（2026-07-12）
+
+demo=`16`。`GPDMA1` + Channel0 已迁 NonSecure；通道属性为 **NSEC + PRIV**（SRAM3 MPCBB 默认仅特权可访问）。
+
+| 项 | 结果 |
+|----|------|
+| `dma_ready` | **1** |
+| 模式 | 内存到内存，16×word |
+| `xfer_ok` | **1** |
+| `mismatch` | **0**（`src0==dst0`） |
+
+原始日志：工程 `docs/superpowers/measured/demo16-com3.txt`。外设触发 / linked-list 仍待补。
+""",
 }
 
 

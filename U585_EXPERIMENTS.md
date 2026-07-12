@@ -28,7 +28,7 @@ This project keeps article-facing test code under the NonSecure application laye
 | 13 | `13` | `exp13_spi_bus.c` | Measured: SPI2 Mode0 NS xfer_ok=1 |
 | 14 | `14` | `exp14_adc_dma.c` | Measured: ADC1 VREFINT/TEMP poll; VDDA≈3.35V |
 | 15 | `15` | `exp15_dac_output.c` | Shell |
-| 16 | `16` | `exp16_gpdma_transfer.c` | Shell |
+| 16 | `16` | `exp16_gpdma_transfer.c` | Measured: GPDMA1 CH0 mem2mem mismatch=0 |
 | 17 | `17` | `exp17_hts221_sensor.c` | Measured: WHO_AM_I=0xBC |
 | 18 | `18` | `exp18_lps22hh_sensor.c` | Measured: LPS22HH WHO_AM_I=0xB3 |
 | 19 | `19` | `exp19_ism330dhcx_imu.c` | Measured: ISM330DHCX WHO_AM_I=0x6B |
