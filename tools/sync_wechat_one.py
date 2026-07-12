@@ -176,6 +176,53 @@ demo=`27`。SPI2 已在 NS；本机补上 **EMW3080 控制脚**（UM2839 Table 1
 
 原始日志：工程 `docs/superpowers/measured/demo27-com3.txt`。`flow=0` 常见于 **EMW3080 模组固件未刷或版本不匹配**（需 X-WIFI-EMW3080B + SW2 BOOT 更新）；完整 `mx_wifi` 握手与扫 AP 仍待补。
 """,
+    "29": """
+## 上板实测记录（2026-07-12）
+
+demo=`29`。本机先做 **离线 MQTT CONNECT 帧组装**（无 Broker）。完整上云依赖第 27 篇 Wi-Fi（`flow_ok=0`）与第 28 篇 FreeRTOS（本序列暂缓）。
+
+| 项 | 结果 |
+|----|------|
+| `wifi_ready` | **0** |
+| `freertos_ready` | **0** |
+| `mqtt_ready` | **0**（未连 Broker） |
+| `connect_pkt_len` | **14** |
+| `connect_pkt_ok` | **1**（MQTT 3.1.1 CONNECT：`0x10` / remaining `0x0C`） |
+
+原始日志：工程 `docs/superpowers/measured/demo29-com3.txt`。连 Broker / 订阅发布仍待 Wi-Fi + RTOS。
+""",
+    "30": """
+## 上板实测记录（2026-07-12）
+
+demo=`30`。`GTZC_PERIPH_ICACHE_REG` 已迁 NonSecure。内部 Flash 上做 **关/开 ICACHE** 同一段取指负载，用 DWT `CYCCNT` 计时。
+
+| 项 | 结果 |
+|----|------|
+| `icache_ready` | **1**（先 Disable 再配 1-way） |
+| `cycles_off` | **1481987** |
+| `cycles_on` | **820638** |
+| `faster` | **1**（约 1.8×） |
+| `hit_on` / `miss_on` | **460222 / 70** |
+| `hit_off` / `miss_off` | **0 / 0**（Cache 关闭时监视器无命中统计） |
+
+原始日志：工程 `docs/superpowers/measured/demo30-com3.txt`。OSPI XIP 场景下的加速对比仍待补（依赖第 23 篇八线 XIP）。
+""",
+    "31": """
+## 上板实测记录（2026-07-12）
+
+demo=`31`。RNG / AES / PKA 已迁 NonSecure（HSI48→RNG）。本机做 **RNG 抽数 + AES-128-ECB 加解密回环 + PKA 模加**。
+
+| 项 | 结果 |
+|----|------|
+| `rng_ok` | **1**（4 个随机字互不相同） |
+| `aes_ok` | **1**（NIST 样例明文加解密回环一致） |
+| `aes_ct0` | 密文前 4 字节拼成的 u32（字节序随 `CRYP_NO_SWAP`） |
+| `pka_ok` | **1** |
+| `pka_sum0` | **1**（`(5+7) mod 11`；模数为大端字节） |
+| HASH / SAES / TLS | **未做** |
+
+原始日志：工程 `docs/superpowers/measured/demo31-com3.txt`。
+""",
 }
 
 
