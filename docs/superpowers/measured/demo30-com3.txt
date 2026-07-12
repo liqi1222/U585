@@ -1,0 +1,18 @@
+﻿# U585 demo 30 VCP capture
+# port=COM3 baud=115200 seconds=5
+# utc=2026-07-12T06:10:16.1328147Z
+
+[S] Secure world ready
+[NS] [U585][30] ICACHE on/off fetch bench (DWT CYCCNT)
+[NS] [U585][30] internal Flash workload (OSPI XIP contrast later)
+[NS] [U585][30] icache_ready=1
+[NS] [U585][30] cycles_off=1481987
+[NS] [U585][30] cycles_on=820638
+[NS] [U585][30] hit_off=0
+[NS] [U585][30] miss_off=0
+[NS] [U585][30] hit_on=460222
+[NS] [U585][30] miss_on=70
+[NS] [U585][30] faster=1
+[NS] [U585][30] checksum=109396
+[NS] [U585][30] heartbeat=4
+[NS] [U585][30] heartbeat=8

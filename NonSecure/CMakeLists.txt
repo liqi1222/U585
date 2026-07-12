@@ -129,6 +129,11 @@ target_sources(STM32_Drivers PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mdf.c
     ${CMAKE_CURRENT_SOURCE_DIR}/../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_ospi.c
     ${CMAKE_CURRENT_SOURCE_DIR}/../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_dlyb.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_icache.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rng.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_cryp.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_cryp_ex.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_pka.c
 )
 
 # Link directories setup
