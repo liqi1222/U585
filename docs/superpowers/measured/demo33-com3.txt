@@ -1,0 +1,15 @@
+﻿# U585 demo 33 VCP capture
+# port=COM3 baud=115200 seconds=4
+# utc=2026-07-12T06:14:50.7443725Z
+
+[S] Secure world ready
+[NS] [U585][33] TF-M / Secure Boot status (read-only)
+[NS] [U585][33] this repo = CubeMX dual-image TZ, NOT TF-M/SBSFU
+[NS] [U585][33] cubemx_tz=1
+[NS] [U585][33] tfm_ready=0
+[NS] [U585][33] sbsfu_ready=0
+[NS] [U585][33] secure_boot_ob=0
+[NS] [U585][33] nsc_ok=1
+[NS] [U585][33] series_end=1
+[NS] [U585][33] heartbeat=4
+[NS] [U585][33] heartbeat=8

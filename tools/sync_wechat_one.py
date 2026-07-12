@@ -223,6 +223,39 @@ demo=`31`。RNG / AES / PKA 已迁 NonSecure（HSI48→RNG）。本机做 **RNG 
 
 原始日志：工程 `docs/superpowers/measured/demo31-com3.txt`。
 """,
+    "32": """
+## 上板实测记录（2026-07-12）
+
+demo=`32`。本工程已是 **CubeMX TrustZone 双镜像**（Secure @ `0x0C000000` → 跳转 NonSecure @ `0x08100000`）。本机从 NS 侧经 **NSC veneer** 回读 SAU/Flash 地图；未改 SAU/option bytes。
+
+| 项 | 结果 |
+|----|------|
+| `tz_ready` | **1** |
+| `nsc_ok` | **1**（`SECURE_GetTzMagic()==0xA5850032`） |
+| `sau_regions` | **8** |
+| `flash_s` | **0x0C000000** |
+| `flash_ns` / `vtor_ns` | **0x08100000** |
+| `running_ns` | **1** |
+| `gtzc_handoff` | **1**（系列 demo 已用 TZSC 向外设放权） |
+
+原始日志：工程 `docs/superpowers/measured/demo32-com3.txt`。完整 MPCBB 细粒度实验、SecureFault 注入仍可另开专题。
+""",
+    "33": """
+## 上板实测记录（2026-07-12）
+
+demo=`33`。**只做只读盘点，不写 option bytes、不烧 TF-M/SBSFU。** 本仓库是 CubeMX 双镜像 TrustZone，不是 TF-M 参考实现。
+
+| 项 | 结果 |
+|----|------|
+| `cubemx_tz` | **1** |
+| `tfm_ready` | **0**（树内无 TF-M BL2/SPE） |
+| `sbsfu_ready` | **0** |
+| `secure_boot_ob` | **0**（未改安全启动选项字节） |
+| `nsc_ok` | **1**（沿用第 32 篇 NSC） |
+| `series_end` | **1** |
+
+原始日志：工程 `docs/superpowers/measured/demo33-com3.txt`。若要真做 TF-M/SBSFU，需另开官方 TF-M 工程并谨慎操作 RDP/OB——本系列刻意止于盘点。
+""",
 }
 
 
