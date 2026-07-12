@@ -5,7 +5,7 @@ This project keeps article-facing test code under the NonSecure application laye
 ## Default Boundary
 
 - `Secure/` keeps TrustZone boot handoff, system clock/power setup, GTZC initial setup, and Secure boot banner on USART1.
-- After the Secure banner, Secure **hands USART1 / TIM2 / RTC to NonSecure** (GTZC NSEC), releases PA9/PA10 + PC13 GPIO security bits, clears EXTI13 secure bit, and routes `TIM2_IRQn` / `EXTI13_IRQn` to NS via `NVIC_SetTargetState`.
+- After the Secure banner, Secure **hands USART1 / TIM2 / RTC / I2C2 to NonSecure** (GTZC NSEC), releases PA9/PA10 + PH4/PH5 + PC13 GPIO security bits, clears EXTI13 secure bit, and routes `TIM2_IRQn` / `EXTI13_IRQn` to NS via `NVIC_SetTargetState`.
 - `NonSecure/App/` owns article demos, board helpers, NS USART1 (`u585_usart1.c`), and VCP logging (`u585_log.c` uses NS UART when ready, NSC fallback otherwise).
 - Articles 32 and 33 remain Secure/TF-M topics.
 - Dual-image layout: `TZEN=1`, `SECBOOTADD0=0x0C000000`, Bank2 NS at `0x08100000`. Verified OB: `SECWM2_PSTRT=0x7F SECWM2_PEND=0x0`.
@@ -24,12 +24,12 @@ This project keeps article-facing test code under the NonSecure application laye
 | 09 | `9` | `exp09_gpio_exti.c` | EXTI enabled; press counts author |
 | 10 | `10` | `exp10_tim_pwm_input_capture.c` | Measured: TIM2 IRQ software PWM |
 | 11 | `11` | `exp11_uart_printf_log.c` | Measured: NS USART1 printf |
-| 12 | `12` | `exp12_i2c_sensor_bus.c` | Shell |
+| 12 | `12` | `exp12_i2c_sensor_bus.c` | Measured: I2C2 scan found 7 addrs |
 | 13 | `13` | `exp13_spi_bus.c` | Shell |
 | 14 | `14` | `exp14_adc_dma.c` | Shell |
 | 15 | `15` | `exp15_dac_output.c` | Shell |
 | 16 | `16` | `exp16_gpdma_transfer.c` | Shell |
-| 17 | `17` | `exp17_hts221_sensor.c` | Shell |
+| 17 | `17` | `exp17_hts221_sensor.c` | Measured: WHO_AM_I=0xBC |
 | 18 | `18` | `exp18_lps22hh_sensor.c` | Shell |
 | 19 | `19` | `exp19_ism330dhcx_imu.c` | Shell |
 | 20 | `20` | `exp20_iis2mdc_compass.c` | Shell |
