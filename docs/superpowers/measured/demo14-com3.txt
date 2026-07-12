@@ -1,0 +1,30 @@
+﻿# U585 demo 14 VCP capture
+# port=COM3 baud=115200 seconds=4
+# utc=2026-07-12T05:22:51.2288563Z
+
+[S] Secure world ready
+[NS] [U585][14] ADC1 internal channels (VREFINT/TEMP)
+[NS] [U585][14] mode=polling dma_used=0
+[NS] [U585][14] adc_ready=1
+[NS] [U585][14] resolution_bits=12
+[NS] [U585][14] dma_used=0
+[NS] [U585][14] vrefint_raw=1482
+[NS] [U585][14] vrefint_cal=6530
+[NS] [U585][14] vdda_mv=3348
+[NS] [U585][14] tempsensor_raw=932
+[NS] [U585][14] vrefint_raw=1483
+[NS] [U585][14] vrefint_cal=6530
+[NS] [U585][14] vdda_mv=3346
+[NS] [U585][14] tempsensor_raw=932
+[NS] [U585][14] vrefint_raw=1482
+[NS] [U585][14] vrefint_cal=6530
+[NS] [U585][14] vdda_mv=3348
+[NS] [U585][14] tempsensor_raw=934
+[NS] [U585][14] vrefint_raw=1481
+[NS] [U585][14] vrefint_cal=6530
+[NS] [U585][14] vdda_mv=3351
+[NS] [U585][14] tempsensor_raw=934
+[NS] [U585][14] vrefint_raw=1482
+[NS] [U585][14] vrefint_cal=6530
+[NS] [U585][14] vdda_mv=3348
+[NS] [U585][14] tempsensor_raw=933

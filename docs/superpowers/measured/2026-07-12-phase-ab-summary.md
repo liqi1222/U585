@@ -46,4 +46,5 @@ Raw logs: `docs/superpowers/measured/demoXX-com3.txt`
 | Demo | Key results |
 |------|-------------|
 | 13 | SPI2 NS Mode0 8-bit soft-NSS; `spi_ready=1` `xfer_ok=1`; tx0=0x9F, rx=[11,0,0,255] on WRLS path |
+| 14 | ADC1 NS polling VREFINT/TEMP; `adc_ready=1`; vrefint_raw≈1482; vdda_mv≈3348; dma_used=0 |
 

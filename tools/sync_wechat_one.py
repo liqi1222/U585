@@ -27,6 +27,21 @@ demo=`13`。SPI2 已迁 NonSecure（原 Cube 4-bit 配置改为 **Mode0 / 8-bit 
 
 原始日志：工程 `docs/superpowers/measured/demo13-com3.txt`。示波器 CPOL/CPHA 波形、WiFi 正式协议仍待补（见 27 篇）。
 """,
+    "14": """
+## 上板实测记录（2026-07-12）
+
+demo=`14`。ADC1（`GTZC_PERIPH_ADC12`）已迁 NonSecure；本机先做 **内部通道轮询**（`dma_used=0`）。
+
+| 项 | 结果 |
+|----|------|
+| `adc_ready` | **1** |
+| 分辨率 | **12 bit** |
+| `vrefint_raw` | ≈**1482**（稳定） |
+| `vdda_mv` | ≈**3348**（与 ST-LINK 读电压 3.28 V 接近；工厂 `VREFINT_CAL` 在 NS 侧读数异常，已用 1.212 V 近似换算） |
+| `tempsensor_raw` | ≈**930** |
+
+原始日志：工程 `docs/superpowers/measured/demo14-com3.txt`。外部模拟输入 + GPDMA 连续采样仍待补（DMA 搬运见 16 篇）。
+""",
 }
 
 
