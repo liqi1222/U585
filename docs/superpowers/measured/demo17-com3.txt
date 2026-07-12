@@ -1,0 +1,30 @@
+﻿# U585 demo 17 VCP capture
+# port=COM3 baud=115200 seconds=6
+# utc=2026-07-12T05:05:11.0904048Z
+
+[S] Secure world ready
+[NS] [U585][17] HTS221 humidity/temp
+[NS] [U585][17] i2c_ready=1
+[NS] [U585][17] WHO_AM_I=188
+[NS] [U585][17] who_ok=1
+[NS] [U585][17] raw_hum=55373
+[NS] [U585][17] raw_temp=383
+[S] Secure world ready
+[NS] [U585][17] HTS221 humidity/temp
+[NS] [U585][17] i2c_ready=1
+[NS] [U585][17] WHO_AM_I=188
+[NS] [U585][17] who_ok=1
+[NS] [U585][17] raw_hum=62543
+[NS] [U585][17] raw_temp=712
+[NS] [U585][17] raw_hum=62534
+[NS] [U585][17] raw_temp=711
+[NS] [U585][17] raw_hum=62524
+[NS] [U585][17] raw_temp=712
+[NS] [U585][17] raw_hum=62538
+[NS] [U585][17] raw_temp=714
+[NS] [U585][17] raw_hum=62531
+[NS] [U585][17] raw_temp=715
+[NS] [U585][17] raw_hum=62526
+[NS] [U585][17] raw_temp=716
+[NS] [U585][17] raw_hum=62542
+[NS] [U585][17] raw_temp=715

@@ -70,6 +70,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     App/Src/u585_board.c
     App/Src/u585_log.c
     App/Src/u585_usart1.c
+    App/Src/u585_i2c2.c
     App/Src/exp03_led_button.c
     App/Src/exp04_debug_fault.c
     App/Src/exp05_clock_tree.c
@@ -109,6 +110,8 @@ target_sources(STM32_Drivers PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_rtc_ex.c
     ${CMAKE_CURRENT_SOURCE_DIR}/../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim.c
     ${CMAKE_CURRENT_SOURCE_DIR}/../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_tim_ex.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_i2c_ex.c
 )
 
 # Link directories setup

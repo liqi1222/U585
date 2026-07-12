@@ -30,3 +30,11 @@ Host capture: `tools/flash_and_capture.ps1`
 - Serial terminal screenshot for publishing (11)
 
 Raw logs: `docs/superpowers/measured/demoXX-com3.txt`
+
+## Phase C addendum (I2C)
+
+| Demo | Key results |
+|------|-------------|
+| 12 | I2C2 NS scan: 7 devices (0x10,0x1E,0x56,0x5D,0x5E,0x5F,0x6B) |
+| 17 | HTS221 WHO_AM_I=0xBC ok; raw_hum/raw_temp streaming |
+
