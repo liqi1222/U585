@@ -1,0 +1,22 @@
+﻿# U585 demo 4 VCP capture
+# port=COM3 baud=115200 seconds=6
+# utc=2026-07-12T04:10:13.9026458Z
+
+[NS] [U585][05] SystemCoreClock_Hz=160000000
+[NS] [U585][05] SYSCLK_Hz=160000000
+[NS] [U585][05] HCLK_Hz=160000000
+[NS] [U585][05] PCLK1_Hz=160000000
+[NS] [U585][05] PCLK2_Hz=160000000
+[NS] [U585][05] PCLK3_Hz=160000000
+[NS] [U585][05] FLASH_LATENCY=4
+[S] Secure world ready
+[NS] [U585][04] SWD/SWO/Fault demo start
+[NS] [U585][04] VCP=USART1 NonSecure direct; ITM/SWO optional
+[NS] [U585][04] itm_trcena=0
+[NS] [U585][04] fault_trigger_enabled=0
+[S] Secure world ready
+[NS] [U585][04] SWD/SWO/Fault demo start
+[NS] [U585][04] VCP=USART1 NonSecure direct; ITM/SWO optional
+[NS] [U585][04] itm_trcena=0
+[NS] [U585][04] fault_trigger_enabled=0
+[NS] [U585][04] heartbeat=20

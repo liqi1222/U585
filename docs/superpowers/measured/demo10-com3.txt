@@ -1,0 +1,45 @@
+﻿# U585 demo 10 VCP capture
+# port=COM3 baud=115200 seconds=5
+# utc=2026-07-12T04:11:11.8796169Z
+
+[NS] [U585][06] voltage_range=196608
+[NS] [U585][06] PWR_VOSR=507904
+[NS] [U585][06] PWR_CR3=2
+[NS] [U585][06] smps_selected=1
+[NS] [U585][06] NOTE: board current needs DMM on JP measurement path
+[NS] [U585][06] voltage_range=196608
+[NS] [U585][06] PWR_VOSR=507904
+[NS] [U585][06] PWR_CR3=2
+[NS] [U585][06] smps_selected=1
+[NS] [U585][06] NOTE: board current needs DMM on JP measurement path
+[NS] [U585][06] voltage_range=196608
+[NS] [U585][06] PWR_VOSR=507904
+[NS] [U585][06] PWR_CR3=2
+[NS] [U585][06] smps_selected=1
+[NS] [U585][06] NOTE: board current needs DMM on JP measurement path
+[NS] [U585][06] voltage_range=196608
+[NS] [U585][06] PWR_VOSR=507904
+[NS] [U585][06] PWR_CR3=2
+[NS] [U585][06] smps_selected=1
+[NS] [U585][06] NOTE: board current needs DMM on JP measurement path
+[NS] [U585][06] voltage_range=196608
+[NS] [U585][06] PWR_VOSR=507904
+[NS] [U585][06] PWR_CR3=2
+[NS] [U585][06] smps_selected=1
+[NS] [U585][06] NOTE: board current needs DMM on JP measurement path
+[NS] [U585][06] voltage_range=196608
+[NS] [U585][06] PWR_VOSR=507904
+[NS] [U585][06] PWR_CR3=2
+[NS] [U585][06] smps_selected=1
+[NS] [U585][06] NOTE: board current needs DMM on JP measurement path
+[S] Secure world ready
+[NS] [U585][10] TIM2 software-PWM on green LED
+[NS] [U585][10] tim_ready=1
+[NS] [U585][10] duty_percent=20
+[NS] [U585][10] NOTE: scope waveform / input-capture -> author follow-up
+[NS] [U585][10] tim_irq=819
+[NS
+] [U585][10] tim_irq=1826
+[NS] [U585][10] tim_irq=2833
+[NS] [U585][10] tim_irq=3840
+[NS] [U585][10] tim_irq=4847

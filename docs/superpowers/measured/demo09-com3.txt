@@ -1,0 +1,17 @@
+﻿# U585 demo 9 VCP capture
+# port=COM3 baud=115200 seconds=6
+# utc=2026-07-12T04:09:08.7961397Z
+
+[NS] [U585][08] seconds=6
+[NS] [U585][08] seconds=7
+[NS] [U585][08] seconds=8
+[NS] [U585][08] seconds=9
+[NS] [U585][08] seconds=10
+[S] Secure world ready
+[NS] [U585][09] GPIO EXTI demo (PC13 rising/falling)
+[NS] [U585][09] initial_button=0
+[NS] [U585][09] exti_enabled=1
+[S] Secure world ready
+[NS] [U585][09] GPIO EXTI demo (PC13 rising/falling)
+[NS] [U585][09] initial_button=0
+[NS] [U585][09] exti_enabled=1

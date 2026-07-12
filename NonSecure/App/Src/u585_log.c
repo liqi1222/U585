@@ -2,9 +2,9 @@
 
 #include <stddef.h>
 
+#include "u585_usart1.h"
 #include "secure_nsc.h"
 
-/* Tag identifying the non-secure world on the shared secure-side UART. */
 #define U585_LOG_NS_TAG "[NS] "
 
 static void u585_log_write_decimal(uint32_t value)
@@ -37,14 +37,36 @@ static void u585_log_write_decimal(uint32_t value)
 
 void U585_Log_WriteString(const char *text)
 {
-  SECURE_UART1_WriteString(text);
+  const char *cursor = text;
+  uint16_t length = 0U;
+
+  if (cursor == NULL)
+  {
+    return;
+  }
+
+  while ((cursor[length] != '\0') && (length < 256U))
+  {
+    length++;
+  }
+
+  if (length == 0U)
+  {
+    return;
+  }
+
+  if (U585_USART1_IsReady() != 0U)
+  {
+    (void)HAL_UART_Transmit(&huart1_ns, (uint8_t *)text, length, 100U);
+  }
+  else
+  {
+    SECURE_UART1_WriteString(text);
+  }
 }
 
 void U585_Log_WriteLine(const char *text)
 {
-  /* Tag the line so the secure-side UART output can be attributed to the
-   * non-secure world. An empty/blank line is emitted without the tag to
-   * keep visual separators clean. */
   if ((text != NULL) && (text[0] != '\0'))
   {
     U585_Log_WriteString(U585_LOG_NS_TAG);

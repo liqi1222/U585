@@ -142,4 +142,36 @@ void SysTick_Handler(void)
 
 /* USER CODE BEGIN 1 */
 
+extern TIM_HandleTypeDef htim2_ns;
+void U585_Exp09_OnExti(uint16_t pin);
+void U585_Exp10_OnTimUpdate(void);
+
+void EXTI13_IRQHandler(void)
+{
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_13);
+}
+
+void HAL_GPIO_EXTI_Falling_Callback(uint16_t GPIO_Pin)
+{
+  U585_Exp09_OnExti(GPIO_Pin);
+}
+
+void HAL_GPIO_EXTI_Rising_Callback(uint16_t GPIO_Pin)
+{
+  U585_Exp09_OnExti(GPIO_Pin);
+}
+
+void TIM2_IRQHandler(void)
+{
+  HAL_TIM_IRQHandler(&htim2_ns);
+}
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+  if (htim->Instance == TIM2)
+  {
+    U585_Exp10_OnTimUpdate();
+  }
+}
+
 /* USER CODE END 1 */

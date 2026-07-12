@@ -1,0 +1,22 @@
+﻿# U585 demo 3 VCP capture
+# port=COM3 baud=115200 seconds=3
+# utc=2026-07-12T04:12:24.1667520Z
+
+[S] Secure world ready
+[NS] [U585][03] LED/button demo start
+[NS] [U585][03] USART1 VCP log via NonSecure UART (post Phase-B handoff)
+[NS] [U585][03] initial_button=0
+[NS] [U585][03] led_state=2
+[NS] [U585][03] led_state=1
+[S] Secure world ready
+[NS] [U585][03] LED/button demo start
+[NS] [U585][03] USART1 VCP log via NonSecure UART (post Phase-B handoff)
+[NS] [U585][03] initial_button=0
+[NS] [U585][03] led_state=2
+[NS] [U585][03] led_state=1
+[NS] [U585][03] led_state=2
+[NS] [U585][03] led_state=1
+[NS] [U585][03] led_state=2
+[NS] [U585][03] led_state=1
+[NS] [U585][03] led_state=2
+[NS] [U585][03] led_state=1

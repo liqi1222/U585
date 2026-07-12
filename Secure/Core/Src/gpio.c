@@ -79,6 +79,8 @@ void MX_GPIO_Init(void)
    */
   GPIOH->SECCFGR &= ~(GPIO_SECCFGR_SEC6 | GPIO_SECCFGR_SEC7);
 
+  /* USER button PC13 for NonSecure EXTI demos. */
+  GPIOC->SECCFGR &= ~(GPIO_SECCFGR_SEC13);
 }
 
 /* USER CODE BEGIN 2 */

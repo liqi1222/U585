@@ -125,6 +125,27 @@ int main(void)
    * U585_Secure_Log_WriteLine so this output is distinguishable from the
    * non-secure world's "[NS] " tagged lines on the shared USART1 console. */
   U585_Secure_Log_WriteLine("Secure world ready");
+
+  /*
+   * Hand selected peripherals to NonSecure for article demos 08-11.
+   * USART1 is released only after the Secure boot banner is printed.
+   */
+  (void)HAL_UART_DeInit(&huart1);
+
+  (void)HAL_GTZC_TZSC_ConfigPeriphAttributes(
+      GTZC_PERIPH_USART1, GTZC_TZSC_PERIPH_NSEC | GTZC_TZSC_PERIPH_NPRIV);
+  (void)HAL_GTZC_TZSC_ConfigPeriphAttributes(
+      GTZC_PERIPH_TIM2, GTZC_TZSC_PERIPH_NSEC | GTZC_TZSC_PERIPH_NPRIV);
+  (void)HAL_GTZC_TZSC_ConfigPeriphAttributes(
+      GTZC_PERIPH_RTC, GTZC_TZSC_PERIPH_NSEC | GTZC_TZSC_PERIPH_NPRIV);
+
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+  GPIOA->SECCFGR &= ~(GPIO_SECCFGR_SEC9 | GPIO_SECCFGR_SEC10);
+  CLEAR_BIT(EXTI->SECCFGR1, EXTI_SECCFGR1_SEC13);
+
+  /* Route demo IRQs to NonSecure so TIM2/EXTI13 handlers in NS can run. */
+  NVIC_SetTargetState(TIM2_IRQn);
+  NVIC_SetTargetState(EXTI13_IRQn);
   /* USER CODE END 2 */
 
   /*************** Setup and jump to non-secure *******************************/

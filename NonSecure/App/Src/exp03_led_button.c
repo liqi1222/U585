@@ -52,7 +52,7 @@ static void exp03_init(void)
   g_u585_exp03_state.log_checkpoint = 2U;
   U585_Log_WriteLine("[U585][03] LED/button demo start");
   g_u585_exp03_state.log_checkpoint = 3U;
-  U585_Log_WriteLine("[U585][03] USART1 VCP log via Secure NSC bridge");
+  U585_Log_WriteLine("[U585][03] USART1 VCP log via NonSecure UART (post Phase-B handoff)");
   g_u585_exp03_state.log_checkpoint = 4U;
   U585_Log_WriteU32("[U585][03] initial_button=", last_button_pressed);
   g_u585_exp03_state.log_checkpoint = 5U;

@@ -1,4 +1,6 @@
 #include "u585_app.h"
+#include "u585_board.h"
+#include "u585_usart1.h"
 
 #ifndef U585_ACTIVE_DEMO
 #define U585_ACTIVE_DEMO 3
@@ -83,6 +85,13 @@ const U585_Demo U585_Demo_Unsupported = {
 
 void U585_App_Init(void)
 {
+  /* Blink red once if USART1 NS init fails (keeps board diagnosable without VCP). */
+  if (U585_USART1_Init() != HAL_OK)
+  {
+    U585_Board_InitBasicGpio();
+    U585_Board_SetRedLed(GPIO_PIN_SET);
+  }
+
   if ((active_demo != 0) && (active_demo->init != 0))
   {
     active_demo->init();

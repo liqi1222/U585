@@ -17,6 +17,9 @@ set(CMAKE_PROJECT_NAME U585)
 # Core project settings
 project(${CMAKE_PROJECT_NAME})
 
+# Forward article demo selection into the NonSecure ExternalProject.
+set(U585_ACTIVE_DEMO "3" CACHE STRING "Active U585 article demo (3-31)")
+
 # Include external project file
 include("mx-generated.cmake")
 

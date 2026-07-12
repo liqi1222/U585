@@ -1,0 +1,26 @@
+﻿# U585 demo 6 VCP capture
+# port=COM3 baud=115200 seconds=6
+# utc=2026-07-12T04:10:30.2293492Z
+
+[NS] [U585][04] heartbeat=40
+[S] Secure world ready
+[NS] [U585][06] power architecture observation start
+[NS] [U585][06] Secure SystemPower_Config: SMPS + VOS1
+[NS] [U585][06] voltage_range=196608
+[NS] [U585][06] PWR_VOSR=507904
+[NS] [U585][06] PWR_CR3=2
+[NS] [U585][06] smps_selected=1
+[NS] [U585][06] NOTE: board current needs DMM on JP measurement path
+[S] Secure world ready
+[NS] [U585][06] power architecture observation start
+[NS] [U585][06] Secure SystemPower_Config: SMPS + VOS1
+[NS] [U585][06] voltage_range=196608
+[NS] [U585][06] PWR_VOSR=507904
+[NS] [U585][06] PWR_CR3=2
+[NS] [U585][06] smps_selected=1
+[NS] [U585][06] NOTE: board current needs DMM on JP measurement path
+[NS] [U585][06] voltage_range=196608
+[NS] [U585][06] PWR_VOSR=507904
+[NS] [U585][06] PWR_CR3=2
+[NS] [U585][06] smps_selected=1
+[NS] [U585][06] NOTE: board current needs DMM on JP measurement path
