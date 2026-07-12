@@ -1,18 +1,17 @@
-﻿# U585 demo 31 VCP capture
+﻿# U585 demo 32 VCP capture
 # port=COM3 baud=115200 seconds=5
-# utc=2026-07-12T06:11:32.9433840Z
+# utc=2026-07-12T06:14:24.2892878Z
 
 [S] Secure world ready
-[NS] [U585][31] RNG + AES-ECB + PKA ModAdd probe
-[NS] [U585][31] HASH/SAES/TLS pending
-[NS] [U585][31] rng_ok=1
-[NS] [U585][31] r0=1148945712
-[NS] [U585][31] r1=1165028757
-[NS] [U585][31] r2=3018496735
-[NS] [U585][31] r3=2661366318
-[NS] [U585][31] aes_ok=1
-[NS] [U585][31] aes_ct0=3297597316
-[NS] [U585][31] pka_ok=1
-[NS] [U585][31] pka_sum0=1
+[NS] [U585][31] TrustZone dual-image observe (CubeMX TZ, not TF-M)
+[NS] [U585][31] probe NSC veneer + SAU/Flash map
+[NS] [U585][31] tz_ready=1
+[NS] [U585][31] nsc_ok=1
+[NS] [U585][31] sau_regions=8
+[NS] [U585][31] flash_s=201326592
+[NS] [U585][31] flash_ns=135266304
+[NS] [U585][31] vtor_ns=135266304
+[NS] [U585][31] running_ns=1
+[NS] [U585][31] gtzc_handoff=1
 [NS] [U585][31] heartbeat=4
 [NS] [U585][31] heartbeat=8

@@ -7,7 +7,7 @@ This project keeps article-facing test code under the NonSecure application laye
 - `Secure/` keeps TrustZone boot handoff, system clock/power setup, GTZC initial setup, and Secure boot banner on USART1.
 - After the Secure banner, Secure **hands USART1 / TIM2 / RTC / I2C2 (/ SPI2 when demo needs it) to NonSecure** (GTZC NSEC), releases related GPIO security bits, clears EXTI13 secure bit, and routes demo IRQs to NS via `NVIC_SetTargetState`.
 - `NonSecure/App/` owns article demos, board helpers, NS USART1 (`u585_usart1.c`), and VCP logging (`u585_log.c` uses NS UART when ready, NSC fallback otherwise).
-- Articles 32 and 33 remain Secure/TF-M topics.
+- Articles 31 and 32 remain Secure/TF-M topics.
 - Dual-image layout: `TZEN=1`, `SECBOOTADD0=0x0C000000`, Bank2 NS at `0x08100000`. Verified OB: `SECWM2_PSTRT=0x7F SECWM2_PEND=0x0`.
 - LEDs PH6/PH7 are NonSecure (`GPIOH->SECCFGR` clears SEC6/SEC7).
 
@@ -38,13 +38,13 @@ This project keeps article-facing test code under the NonSecure application laye
 | 23 | `23` | `exp23_ospi_flash_xip.c` | Measured: OCTOSPI2 JEDEC C2/85/3A (MX25LM51245G) |
 | 24 | `24` | `exp24_ospi_psram_cache.c` | Measured: OCTOSPI1 init ready=1; SPI RW/ID pending |
 | 25 | `25` | `exp25_st25dv_nfc.c` | Measured: no ST25DV; M24256 EEPROM @0x56 rw_ok=1 |
-| 26 | `26` | `exp26_usb_ucpd_device.c` | Shell |
-| 27 | `27` | `exp27_wifi_emw3080.c` | Shell |
-| 28 | `28` | `exp28_freertos_queue_log.c` | Shell |
-| 29 | `29` | `exp29_mqtt_cloud.c` | Shell |
-| 30 | `30` | `exp30_icache_fetch.c` | Shell |
-| 31 | `31` | `exp31_rng_aes_pka.c` | Shell |
-| 32–33 | Secure/TF-M | TrustZone topics | Out of NonSecure demo range |
+| 26 | `26` | `exp26_usb_ucpd_device.c` | Measured: UCPD CC sense ucpd_ready=1 |
+| 27 | `27` | `exp27_wifi_emw3080.c` | Measured: Chip_En/SPI; flow_ok=0 |
+| 28 | `28` | `exp28_mqtt_cloud.c` | Measured: offline CONNECT frame; Wi-Fi blocked |
+| 29 | `29` | `exp29_icache_fetch.c` | Measured: ICACHE on/off ~1.8× |
+| 30 | `30` | `exp30_rng_aes_pka.c` | Measured: RNG/AES/PKA ok |
+| 31 | `31` | `exp31_trustzone_gtzc.c` | Measured: NSC + dual-image map |
+| 32 | `32` | `exp32_tfm_secure_boot.c` | Measured: TF-M/SBSFU inventory stub |
 
 Default demo is `3`. Logging prefers NonSecure USART1; `SECURE_UART1_WriteString` remains as NSC fallback if NS UART is not ready.
 

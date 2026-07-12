@@ -1,0 +1,14 @@
+﻿# U585 demo 28 VCP capture
+# port=COM3 baud=115200 seconds=4
+# utc=2026-07-12T06:10:54.4091361Z
+# note: renumbered from former demo29; freertos lines removed from firmware
+
+[S] Secure world ready
+[NS] [U585][28] MQTT CONNECT frame only (no broker)
+[NS] [U585][28] blocked on WiFi(27); RTOS out of series scope
+[NS] [U585][28] wifi_ready=0
+[NS] [U585][28] mqtt_ready=0
+[NS] [U585][28] connect_pkt_len=14
+[NS] [U585][28] connect_pkt_ok=1
+[NS] [U585][28] heartbeat=4
+[NS] [U585][28] heartbeat=8

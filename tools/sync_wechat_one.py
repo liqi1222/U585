@@ -176,25 +176,24 @@ demo=`27`。SPI2 已在 NS；本机补上 **EMW3080 控制脚**（UM2839 Table 1
 
 原始日志：工程 `docs/superpowers/measured/demo27-com3.txt`。`flow=0` 常见于 **EMW3080 模组固件未刷或版本不匹配**（需 X-WIFI-EMW3080B + SW2 BOOT 更新）；完整 `mx_wifi` 握手与扫 AP 仍待补。
 """,
-    "29": """
+    "28": """
 ## 上板实测记录（2026-07-12）
 
-demo=`29`。本机先做 **离线 MQTT CONNECT 帧组装**（无 Broker）。完整上云依赖第 27 篇 Wi-Fi（`flow_ok=0`）与第 28 篇 FreeRTOS（本序列暂缓）。
+demo=`28`。本机先做 **离线 MQTT CONNECT 帧组装**（无 Broker）。完整上云依赖第 27 篇 Wi-Fi（`flow_ok=0`）。**FreeRTOS/RTOS 已移出本系列计划**（纯软件，不涉及板载芯片能力）。
 
 | 项 | 结果 |
 |----|------|
 | `wifi_ready` | **0** |
-| `freertos_ready` | **0** |
 | `mqtt_ready` | **0**（未连 Broker） |
 | `connect_pkt_len` | **14** |
 | `connect_pkt_ok` | **1**（MQTT 3.1.1 CONNECT：`0x10` / remaining `0x0C`） |
 
-原始日志：工程 `docs/superpowers/measured/demo29-com3.txt`。连 Broker / 订阅发布仍待 Wi-Fi + RTOS。
+原始日志：工程 `docs/superpowers/measured/demo28-com3.txt`。连 Broker / 订阅发布仍待 Wi-Fi。
 """,
-    "30": """
+    "29": """
 ## 上板实测记录（2026-07-12）
 
-demo=`30`。`GTZC_PERIPH_ICACHE_REG` 已迁 NonSecure。内部 Flash 上做 **关/开 ICACHE** 同一段取指负载，用 DWT `CYCCNT` 计时。
+demo=`29`。`GTZC_PERIPH_ICACHE_REG` 已迁 NonSecure。内部 Flash 上做 **关/开 ICACHE** 同一段取指负载，用 DWT `CYCCNT` 计时。
 
 | 项 | 结果 |
 |----|------|
@@ -205,12 +204,12 @@ demo=`30`。`GTZC_PERIPH_ICACHE_REG` 已迁 NonSecure。内部 Flash 上做 **�
 | `hit_on` / `miss_on` | **460222 / 70** |
 | `hit_off` / `miss_off` | **0 / 0**（Cache 关闭时监视器无命中统计） |
 
-原始日志：工程 `docs/superpowers/measured/demo30-com3.txt`。OSPI XIP 场景下的加速对比仍待补（依赖第 23 篇八线 XIP）。
+原始日志：工程 `docs/superpowers/measured/demo29-com3.txt`。OSPI XIP 场景下的加速对比仍待补（依赖第 23 篇八线 XIP）。
 """,
-    "31": """
+    "30": """
 ## 上板实测记录（2026-07-12）
 
-demo=`31`。RNG / AES / PKA 已迁 NonSecure（HSI48→RNG）。本机做 **RNG 抽数 + AES-128-ECB 加解密回环 + PKA 模加**。
+demo=`30`。RNG / AES / PKA 已迁 NonSecure（HSI48→RNG）。本机做 **RNG 抽数 + AES-128-ECB 加解密回环 + PKA 模加**。
 
 | 项 | 结果 |
 |----|------|
@@ -221,12 +220,12 @@ demo=`31`。RNG / AES / PKA 已迁 NonSecure（HSI48→RNG）。本机做 **RNG 
 | `pka_sum0` | **1**（`(5+7) mod 11`；模数为大端字节） |
 | HASH / SAES / TLS | **未做** |
 
-原始日志：工程 `docs/superpowers/measured/demo31-com3.txt`。
+原始日志：工程 `docs/superpowers/measured/demo30-com3.txt`。
 """,
-    "32": """
+    "31": """
 ## 上板实测记录（2026-07-12）
 
-demo=`32`。本工程已是 **CubeMX TrustZone 双镜像**（Secure @ `0x0C000000` → 跳转 NonSecure @ `0x08100000`）。本机从 NS 侧经 **NSC veneer** 回读 SAU/Flash 地图；未改 SAU/option bytes。
+demo=`31`。本工程已是 **CubeMX TrustZone 双镜像**（Secure @ `0x0C000000` → 跳转 NonSecure @ `0x08100000`）。本机从 NS 侧经 **NSC veneer** 回读 SAU/Flash 地图；未改 SAU/option bytes。
 
 | 项 | 结果 |
 |----|------|
@@ -238,12 +237,12 @@ demo=`32`。本工程已是 **CubeMX TrustZone 双镜像**（Secure @ `0x0C00000
 | `running_ns` | **1** |
 | `gtzc_handoff` | **1**（系列 demo 已用 TZSC 向外设放权） |
 
-原始日志：工程 `docs/superpowers/measured/demo32-com3.txt`。完整 MPCBB 细粒度实验、SecureFault 注入仍可另开专题。
+原始日志：工程 `docs/superpowers/measured/demo31-com3.txt`。完整 MPCBB 细粒度实验、SecureFault 注入仍可另开专题。
 """,
-    "33": """
+    "32": """
 ## 上板实测记录（2026-07-12）
 
-demo=`33`。**只做只读盘点，不写 option bytes、不烧 TF-M/SBSFU。** 本仓库是 CubeMX 双镜像 TrustZone，不是 TF-M 参考实现。
+demo=`32`。**只做只读盘点，不写 option bytes、不烧 TF-M/SBSFU。** 本仓库是 CubeMX 双镜像 TrustZone，不是 TF-M 参考实现。
 
 | 项 | 结果 |
 |----|------|
@@ -251,10 +250,10 @@ demo=`33`。**只做只读盘点，不写 option bytes、不烧 TF-M/SBSFU。** 
 | `tfm_ready` | **0**（树内无 TF-M BL2/SPE） |
 | `sbsfu_ready` | **0** |
 | `secure_boot_ob` | **0**（未改安全启动选项字节） |
-| `nsc_ok` | **1**（沿用第 32 篇 NSC） |
+| `nsc_ok` | **1**（沿用第 31 篇 NSC） |
 | `series_end` | **1** |
 
-原始日志：工程 `docs/superpowers/measured/demo33-com3.txt`。若要真做 TF-M/SBSFU，需另开官方 TF-M 工程并谨慎操作 RDP/OB——本系列刻意止于盘点。
+原始日志：工程 `docs/superpowers/measured/demo32-com3.txt`。若要真做 TF-M/SBSFU，需另开官方 TF-M 工程并谨慎操作 RDP/OB——本系列刻意止于盘点。
 """,
 }
 

@@ -30,10 +30,11 @@ DEMO_SOURCES = {
     25: "exp25_st25dv_nfc.c",
     26: "exp26_usb_ucpd_device.c",
     27: "exp27_wifi_emw3080.c",
-    28: "exp28_freertos_queue_log.c",
-    29: "exp29_mqtt_cloud.c",
-    30: "exp30_icache_fetch.c",
-    31: "exp31_rng_aes_pka.c",
+    28: "exp28_mqtt_cloud.c",
+    29: "exp29_icache_fetch.c",
+    30: "exp30_rng_aes_pka.c",
+    31: "exp31_trustzone_gtzc.c",
+    32: "exp32_tfm_secure_boot.c",
 }
 
 
@@ -116,7 +117,7 @@ def main():
     require("U585_Demo_Unsupported" in app_c, "Dispatcher must provide unsupported-demo fallback")
 
     doc = read_text("U585_EXPERIMENTS.md")
-    for token in [f"{demo:02d}" for demo in DEMO_SOURCES] + ["32", "33", "NonSecure", "TrustZone"]:
+    for token in [f"{demo:02d}" for demo in DEMO_SOURCES] + ["31", "32", "NonSecure", "TrustZone"]:
         require(token in doc, f"Document missing token: {token}")
     require("SECURE_UART1_WriteString" in doc, "Document must describe the Secure UART bridge")
     require("SECWM2_PSTRT=0x7F" in doc, "Document must describe Bank2 NonSecure OB setting")

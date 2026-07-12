@@ -50,10 +50,10 @@ Expected before implementation: FAIL listing missing `exp06_...` through `exp31_
 - Create: `NonSecure/App/Src/exp25_st25dv_nfc.c`
 - Create: `NonSecure/App/Src/exp26_usb_ucpd_device.c`
 - Create: `NonSecure/App/Src/exp27_wifi_emw3080.c`
-- Create: `NonSecure/App/Src/exp28_freertos_queue_log.c`
-- Create: `NonSecure/App/Src/exp29_mqtt_cloud.c`
-- Create: `NonSecure/App/Src/exp30_icache_fetch.c`
-- Create: `NonSecure/App/Src/exp31_rng_aes_pka.c`
+- ~~Create: `NonSecure/App/Src/exp28_freertos_queue_log.c`~~ **Removed from plan** (FreeRTOS = pure software; not chip/board capability)
+- Create: `NonSecure/App/Src/exp28_mqtt_cloud.c` (was planned as 29; FreeRTOS dropped)
+- Create: `NonSecure/App/Src/exp29_icache_fetch.c`
+- Create: `NonSecure/App/Src/exp30_rng_aes_pka.c`
 
 - [x] **Step 1: Add compile-safe article shells**
 
@@ -68,7 +68,7 @@ Each file exports a `U585_Demo_ExpNN` object, initializes basic GPIO, updates a 
 
 - [x] **Step 1: Declare demo objects**
 
-Add `extern const U585_Demo U585_Demo_Exp06` through `U585_Demo_Exp31`.
+Add `extern const U585_Demo U585_Demo_Exp06` through `U585_Demo_Exp32`.
 
 - [x] **Step 2: Extend dispatcher**
 

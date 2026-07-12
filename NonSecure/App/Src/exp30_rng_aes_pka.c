@@ -16,9 +16,9 @@ typedef struct
   uint32_t r3;
   uint32_t aes_ct0;
   uint32_t pka_sum0;
-} U585_Exp31State;
+} U585_Exp30State;
 
-volatile U585_Exp31State g_u585_exp31_state;
+volatile U585_Exp30State g_u585_exp30_state;
 
 static RNG_HandleTypeDef hrng_ns;
 static CRYP_HandleTypeDef hcryp_ns;
@@ -33,7 +33,7 @@ static uint8_t s_aes_pt[16] = {
   0xE9U, 0x3DU, 0x7EU, 0x11U, 0x73U, 0x93U, 0x17U, 0x2AU
 };
 
-static HAL_StatusTypeDef exp31_rng_probe(void)
+static HAL_StatusTypeDef exp30_rng_probe(void)
 {
   RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
   uint32_t i;
@@ -60,23 +60,23 @@ static HAL_StatusTypeDef exp31_rng_probe(void)
     {
       return HAL_ERROR;
     }
-    if (i == 0U) { g_u585_exp31_state.r0 = v; }
-    else if (i == 1U) { g_u585_exp31_state.r1 = v; }
-    else if (i == 2U) { g_u585_exp31_state.r2 = v; }
-    else { g_u585_exp31_state.r3 = v; }
+    if (i == 0U) { g_u585_exp30_state.r0 = v; }
+    else if (i == 1U) { g_u585_exp30_state.r1 = v; }
+    else if (i == 2U) { g_u585_exp30_state.r2 = v; }
+    else { g_u585_exp30_state.r3 = v; }
   }
 
   /* Weak sanity: not all identical (extremely unlikely for true RNG). */
-  if ((g_u585_exp31_state.r0 == g_u585_exp31_state.r1) &&
-      (g_u585_exp31_state.r1 == g_u585_exp31_state.r2) &&
-      (g_u585_exp31_state.r2 == g_u585_exp31_state.r3))
+  if ((g_u585_exp30_state.r0 == g_u585_exp30_state.r1) &&
+      (g_u585_exp30_state.r1 == g_u585_exp30_state.r2) &&
+      (g_u585_exp30_state.r2 == g_u585_exp30_state.r3))
   {
     return HAL_ERROR;
   }
   return HAL_OK;
 }
 
-static HAL_StatusTypeDef exp31_aes_probe(void)
+static HAL_StatusTypeDef exp30_aes_probe(void)
 {
   uint8_t ct[16] = {0};
   uint8_t pt_out[16] = {0};
@@ -104,7 +104,7 @@ static HAL_StatusTypeDef exp31_aes_probe(void)
     return HAL_ERROR;
   }
 
-  g_u585_exp31_state.aes_ct0 =
+  g_u585_exp30_state.aes_ct0 =
       ((uint32_t)ct[0] << 24) | ((uint32_t)ct[1] << 16) |
       ((uint32_t)ct[2] << 8) | (uint32_t)ct[3];
 
@@ -124,7 +124,7 @@ static HAL_StatusTypeDef exp31_aes_probe(void)
   return HAL_OK;
 }
 
-static HAL_StatusTypeDef exp31_pka_probe(void)
+static HAL_StatusTypeDef exp30_pka_probe(void)
 {
   /* Tiny modular add: (5 + 7) mod 11 = 1. */
   uint32_t opA[1] = {5U};
@@ -152,54 +152,54 @@ static HAL_StatusTypeDef exp31_pka_probe(void)
   }
 
   HAL_PKA_Arithmetic_GetResult(&hpka_ns, result);
-  g_u585_exp31_state.pka_sum0 = result[0];
+  g_u585_exp30_state.pka_sum0 = result[0];
   return (result[0] == 1U) ? HAL_OK : HAL_ERROR;
 }
 
-static void exp31_init(void)
+static void exp30_init(void)
 {
   U585_Board_InitBasicGpio();
-  g_u585_exp31_state.magic = 0xA585001FUL;
-  g_u585_exp31_state.iterations = 0U;
-  g_u585_exp31_state.tick_ms = HAL_GetTick();
+  g_u585_exp30_state.magic = 0xA585001EUL;
+  g_u585_exp30_state.iterations = 0U;
+  g_u585_exp30_state.tick_ms = HAL_GetTick();
 
   U585_Log_WriteLine("");
-  U585_Log_WriteLine("[U585][31] RNG + AES-ECB + PKA ModAdd probe");
-  U585_Log_WriteLine("[U585][31] HASH/SAES/TLS pending");
+  U585_Log_WriteLine("[U585][30] RNG + AES-ECB + PKA ModAdd probe");
+  U585_Log_WriteLine("[U585][30] HASH/SAES/TLS pending");
 
-  g_u585_exp31_state.rng_ok = (exp31_rng_probe() == HAL_OK) ? 1U : 0U;
-  U585_Log_WriteU32("[U585][31] rng_ok=", g_u585_exp31_state.rng_ok);
-  U585_Log_WriteU32("[U585][31] r0=", g_u585_exp31_state.r0);
-  U585_Log_WriteU32("[U585][31] r1=", g_u585_exp31_state.r1);
-  U585_Log_WriteU32("[U585][31] r2=", g_u585_exp31_state.r2);
-  U585_Log_WriteU32("[U585][31] r3=", g_u585_exp31_state.r3);
+  g_u585_exp30_state.rng_ok = (exp30_rng_probe() == HAL_OK) ? 1U : 0U;
+  U585_Log_WriteU32("[U585][30] rng_ok=", g_u585_exp30_state.rng_ok);
+  U585_Log_WriteU32("[U585][30] r0=", g_u585_exp30_state.r0);
+  U585_Log_WriteU32("[U585][30] r1=", g_u585_exp30_state.r1);
+  U585_Log_WriteU32("[U585][30] r2=", g_u585_exp30_state.r2);
+  U585_Log_WriteU32("[U585][30] r3=", g_u585_exp30_state.r3);
 
-  g_u585_exp31_state.aes_ok = (exp31_aes_probe() == HAL_OK) ? 1U : 0U;
-  U585_Log_WriteU32("[U585][31] aes_ok=", g_u585_exp31_state.aes_ok);
-  U585_Log_WriteU32("[U585][31] aes_ct0=", g_u585_exp31_state.aes_ct0);
+  g_u585_exp30_state.aes_ok = (exp30_aes_probe() == HAL_OK) ? 1U : 0U;
+  U585_Log_WriteU32("[U585][30] aes_ok=", g_u585_exp30_state.aes_ok);
+  U585_Log_WriteU32("[U585][30] aes_ct0=", g_u585_exp30_state.aes_ct0);
 
-  g_u585_exp31_state.pka_ok = (exp31_pka_probe() == HAL_OK) ? 1U : 0U;
-  U585_Log_WriteU32("[U585][31] pka_ok=", g_u585_exp31_state.pka_ok);
-  U585_Log_WriteU32("[U585][31] pka_sum0=", g_u585_exp31_state.pka_sum0);
+  g_u585_exp30_state.pka_ok = (exp30_pka_probe() == HAL_OK) ? 1U : 0U;
+  U585_Log_WriteU32("[U585][30] pka_ok=", g_u585_exp30_state.pka_ok);
+  U585_Log_WriteU32("[U585][30] pka_sum0=", g_u585_exp30_state.pka_sum0);
 }
 
-static void exp31_loop(void)
+static void exp30_loop(void)
 {
-  g_u585_exp31_state.iterations++;
-  g_u585_exp31_state.tick_ms = HAL_GetTick();
+  g_u585_exp30_state.iterations++;
+  g_u585_exp30_state.tick_ms = HAL_GetTick();
 
-  if ((g_u585_exp31_state.iterations % 4U) == 0U)
+  if ((g_u585_exp30_state.iterations % 4U) == 0U)
   {
-    U585_Log_WriteU32("[U585][31] heartbeat=", g_u585_exp31_state.iterations);
+    U585_Log_WriteU32("[U585][30] heartbeat=", g_u585_exp30_state.iterations);
   }
 
   U585_Board_ToggleGreenLed();
   HAL_Delay(500U);
 }
 
-const U585_Demo U585_Demo_Exp31 = {
-  "31",
+const U585_Demo U585_Demo_Exp30 = {
+  "30",
   "RNG AES PKA hardware crypto probe",
-  exp31_init,
-  exp31_loop,
+  exp30_init,
+  exp30_loop,
 };
