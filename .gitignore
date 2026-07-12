@@ -36,6 +36,11 @@ build.ninja
 *.pdb
 *.ilk
 
+# Python
+__pycache__/
+**/__pycache__/
+*.py[cod]
+
 # OS junk
 Thumbs.db
 Desktop.ini
