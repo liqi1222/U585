@@ -37,4 +37,7 @@ Raw logs: `docs/superpowers/measured/demoXX-com3.txt`
 |------|-------------|
 | 12 | I2C2 NS scan: 7 devices (0x10,0x1E,0x56,0x5D,0x5E,0x5F,0x6B) |
 | 17 | HTS221 WHO_AM_I=0xBC ok; raw_hum/raw_temp streaming |
+| 18 | LPS22HH WHO_AM_I=0xB3 ok; raw_press/raw_temp streaming |
+| 19 | ISM330DHCX WHO_AM_I=0x6B ok; ax/ay/az/gx streaming |
+| 20 | IIS2MDC WHO_AM_I=0x40 ok; mx/my/mz streaming |
 

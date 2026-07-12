@@ -37,7 +37,9 @@ try {
   $sp.Open()
   Start-Sleep -Milliseconds 200
   & $cli -c port=SWD freq=4000 mode=UR -hardRst | Out-Null
-  Start-Sleep -Milliseconds 500
+  Start-Sleep -Milliseconds 800
+  # Drop leftover bytes from previous demo still in the host USB buffer.
+  try { [void]$sp.ReadExisting() } catch {}
   $deadline = [DateTime]::UtcNow.AddSeconds($Seconds)
   while ([DateTime]::UtcNow -lt $deadline) {
     try {
