@@ -33,7 +33,7 @@ This project keeps article-facing test code under the NonSecure application laye
 | 18 | `18` | `exp18_lps22hh_sensor.c` | Measured: LPS22HH WHO_AM_I=0xB3 |
 | 19 | `19` | `exp19_ism330dhcx_imu.c` | Measured: ISM330DHCX WHO_AM_I=0x6B |
 | 20 | `20` | `exp20_iis2mdc_compass.c` | Measured: IIS2MDC WHO_AM_I=0x40 |
-| 21 | `21` | `exp21_vl53l5cx_tof.c` | Shell |
+| 21 | `21` | `exp21_vl53l5cx_tof.c` | Measured: LPn PH1 + I2C 0x29 probe/alive; ULD pending |
 | 22 | `22` | `exp22_pdm_microphone.c` | Shell |
 | 23 | `23` | `exp23_ospi_flash_xip.c` | Shell |
 | 24 | `24` | `exp24_ospi_psram_cache.c` | Shell |

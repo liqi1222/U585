@@ -56,6 +56,20 @@ demo=`16`。`GPDMA1` + Channel0 已迁 NonSecure；通道属性为 **NSEC + PRIV
 
 原始日志：工程 `docs/superpowers/measured/demo16-com3.txt`。外设触发 / linked-list 仍待补。
 """,
+    "21": """
+## 上板实测记录（2026-07-12）
+
+demo=`21`。I2C2 已在 NS；本机补上 **PH1=LPn/xshut** 移交与上电。
+
+| 项 | 结果 |
+|----|------|
+| `lpn_high` | **1**（PH1 拉高） |
+| `probe_ok` | **1**（7-bit 地址 **0x29**，对应 8-bit 0x52；demo12 扫描时未上电故看不到） |
+| `is_alive` | **1**（读到 `0xF0` 设备签名；经典 ULD 对 `(0xF0,0x02)` 组合仍需核对） |
+| `uld_ready` | **0** |
+
+原始日志：工程 `docs/superpowers/measured/demo21-com3.txt`。**多区测距需加载 ~84 KB ULD 固件**，仍待补。
+""",
 }
 
 

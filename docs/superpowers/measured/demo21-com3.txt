@@ -1,0 +1,23 @@
+﻿# U585 demo 21 VCP capture
+# port=COM3 baud=115200 seconds=5
+# utc=2026-07-12T05:41:02.5390615Z
+
+[NS] [U585][21] lpn_high=1
+[NS] [U585][21] i2c_ready=1
+[NS] [U585][21] probe_ok=1
+[NS] [U585][21] is_alive=1
+[NS] [U585][21] device_id=1
+[NS] [U585][21] revision_id=240
+[NS] [U585][21] uld_ready=0
+[S] Secure world ready
+[NS] [U585][21] VL53L5CX ToF (I2C2 + PH1 LPn)
+[NS] [U585][21] addr7=0x29 uld_ready=0
+[NS] [U585][21] lpn_high=1
+[NS] [U585][21] i2c_ready=1
+[NS] [U585][21] probe_ok=1
+[NS] [U585][21] is_alive=1
+[NS] [U585][21] device_id=1
+[NS] [U585][21] revision_id=240
+[NS] [U585][21] uld_ready=0
+[NS] [U585][21] heartbeat=4
+[NS] [U585][21] heartbeat=8

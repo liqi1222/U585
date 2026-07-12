@@ -49,3 +49,9 @@ Raw logs: `docs/superpowers/measured/demoXX-com3.txt`
 | 14 | ADC1 NS polling VREFINT/TEMP; `adc_ready=1`; vrefint_raw≈1482; vdda_mv≈3348; dma_used=0 |
 | 16 | GPDMA1 CH0 NS mem2mem; `xfer_ok=1` `mismatch=0` (channel PRIV required by SRAM3 MPCBB) |
 
+## Phase E addendum (ToF)
+
+| Demo | Key results |
+|------|-------------|
+| 21 | PH1 LPn high → I2C `0x29` `probe_ok=1`; `revision_id=0xF0` signature; `uld_ready=0` (multi-zone ULD later) |
+
