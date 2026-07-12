@@ -101,6 +101,32 @@ demo=`22`。ADF1 已迁 NonSecure；板载 **MIC1** 走 PE9=CCK0 / PE10=SDI0。�
 
 原始日志：工程 `docs/superpowers/measured/demo22-com3.txt`。
 """,
+    "23": """
+## 上板实测记录（2026-07-12）
+
+demo=`23`。OCTOSPI2 + OCTOSPIM/MEM 已迁 NonSecure；板载 **MX25LM51245G**（Port2）。本机先做 SPI **1-1-1 READ ID (0x9F)**，XIP/八线仍待补。
+
+| 项 | 结果 |
+|----|------|
+| `ospi_flash_ready` | **1** |
+| `jedec_ok` | **1** |
+| JEDEC ID | **0xC2 / 0x85 / 0x3A**（Macronix MX25LM51245G） |
+
+原始日志：工程 `docs/superpowers/measured/demo23-com3.txt`。
+""",
+    "24": """
+## 上板实测记录（2026-07-12）
+
+demo=`24`。OCTOSPI1 + OCTOSPIM/MEM 已迁 NonSecure；板载 **APS6408**（Port1 @ `0x90000000`）。
+
+| 项 | 结果 |
+|----|------|
+| `ospi_psram_ready` | **1**（外设/OSPIM 初始化成功） |
+| `memtest_ok` | **0** |
+| SPI READ ID / 读写 | 回读为 0（默认八线/同步模式序列仍待按 ST BSP 补齐） |
+
+原始日志：工程 `docs/superpowers/measured/demo24-com3.txt`。完整 octal + 内存映射 + Cache 对比仍待补。
+""",
 }
 
 

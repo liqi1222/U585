@@ -75,6 +75,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     App/Src/u585_adc1.c
     App/Src/u585_dac1.c
     App/Src/u585_adf1.c
+    App/Src/u585_ospi.c
     App/Src/u585_gpdma.c
     App/Src/exp03_led_button.c
     App/Src/exp04_debug_fault.c
@@ -124,6 +125,8 @@ target_sources(STM32_Drivers PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dac.c
     ${CMAKE_CURRENT_SOURCE_DIR}/../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_dac_ex.c
     ${CMAKE_CURRENT_SOURCE_DIR}/../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mdf.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_ospi.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_ll_dlyb.c
 )
 
 # Link directories setup

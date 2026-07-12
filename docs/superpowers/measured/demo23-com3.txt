@@ -1,0 +1,14 @@
+﻿# U585 demo 23 VCP capture
+# port=COM3 baud=115200 seconds=5
+# utc=2026-07-12T05:52:05.4802044Z
+
+[S] Secure world ready
+[NS] [U585][23] OCTOSPI2 MX25LM51245G JEDEC 0x9F
+[NS] [U585][23] mode=SPI 1-1-1 (XIP pending)
+[NS] [U585][23] ospi_flash_ready=1
+[NS] [U585][23] jedec_ok=1
+[NS] [U585][23] id0=194
+[NS] [U585][23] id1=133
+[NS] [U585][23] id2=58
+[NS] [U585][23] heartbeat=4
+[NS] [U585][23] heartbeat=8

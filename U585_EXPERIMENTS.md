@@ -35,8 +35,8 @@ This project keeps article-facing test code under the NonSecure application laye
 | 20 | `20` | `exp20_iis2mdc_compass.c` | Measured: IIS2MDC WHO_AM_I=0x40 |
 | 21 | `21` | `exp21_vl53l5cx_tof.c` | Measured: LPn PH1 + I2C 0x29 probe/alive; ULD pending |
 | 22 | `22` | `exp22_pdm_microphone.c` | Measured: ADF1 MIC1 poll sample_ok=1 |
-| 23 | `23` | `exp23_ospi_flash_xip.c` | Shell |
-| 24 | `24` | `exp24_ospi_psram_cache.c` | Shell |
+| 23 | `23` | `exp23_ospi_flash_xip.c` | Measured: OCTOSPI2 JEDEC C2/85/3A (MX25LM51245G) |
+| 24 | `24` | `exp24_ospi_psram_cache.c` | Measured: OCTOSPI1 init ready=1; SPI RW/ID pending |
 | 25 | `25` | `exp25_st25dv_nfc.c` | Shell |
 | 26 | `26` | `exp26_usb_ucpd_device.c` | Shell |
 | 27 | `27` | `exp27_wifi_emw3080.c` | Shell |
