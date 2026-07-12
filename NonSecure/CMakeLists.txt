@@ -76,6 +76,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     App/Src/u585_dac1.c
     App/Src/u585_adf1.c
     App/Src/u585_ospi.c
+    App/Src/u585_ucpd1.c
     App/Src/u585_gpdma.c
     App/Src/exp03_led_button.c
     App/Src/exp04_debug_fault.c

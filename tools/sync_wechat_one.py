@@ -142,6 +142,22 @@ demo=`25`。I2C2 已在 NS。**本板 BSP/原理图实际是 M24256（256 Kbit I
 
 原始日志：工程 `docs/superpowers/measured/demo25-com3.txt`。NFC/NDEF/手机碰一碰需外接 ST25DV 模块，本板无法测。
 """,
+    "26": """
+## 上板实测记录（2026-07-12）
+
+demo=`26`。UCPD1 已迁 NonSecure（`GTZC_PERIPH_UCPD1` + PA15/PB15 SECCFGR）。本机先做 **Type-C Sink CC 电压态轮询**；USB FS 设备栈（CDC 枚举）仍待补。
+
+| 项 | 结果 |
+|----|------|
+| `ucpd_ready` | **1** |
+| 引脚 | **PA15=CC1**、**PB15=CC2**（模拟） |
+| 角色 | Sink（SNK），CC1+CC2 使能 |
+| `cc1` / `cc2` | **0 / 0**（本次仅 ST-LINK 供电调试，用户 USB-C 未接 Source） |
+| `attached` | **0** |
+| USB FS / CDC | **未做** |
+
+原始日志：工程 `docs/superpowers/measured/demo26-com3.txt`。插上 Type-C 充电器或 Host 后应看到非零 VSTATE / `attached=1`；CDC 虚拟串口仍待接 USB Device 中间件。
+""",
 }
 
 
