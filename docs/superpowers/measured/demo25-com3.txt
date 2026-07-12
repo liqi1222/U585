@@ -1,0 +1,15 @@
+﻿# U585 demo 25 VCP capture
+# port=COM3 baud=115200 seconds=5
+# utc=2026-07-12T06:01:06.6971386Z
+
+[S] Secure world ready
+[NS] [U585][25] NFC article: probe ST25DV + board M24256 EEPROM
+[NS] [U585][25] ST25DV expect 0x53/0x57; EEPROM 0x56 (0xAC)
+[NS] [U585][25] i2c_ready=1
+[NS] [U585][25] st25_user_ok=0
+[NS] [U585][25] st25_sys_ok=0
+[NS] [U585][25] eeprom_ok=1
+[NS] [U585][25] rw_ok=1
+[NS] [U585][25] readback=13
+[NS] [U585][25] heartbeat=4
+[NS] [U585][25] heartbeat=8

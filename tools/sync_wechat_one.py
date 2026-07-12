@@ -127,6 +127,21 @@ demo=`24`。OCTOSPI1 + OCTOSPIM/MEM 已迁 NonSecure；板载 **APS6408**（Port
 
 原始日志：工程 `docs/superpowers/measured/demo24-com3.txt`。完整 octal + 内存映射 + Cache 对比仍待补。
 """,
+    "25": """
+## 上板实测记录（2026-07-12）
+
+demo=`25`。I2C2 已在 NS。**本板 BSP/原理图实际是 M24256（256 Kbit I2C EEPROM @ 7-bit `0x56` / 8-bit `0xAC`），没有 ST25DV NFC 标签。**
+
+| 项 | 结果 |
+|----|------|
+| `i2c_ready` | **1** |
+| ST25DV user `0x53` | **未应答**（`st25_user_ok=0`） |
+| ST25DV system `0x57` | **未应答**（`st25_sys_ok=0`） |
+| M24256 `0x56` | **`eeprom_ok=1`** |
+| 读写校验 | **`rw_ok=1`**（写一字节后读回一致，并恢复原值） |
+
+原始日志：工程 `docs/superpowers/measured/demo25-com3.txt`。NFC/NDEF/手机碰一碰需外接 ST25DV 模块，本板无法测。
+""",
 }
 
 
