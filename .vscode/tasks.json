@@ -1,0 +1,46 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "CMake: configure Debug",
+            "type": "cmake",
+            "command": "configure",
+            "preset": "Debug",
+            "problemMatcher": []
+        },
+        {
+            "label": "CMake: build Debug",
+            "type": "cmake",
+            "command": "build",
+            "preset": "Debug",
+            "dependsOn": "CMake: configure Debug",
+            "dependsOrder": "sequence",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "ST-LINK: reset and release target",
+            "type": "process",
+            "command": "C:/ST/STM32CubeCLT_1.21.0/STM32CubeProgrammer/bin/STM32_Programmer_CLI.exe",
+            "args": [
+                "-c",
+                "port=SWD",
+                "freq=1000",
+                "mode=UR",
+                "reset=HWrst",
+                "-rst"
+            ],
+            "presentation": {
+                "reveal": "silent",
+                "panel": "dedicated",
+                "clear": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}

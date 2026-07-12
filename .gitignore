@@ -1,0 +1,42 @@
+# Build outputs
+build/
+**/build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+.ninja_deps
+.ninja_log
+build.ninja
+*.ninja
+
+# Compiler / linker artifacts
+*.o
+*.obj
+*.elf
+*.bin
+*.hex
+*.map
+*.lst
+*.d
+*.a
+*.lib
+*.su
+*.sydr*
+*.axf
+*.out
+
+# IDE / clangd / local caches
+.cache/
+**/clangd/
+*.user
+*.suo
+*.ncb
+*.opendb
+*.pdb
+*.ilk
+
+# OS junk
+Thumbs.db
+Desktop.ini
+.DS_Store
