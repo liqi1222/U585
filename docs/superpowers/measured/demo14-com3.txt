@@ -1,30 +1,80 @@
 ﻿# U585 demo 14 VCP capture
-# port=COM3 baud=115200 seconds=4
-# utc=2026-07-12T05:22:51.2288563Z
+# port=COM3 baud=115200 seconds=6
+# utc=2026-08-08T00:14:16.6465662Z
 
 [S] Secure world ready
-[NS] [U585][14] ADC1 internal channels (VREFINT/TEMP)
-[NS] [U585][14] mode=polling dma_used=0
+[NS] [U585][14] ADC1 VREFINT: TIM2 TRGO + GPDMA circular list
 [NS] [U585][14] adc_ready=1
-[NS] [U585][14] resolution_bits=12
-[NS] [U585][14] dma_used=0
+[NS] [U585][14] timer_ready=1
+[NS] [U585][14] dma_used=1
+[NS] [U585][14] dma_started=1
+[NS] [U585][14] sample_rate_hz=10000
+[NS] [U585][14] vrefint_cal=6530
 [NS] [U585][14] vrefint_raw=1482
-[NS] [U585][14] vrefint_cal=6530
-[NS] [U585][14] vdda_mv=3348
-[NS] [U585][14] tempsensor_raw=932
-[NS] [U585][14] vrefint_raw=1483
-[NS] [U585][14] vrefint_cal=6530
-[NS] [U585][14] vdda_mv=3346
-[NS] [U585][14] tempsensor_raw=932
-[NS] [U585][14] vrefint_raw=1482
-[NS] [U585][14] vrefint_cal=6530
-[NS] [U585][14] vdda_mv=3348
-[NS] [U585][14] tempsensor_raw=934
+[NS] [U585][14] vdda_mv=3304
+[NS] [U585][14] dma_half_count=2
+[NS] [U585][14] dma_full_count=2
+[NS] [U585][14] dma_csr=0
 [NS] [U585][14] vrefint_raw=1481
-[NS] [U585][14] vrefint_cal=6530
-[NS] [U585][14] vdda_mv=3351
-[NS] [U585][14] tempsensor_raw=934
+[NS] [U585][14] vdda_mv=3306
+[NS] [U585][14] dma_half_count=42
+[NS] [U585][14] dma_full_count=42
+[NS] [U585][14] dma_csr=0
 [NS] [U585][14] vrefint_raw=1482
-[NS] [U585][14] vrefint_cal=6530
-[NS] [U585][14] vdda_mv=3348
-[NS] [U585][14] tempsensor_raw=933
+[NS] [U585][14] vdda_mv=3304
+[NS] [U585][14] dma_half_count=83
+[NS] [U585][14] dma_full_count=82
+[NS] [U585][14] dma_csr=0
+[NS] [U585][14] vrefint_raw=1488
+[NS]
+[U585][14] vdda_mv=3291
+[NS] [U585][14] dma_half_count=123
+[NS] [U585][14] dma_full_count=123
+[NS] [U585][14] dma_csr=0
+[NS] [U585][14] vrefint_raw=1482
+[NS] [U585][14] vdda_mv=3304
+[NS] [U585][14] dma_half_count=163
+[NS] [U585][14] dma_full_count=163
+[NS] [U585][14] dma_csr=0
+[NS] [U585][14] vrefint_raw=1482
+[NS] [U585][14] vdda_mv=3304
+[NS] [U585][14] dma_half_count=203
+[NS] [U585][14] dma_full_count=203
+[NS] [U585][14] dma_csr=0
+[NS] [U585][14] vrefint_raw=1482
+[NS] [U585][14] vdda_mv=3304
+[NS] [U585][14] dma_half_count=244
+[NS] [U585][14] dma_full_count=243
+[NS] [U585][14] dma_csr=0
+[NS] [U585][14] vrefint_raw=1482
+[NS] [U585][14] vdda_mv=3304
+[NS] [U585][14] dma_half_count=284
+[NS] [U585][14] dma_ful
+l_count=284
+[NS] [U585][14] dma_csr=0
+[NS] [U585][14] vrefint_raw=1483
+[NS] [U585][14] vdda_mv=3302
+[NS] [U585][14] dm
+a_half_count=324
+[NS] [U585][14] dma_full_count=324
+[NS] [U585][14] dma_csr=0
+[NS] [U585][14] vrefint_raw=1482
+[NS] [U585][14] vdda_mv=3304
+[NS] [U585][14] dma_half_count=364
+[NS] [U585][14] dma_full_count=364
+[NS] [U585][14] dma_csr=0
+[NS] [U585][14] vrefint_raw=1482
+[NS] [U585][14] vdda_mv=3304
+[NS] [U585][14] dma_half_count=404
+[NS] [U585][14] dma_full_count=404
+[NS] [U585][14] dma_csr=0
+[NS] [U585][14] vrefint_raw=1482
+[NS] [U585][14] vdda_mv=3304
+[NS] [U585][14] dma_half_count=445
+[NS] [U585][14] dma_full_count=444
+[NS] [U585][14] dma_csr=0
+[NS] [U585][14] vrefint_raw=1482
+[NS] [U585][14] vdda_mv=3304
+[NS] [U585][14] dma_half_count=485
+[NS] [U585][14] dma_full_count=485
+[NS] [U585][14] dma_csr=0

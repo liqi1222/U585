@@ -68,10 +68,16 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define USER_Button_Pin GPIO_PIN_13
+#define USER_Button_GPIO_Port GPIOC
 #define PC14_OSC32_IN_Pin GPIO_PIN_14
 #define PC14_OSC32_IN_GPIO_Port GPIOC
 #define PC15_OSC32_OUT_Pin GPIO_PIN_15
 #define PC15_OSC32_OUT_GPIO_Port GPIOC
+#define LED_RED_Pin GPIO_PIN_6
+#define LED_RED_GPIO_Port GPIOH
+#define LED_GREEN_Pin GPIO_PIN_7
+#define LED_GREEN_GPIO_Port GPIOH
 
 /* USER CODE BEGIN Private defines */
 

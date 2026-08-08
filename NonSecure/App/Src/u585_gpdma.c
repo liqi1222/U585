@@ -1,7 +1,81 @@
 #include "u585_gpdma.h"
 
 DMA_HandleTypeDef hdma_gpdma1_ch0_ns;
+DMA_HandleTypeDef hdma_gpdma1_ch1_adc_ns;
+DMA_HandleTypeDef hdma_gpdma1_ch2_dac_ns;
+
+static __ALIGNED(32) DMA_NodeTypeDef s_gpdma1_ch1_adc_node;
+static __ALIGNED(32) DMA_QListTypeDef s_gpdma1_ch1_adc_queue;
+static __ALIGNED(32) DMA_NodeTypeDef s_gpdma1_ch2_dac_node;
+static __ALIGNED(32) DMA_QListTypeDef s_gpdma1_ch2_dac_queue;
+
 static uint8_t u585_gpdma_ready = 0U;
+
+static HAL_StatusTypeDef u585_gpdma_init_circular(DMA_HandleTypeDef *hdma,
+                                                    DMA_NodeTypeDef *node,
+                                                    DMA_QListTypeDef *queue,
+                                                    DMA_Channel_TypeDef *instance,
+                                                    uint32_t request,
+                                                    uint32_t direction,
+                                                    uint32_t src_increment,
+                                                    uint32_t dst_increment,
+                                                    uint32_t src_data_width,
+                                                    uint32_t dst_data_width)
+{
+  DMA_NodeConfTypeDef node_config = {0};
+
+  __HAL_RCC_GPDMA1_CLK_ENABLE();
+
+  hdma->Instance = instance;
+  hdma->InitLinkedList.Priority = DMA_HIGH_PRIORITY;
+  hdma->InitLinkedList.LinkStepMode = DMA_LSM_FULL_EXECUTION;
+  hdma->InitLinkedList.LinkAllocatedPort = DMA_LINK_ALLOCATED_PORT1;
+  hdma->InitLinkedList.TransferEventMode = DMA_TCEM_BLOCK_TRANSFER;
+  hdma->InitLinkedList.LinkedListMode = DMA_LINKEDLIST_CIRCULAR;
+  if (HAL_DMAEx_List_Init(hdma) != HAL_OK)
+  {
+    return HAL_ERROR;
+  }
+
+  node_config.NodeType = DMA_GPDMA_LINEAR_NODE;
+  node_config.Init.Request = request;
+  node_config.Init.BlkHWRequest = DMA_BREQ_SINGLE_BURST;
+  node_config.Init.Direction = direction;
+  node_config.Init.SrcInc = src_increment;
+  node_config.Init.DestInc = dst_increment;
+  node_config.Init.SrcDataWidth = src_data_width;
+  node_config.Init.DestDataWidth = dst_data_width;
+  node_config.Init.Priority = DMA_HIGH_PRIORITY;
+  node_config.Init.SrcBurstLength = 1U;
+  node_config.Init.DestBurstLength = 1U;
+  node_config.Init.TransferAllocatedPort = DMA_SRC_ALLOCATED_PORT0 | DMA_DEST_ALLOCATED_PORT0;
+  node_config.Init.TransferEventMode = DMA_TCEM_BLOCK_TRANSFER;
+  node_config.Init.Mode = DMA_NORMAL;
+  node_config.DataHandlingConfig.DataExchange = DMA_EXCHANGE_NONE;
+  node_config.DataHandlingConfig.DataAlignment = DMA_DATA_RIGHTALIGN_ZEROPADDED;
+  node_config.SrcAddress = 0U;
+  node_config.DstAddress = 0U;
+  node_config.DataSize = 0U;
+
+  if (HAL_DMAEx_List_BuildNode(&node_config, node) != HAL_OK)
+  {
+    return HAL_ERROR;
+  }
+  if (HAL_DMAEx_List_InsertNode_Tail(queue, node) != HAL_OK)
+  {
+    return HAL_ERROR;
+  }
+  if (HAL_DMAEx_List_SetCircularMode(queue) != HAL_OK)
+  {
+    return HAL_ERROR;
+  }
+  if (HAL_DMAEx_List_LinkQ(hdma, queue) != HAL_OK)
+  {
+    return HAL_ERROR;
+  }
+
+  return HAL_OK;
+}
 
 HAL_StatusTypeDef U585_GPDMA_Init(void)
 {
@@ -36,6 +110,34 @@ HAL_StatusTypeDef U585_GPDMA_Init(void)
 uint8_t U585_GPDMA_IsReady(void)
 {
   return u585_gpdma_ready;
+}
+
+HAL_StatusTypeDef U585_GPDMA_InitAdcCircular(void)
+{
+  return u585_gpdma_init_circular(&hdma_gpdma1_ch1_adc_ns,
+                                   &s_gpdma1_ch1_adc_node,
+                                   &s_gpdma1_ch1_adc_queue,
+                                   GPDMA1_Channel1,
+                                   GPDMA1_REQUEST_ADC1,
+                                   DMA_PERIPH_TO_MEMORY,
+                                   DMA_SINC_FIXED,
+                                   DMA_DINC_INCREMENTED,
+                                   DMA_SRC_DATAWIDTH_HALFWORD,
+                                   DMA_DEST_DATAWIDTH_HALFWORD);
+}
+
+HAL_StatusTypeDef U585_GPDMA_InitDacCircular(void)
+{
+  return u585_gpdma_init_circular(&hdma_gpdma1_ch2_dac_ns,
+                                   &s_gpdma1_ch2_dac_node,
+                                   &s_gpdma1_ch2_dac_queue,
+                                   GPDMA1_Channel2,
+                                   GPDMA1_REQUEST_DAC1_CH1,
+                                   DMA_MEMORY_TO_PERIPH,
+                                   DMA_SINC_INCREMENTED,
+                                   DMA_DINC_FIXED,
+                                   DMA_SRC_DATAWIDTH_WORD,
+                                   DMA_DEST_DATAWIDTH_WORD);
 }
 
 HAL_StatusTypeDef U585_GPDMA_MemCopyWords(const uint32_t *src, uint32_t *dst, uint32_t word_count)

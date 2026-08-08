@@ -7,27 +7,30 @@ extern "C" {
 
 #include "main.h"
 
-#ifndef U585_LED_RED_PORT
+/* Prefer CubeMX-generated pin defines from main.h so the .ioc stays the
+ * single source of truth; fall back to the measured board mapping
+ * (B-U585I-IOT02A: red LED=PH6, green LED=PH7, user button=PC13). */
+#ifdef LED_RED_GPIO_Port
+#define U585_LED_RED_PORT LED_RED_GPIO_Port
+#define U585_LED_RED_PIN LED_RED_Pin
+#else
 #define U585_LED_RED_PORT GPIOH
-#endif
-
-#ifndef U585_LED_RED_PIN
 #define U585_LED_RED_PIN GPIO_PIN_6
 #endif
 
-#ifndef U585_LED_GREEN_PORT
+#ifdef LED_GREEN_GPIO_Port
+#define U585_LED_GREEN_PORT LED_GREEN_GPIO_Port
+#define U585_LED_GREEN_PIN LED_GREEN_Pin
+#else
 #define U585_LED_GREEN_PORT GPIOH
-#endif
-
-#ifndef U585_LED_GREEN_PIN
 #define U585_LED_GREEN_PIN GPIO_PIN_7
 #endif
 
-#ifndef U585_USER_BUTTON_PORT
+#ifdef USER_Button_GPIO_Port
+#define U585_USER_BUTTON_PORT USER_Button_GPIO_Port
+#define U585_USER_BUTTON_PIN USER_Button_Pin
+#else
 #define U585_USER_BUTTON_PORT GPIOC
-#endif
-
-#ifndef U585_USER_BUTTON_PIN
 #define U585_USER_BUTTON_PIN GPIO_PIN_13
 #endif
 

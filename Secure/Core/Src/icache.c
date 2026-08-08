@@ -36,9 +36,10 @@ void MX_ICACHE_Init(void)
 
   /* USER CODE END ICACHE_Init 1 */
 
-  /** Enable instruction cache in 1-way (direct mapped cache)
+  /** Enable instruction cache in 2-way set-associative mode.
+    * This is CubeMX's DefaultMode and the project performance baseline.
   */
-  if (HAL_ICACHE_ConfigAssociativityMode(ICACHE_1WAY) != HAL_OK)
+  if (HAL_ICACHE_ConfigAssociativityMode(ICACHE_2WAYS) != HAL_OK)
   {
     Error_Handler();
   }

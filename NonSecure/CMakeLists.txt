@@ -80,6 +80,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     App/Src/u585_ucpd1.c
     App/Src/u585_emw3080.c
     App/Src/u585_gpdma.c
+    App/Src/u585_tim2_trgo.c
     App/Src/exp03_led_button.c
     App/Src/exp04_debug_fault.c
     App/Src/exp05_clock_tree.c

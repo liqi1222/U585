@@ -22,6 +22,10 @@
 #include "stm32u5xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "u585_adc1.h"
+#include "u585_dac1.h"
+#include "u585_gpdma.h"
+#include "u585_tim2_trgo.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -142,7 +146,6 @@ void SysTick_Handler(void)
 
 /* USER CODE BEGIN 1 */
 
-extern TIM_HandleTypeDef htim2_ns;
 void U585_Exp09_OnExti(uint16_t pin);
 void U585_Exp10_OnTimUpdate(void);
 
@@ -164,6 +167,26 @@ void HAL_GPIO_EXTI_Rising_Callback(uint16_t GPIO_Pin)
 void TIM2_IRQHandler(void)
 {
   HAL_TIM_IRQHandler(&htim2_ns);
+}
+
+void ADC1_IRQHandler(void)
+{
+  HAL_ADC_IRQHandler(&hadc1_ns);
+}
+
+void DAC1_IRQHandler(void)
+{
+  HAL_DAC_IRQHandler(&hdac1_ns);
+}
+
+void GPDMA1_Channel1_IRQHandler(void)
+{
+  HAL_DMA_IRQHandler(&hdma_gpdma1_ch1_adc_ns);
+}
+
+void GPDMA1_Channel2_IRQHandler(void)
+{
+  HAL_DMA_IRQHandler(&hdma_gpdma1_ch2_dac_ns);
 }
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)

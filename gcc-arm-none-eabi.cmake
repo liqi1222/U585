@@ -30,8 +30,10 @@ set(CMAKE_ASM_FLAGS "${CMAKE_C_FLAGS} -x assembler-with-cpp -MMD -MP")
 
 set(CMAKE_C_FLAGS_DEBUG "-O0 -g3")
 set(CMAKE_C_FLAGS_RELEASE "-Os -g0")
+set(CMAKE_C_FLAGS_PERFORMANCE "-O2 -g3 -DNDEBUG")
 set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g3")
 set(CMAKE_CXX_FLAGS_RELEASE "-Os -g0")
+set(CMAKE_CXX_FLAGS_PERFORMANCE "-O2 -g3 -DNDEBUG")
 
 set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -fno-rtti -fno-exceptions -fno-threadsafe-statics")
 

@@ -1,8 +1,7 @@
 #include "u585_board.h"
 #include "u585_demo.h"
 #include "u585_log.h"
-
-TIM_HandleTypeDef htim2_ns;
+#include "u585_tim2_trgo.h"
 
 typedef struct
 {

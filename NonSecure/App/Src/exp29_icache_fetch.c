@@ -66,7 +66,7 @@ static uint32_t exp29_run_once(uint8_t enable_cache, uint32_t *hit, uint32_t *mi
 
   if (enable_cache != 0U)
   {
-    (void)HAL_ICACHE_ConfigAssociativityMode(ICACHE_1WAY);
+    (void)HAL_ICACHE_ConfigAssociativityMode(ICACHE_2WAYS);
     (void)HAL_ICACHE_Enable();
   }
 
@@ -123,7 +123,7 @@ static void exp29_init(void)
   /* ICACHE_REG handed to NS; must disable before changing WAYSEL. */
   (void)HAL_ICACHE_Disable();
   g_u585_exp29_state.icache_ready =
-      (HAL_ICACHE_ConfigAssociativityMode(ICACHE_1WAY) == HAL_OK) ? 1U : 0U;
+      (HAL_ICACHE_ConfigAssociativityMode(ICACHE_2WAYS) == HAL_OK) ? 1U : 0U;
   U585_Log_WriteU32("[U585][29] icache_ready=", g_u585_exp29_state.icache_ready);
 
   if (g_u585_exp29_state.icache_ready != 0U)

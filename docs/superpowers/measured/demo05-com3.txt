@@ -1,21 +1,10 @@
 ﻿# U585 demo 5 VCP capture
 # port=COM3 baud=115200 seconds=6
-# utc=2026-07-12T04:09:57.4982452Z
+# utc=2026-08-08T00:17:30.2867798Z
 
-[NS] [U585][03] led_state=2
-[NS] [U585][03] led_state=1
-[NS] [U585][03] led_state=2
-[NS] [U585][03] led_state=1
-[NS] [U585][03] led_state=2
-[NS] [U585][03] led_state=1
-[NS] [U585][03] led_state=2
-[NS] [U585][03] heartbeat=20
-[NS] [U585][03] led_state=1
-[NS] [U585][03] led_state=2
-[NS] [U585][03] led_state=1
 [S] Secure world ready
 [NS] [U585][05] clock tree observation start
-[NS] [U585][05] expected: MSI->PLL ~160MHz SCALE1 LATENCY4
+[NS] [U585][05] expected: MSI4->PLL 160MHz SMPS VOS1 LATENCY4 ICACHE2WAY
 [NS] [U585][05] SystemCoreClock_Hz=160000000
 [NS] [U585][05] SYSCLK_Hz=160000000
 [NS] [U585][05] HCLK_Hz=160000000
@@ -23,9 +12,10 @@
 [NS] [U585][05] PCLK2_Hz=160000000
 [NS] [U585][05] PCLK3_Hz=160000000
 [NS] [U585][05] FLASH_LATENCY=4
-[S] Secure world ready
-[NS] [U585][05] clock tree observation start
-[NS] [U585][05] expected: MSI->PLL ~160MHz SCALE1 LATENCY4
+[NS] [U585][05] voltage_range=196608
+[NS] [U585][05] smps_selected=1
+[NS] [U585][05] icache_enabled=1
+[NS] [U585][05] icache_2ways=1
 [NS] [U585][05] SystemCoreClock_Hz=160000000
 [NS] [U585][05] SYSCLK_Hz=160000000
 [NS] [U585][05] HCLK_Hz=160000000
@@ -33,10 +23,7 @@
 [NS] [U585][05] PCLK2_Hz=160000000
 [NS] [U585][05] PCLK3_Hz=160000000
 [NS] [U585][05] FLASH_LATENCY=4
-[NS] [U585][05] SystemCoreClock_Hz=160000000
-[NS] [U585][05] SYSCLK_Hz=160000000
-[NS] [U585][05] HCLK_Hz=160000000
-[NS] [U585][05] PCLK1_Hz=160000000
-[NS] [U585][05] PCLK2_Hz=160000000
-[NS] [U585][05] PCLK3_Hz=160000000
-[NS] [U585][05] FLASH_LATENCY=4
+[NS] [U585][05] voltage_range=196608
+[NS] [U585][05] smps_selected=1
+[NS] [U585][05] icache_enabled=1
+[NS] [U585][05] icache_2ways=1

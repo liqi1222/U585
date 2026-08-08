@@ -2,11 +2,12 @@ param(
   [Parameter(Mandatory = $true)][int]$Demo,
   [string]$Port = "COM3",
   [int]$Baud = 115200,
-  [int]$Seconds = 6
+  [int]$Seconds = 6,
+  [string]$Preset = "Performance"
 )
 
 $ErrorActionPreference = "Stop"
-$root = "E:\360yun\Home\qli\Project\U585"
+$root = (Resolve-Path (Join-Path $PSScriptRoot ".."))
 $cli = "C:\ST\STM32CubeCLT_1.21.0\STM32CubeProgrammer\bin\STM32_Programmer_CLI.exe"
 $secureElf = Join-Path $root "Secure\build\U585_S.elf"
 $nsElf = Join-Path $root "NonSecure\build\U585_NS.elf"
@@ -16,8 +17,8 @@ $outFile = Join-Path $outDir ("demo{0:D2}-com3.txt" -f $Demo)
 
 Write-Host "=== Configure/build demo $Demo ==="
 Push-Location $root
-cmake --preset Debug "-DU585_ACTIVE_DEMO=$Demo" | Out-Host
-cmake --build --preset Debug | Out-Host
+cmake --preset $Preset "-DU585_ACTIVE_DEMO=$Demo" | Out-Host
+cmake --build --preset $Preset | Out-Host
 Pop-Location
 
 Write-Host "=== Flash ==="
@@ -46,6 +47,7 @@ try {
       $chunk = $sp.ReadExisting()
       if (-not [string]::IsNullOrEmpty($chunk)) {
         foreach ($line in ($chunk -split "`r?`n")) {
+          $line = $line.TrimEnd()
           if ($line.Length -gt 0) { $lines.Add($line) }
         }
       }

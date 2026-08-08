@@ -216,14 +216,16 @@ int main(void)
   GPIOG->SECCFGR &= ~(GPIO_SECCFGR_SEC15); /* EMW FLOW */
   CLEAR_BIT(EXTI->SECCFGR1, EXTI_SECCFGR1_SEC13);
 
-  /* Route demo IRQs to NonSecure so TIM2/EXTI13 handlers in NS can run. */
+  /* Route demo IRQs to NonSecure so the selected application owns them. */
   NVIC_SetTargetState(TIM2_IRQn);
   NVIC_SetTargetState(EXTI13_IRQn);
   NVIC_SetTargetState(SPI2_IRQn);
   NVIC_SetTargetState(ADF1_IRQn);
   NVIC_SetTargetState(OCTOSPI1_IRQn);
   NVIC_SetTargetState(OCTOSPI2_IRQn);
-  /* GPDMA1 CH0 must be NonSecure (channel + src/dest) before NS memcopy. */
+  NVIC_SetTargetState(ADC1_IRQn);
+  NVIC_SetTargetState(DAC1_IRQn);
+  /* GPDMA1 channels 0..2 must be NonSecure (channel + src/dest) before use. */
   {
     DMA_HandleTypeDef hdma_ns_attr;
     __HAL_RCC_GPDMA1_CLK_ENABLE();
@@ -231,8 +233,18 @@ int main(void)
     (void)HAL_DMA_ConfigChannelAttributes(
         &hdma_ns_attr,
         DMA_CHANNEL_NSEC | DMA_CHANNEL_PRIV | DMA_CHANNEL_SRC_NSEC | DMA_CHANNEL_DEST_NSEC);
+    hdma_ns_attr.Instance = GPDMA1_Channel1;
+    (void)HAL_DMA_ConfigChannelAttributes(
+        &hdma_ns_attr,
+        DMA_CHANNEL_NSEC | DMA_CHANNEL_PRIV | DMA_CHANNEL_SRC_NSEC | DMA_CHANNEL_DEST_NSEC);
+    hdma_ns_attr.Instance = GPDMA1_Channel2;
+    (void)HAL_DMA_ConfigChannelAttributes(
+        &hdma_ns_attr,
+        DMA_CHANNEL_NSEC | DMA_CHANNEL_PRIV | DMA_CHANNEL_SRC_NSEC | DMA_CHANNEL_DEST_NSEC);
   }
   NVIC_SetTargetState(GPDMA1_Channel0_IRQn);
+  NVIC_SetTargetState(GPDMA1_Channel1_IRQn);
+  NVIC_SetTargetState(GPDMA1_Channel2_IRQn);
   /* USER CODE END 2 */
 
   /*************** Setup and jump to non-secure *******************************/
