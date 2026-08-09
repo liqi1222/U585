@@ -66,6 +66,8 @@ static const U585_Demo *active_demo = &U585_Demo_Exp30;
 static const U585_Demo *active_demo = &U585_Demo_Exp31;
 #elif (U585_ACTIVE_DEMO == 32)
 static const U585_Demo *active_demo = &U585_Demo_Exp32;
+#elif (U585_ACTIVE_DEMO == 33)
+static const U585_Demo *active_demo = &U585_Demo_Exp33;
 #else
 static const U585_Demo *active_demo = &U585_Demo_Unsupported;
 #endif

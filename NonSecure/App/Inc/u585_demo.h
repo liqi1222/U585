@@ -43,6 +43,7 @@ extern const U585_Demo U585_Demo_Exp29;
 extern const U585_Demo U585_Demo_Exp30;
 extern const U585_Demo U585_Demo_Exp31;
 extern const U585_Demo U585_Demo_Exp32;
+extern const U585_Demo U585_Demo_Exp33;
 extern const U585_Demo U585_Demo_Unsupported;
 
 #ifdef __cplusplus

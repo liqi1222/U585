@@ -26,7 +26,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
 # 3-32 map to U585 article demos (FreeRTOS dropped; former 29-33 shifted -1).
 # TrustZone / TF-M topics use demos 31/32.
 set(U585_ACTIVE_DEMO "3" CACHE STRING "Active U585 article demo")
-set_property(CACHE U585_ACTIVE_DEMO PROPERTY STRINGS 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32)
+set_property(CACHE U585_ACTIVE_DEMO PROPERTY STRINGS 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33)
 
 # Compiler options
 set(STM32_MCU_FLAGS  "-mcpu=cortex-m33 -mfpu=fpv4-sp-d16 -mfloat-abi=hard " )
@@ -111,6 +111,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     App/Src/exp30_rng_aes_pka.c
     App/Src/exp31_trustzone_gtzc.c
     App/Src/exp32_tfm_secure_boot.c
+    App/Src/exp33_ospi_otfdec.c
 )
 
 # Extra HAL modules required by Phase-B NonSecure peripherals.

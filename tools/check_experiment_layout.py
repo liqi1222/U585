@@ -35,6 +35,7 @@ DEMO_SOURCES = {
     30: "exp30_rng_aes_pka.c",
     31: "exp31_trustzone_gtzc.c",
     32: "exp32_tfm_secure_boot.c",
+    33: "exp33_ospi_otfdec.c",
 }
 
 

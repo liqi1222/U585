@@ -144,6 +144,7 @@ scope/DMM analog measurements.
 | 30 | `30` | `exp30_rng_aes_pka.c` | Measured: RNG/AES/PKA ok |
 | 31 | `31` | `exp31_trustzone_gtzc.c` | Measured: NSC + dual-image map |
 | 32 | `32` | `exp32_tfm_secure_boot.c` | Measured: TF-M/SBSFU inventory stub |
+| 33 | `33` | `exp33_ospi_otfdec.c` | Measured: OSPI PSRAM+Flash OTFDEC all_ok=1 |
 
 Default demo is `3`. Logging prefers NonSecure USART1; `SECURE_UART1_WriteString` remains as NSC fallback if NS UART is not ready.
 

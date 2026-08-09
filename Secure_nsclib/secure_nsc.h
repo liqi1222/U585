@@ -46,6 +46,16 @@ uint32_t SECURE_GetSauRegionCount(void);
 uint32_t SECURE_GetFlashSecureBase(void);
 uint32_t SECURE_GetFlashNonSecureBase(void);
 
+/* OTFDEC demo API (exp33): keys stay in secure world */
+uint32_t SECURE_OTFDEC_Setup(void);
+uint32_t SECURE_OTFDEC_RegionEnable(uint32_t instance_sel, uint32_t enable);
+uint32_t SECURE_OTFDEC_Cipher(uint32_t instance_sel, uint32_t start_address,
+                              const uint32_t *input, uint32_t *output);
+uint32_t SECURE_OTFDEC_CipherSw(uint32_t instance_sel, uint32_t start_address,
+                                const uint32_t *input, uint32_t *output);
+uint32_t SECURE_OTFDEC_GetReg(uint32_t instance_sel, uint32_t which);
+uint32_t SECURE_OTFDEC_GetKeyCrc(uint32_t instance_sel);
+
 #endif /* SECURE_NSC_H */
 /* USER CODE END Non_Secure_CallLib_h */
 
