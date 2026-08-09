@@ -1,0 +1,7 @@
+{
+  "device": "STM32U585AII6Q",
+  "core": "Cortex-M33",
+  "order": 0,
+  "tz": "TZ-disabled",
+  "toolchain": "CLANG"
+}
