@@ -136,7 +136,7 @@ cmake --build --preset Debug
 | 26 | `26` | `exp26_usb_ucpd_device.c` | 已实测：UCPD CC 检测 ucpd_ready=1 |
 | 27 | `27` | `exp27_wifi_emw3080.c` | 已实测：Chip_En/SPI；flow_ok=0 |
 | 28 | `28` | `exp28_mqtt_cloud.c` | 已实测：离线 CONNECT 帧；Wi-Fi 受阻 |
-| 29 | `29` | `exp29_icache_fetch.c` | 已实测：ICACHE 开/关约 1.8 倍 |
+| 29 | `29` | `exp29_icache_fetch.c` | 复测：ICACHE 命中计数增长；本次 DWT 计时窗口无效（`cycles_off=1`,`cycles_on=1`），性能倍数待修正后再下结论 |
 | 30 | `30` | `exp30_rng_aes_pka.c` | 已实测：RNG/AES/PKA 正常 |
 | 31 | `31` | `exp31_trustzone_gtzc.c` | 已实测：NSC + 双镜像映射 |
 | 32 | `32` | `exp32_tfm_secure_boot.c` | 已实测：TF-M/SBSFU 清单存根 |
