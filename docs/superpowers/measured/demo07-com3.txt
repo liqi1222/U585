@@ -1,15 +1,7 @@
 ﻿# U585 demo 7 VCP capture
-# port=COM3 baud=115200 seconds=4
-# utc=2026-07-12T04:11:25.4491752Z
+# port=COM3 baud=115200 seconds=3
+# utc=2026-08-12T15:36:49.6698159Z
 
-[NS] [U585][10] tim_irq=5854
-[NS] [U585][10] tim_irq=6861
-[NS] [U585][10] tim_irq=7868
-[NS] [U585][10] tim_irq=8875
-[S] Secure world ready
-[NS] [U585][07] low-power hooks start
-[NS] [U585][07] button edge -> short Sleep(WFI); Stop/Standby deferred
-[NS] [U585][07] sleep_enabled=1
 [S] Secure world ready
 [NS] [U585][07] low-power hooks start
 [NS] [U585][07] button edge -> short Sleep(WFI); Stop/Standby deferred

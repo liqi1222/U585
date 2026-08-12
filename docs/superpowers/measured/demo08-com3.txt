@@ -1,35 +1,14 @@
 ﻿# U585 demo 8 VCP capture
-# port=COM3 baud=115200 seconds=6
-# utc=2026-07-12T04:08:52.5255631Z
+# port=COM3 baud=115200 seconds=3
+# utc=2026-08-12T15:32:44.0309270Z
 
-[NS] [U585][11] printf heartbeat=10 tick=9056
-[NS] [U585][11] printf heartbeat=11 tick=10061
-[NS] [U585][11] printf heartbeat=12 tick=11066
-[NS] [U585][11] printf heartbeat=13 tick=12071
-[NS] [U585][11] printf heartbeat=14 tick=13076
-[NS] [U585][11] printf heartbeat=15 tick=14081
-[NS] [U585][11] printf heartbeat=16 tick=15086
-[NS] [U585][11] printf heartbeat=17 tick=16091
-[NS] [U585][11] printf heartbeat=18 tick=17096
-[NS] [U585][11] printf heartbeat=19 tick=18101
-[NS] [U585][11] printf heartbeat=20 tick=19106
-[NS] [U585][11] printf heartbeat=21 tick=20111
-[NS] [U585][11] printf heartbeat=22 tick=21116
 [S] Secure world ready
 [NS] [U585][08] RTC NonSecure calendar/backup demo
 [NS] [U585][08] rtc_ready=1
 [NS] [U585][08] backup0=2776956936
 [NS] [U585][08] NOTE: Stop/Standby wakeup current -> author DMM
-[NS] [U585][08] seconds=0
-[S] Secure world ready
-[NS] [U585][08] RTC NonSecure calendar/backup demo
-[NS] [U585][08] rtc_ready=1
-[NS] [U585][08] backup0=2776956936
-[NS] [U585][08] NOTE: Stop/Standby wakeup current -> author DMM
-[NS] [U585][08] seconds=0
 [NS] [U585][08] seconds=0
 [NS] [U585][08] seconds=1
+[NS] [
+U585][08] seconds=1
 [NS] [U585][08] seconds=2
-[NS] [U585][08] seconds=3
-[NS] [U585][08] seconds=4
-[NS] [U585][08] seconds=5

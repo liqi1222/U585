@@ -1,6 +1,6 @@
-﻿# U585 demo 32 VCP capture
-# port=COM3 baud=115200 seconds=5
-# utc=2026-07-12T06:14:24.2892878Z
+﻿# U585 demo 31 VCP capture
+# port=COM3 baud=115200 seconds=3
+# utc=2026-08-12T15:35:37.9205776Z
 
 [S] Secure world ready
 [NS] [U585][31] TrustZone dual-image observe (CubeMX TZ, not TF-M)
@@ -14,4 +14,3 @@
 [NS] [U585][31] running_ns=1
 [NS] [U585][31] gtzc_handoff=1
 [NS] [U585][31] heartbeat=4
-[NS] [U585][31] heartbeat=8

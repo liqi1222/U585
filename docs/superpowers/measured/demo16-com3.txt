@@ -1,6 +1,6 @@
 ﻿# U585 demo 16 VCP capture
 # port=COM3 baud=115200 seconds=3
-# utc=2026-07-12T05:29:41.8221370Z
+# utc=2026-08-12T15:34:24.9495922Z
 
 [S] Secure world ready
 [NS] [U585][16] GPDMA1_CH0 memory-to-memory

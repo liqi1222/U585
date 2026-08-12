@@ -1,6 +1,6 @@
 ﻿# U585 demo 15 VCP capture
-# port=COM3 baud=115200 seconds=6
-# utc=2026-08-08T00:14:40.9566830Z
+# port=COM3 baud=115200 seconds=3
+# utc=2026-08-12T15:37:04.2305443Z
 
 [S] Secure world ready
 [NS] [U585][15] DAC1_OUT1 PA4: TIM2 TRGO + GPDMA circular list
@@ -24,12 +24,12 @@
 [NS] [U585][15] dma_full_count=82
 [NS] [U585][15] dma_csr=131072
 [NS] [U585][15] dor=1300
-[NS] [U585][15] dma_half_count=122
+[NS] [U585][1
+5] dma_half_count=122
 [NS] [U585][15] dma_full_count=122
 [NS] [U585][15] dma_csr=131072
 [NS] [U585][15] dor=1300
-[
-NS] [U585][15] dma_half_count=162
+[NS] [U585][15] dma_half_count=162
 [NS] [U585][15] dma_full_count=162
 [NS] [U585][15] dma_csr=131072
 [NS] [U585][15] dor=1300
@@ -39,28 +39,4 @@ NS] [U585][15] dma_half_count=162
 [NS] [U585][15] dor=1300
 [NS] [U585][15] dma_half_count=242
 [NS] [U585][15] dma_full_count=242
-[NS] [U585][15] dma_csr=131072
-[NS] [U585][15] dor=1300
-[NS] [U585][15] dma_half_count=282
-[NS] [U585][15] dma_full_count=282
-[NS] [U585][15] dma_csr=131072
-[NS] [U585][15] dor=1300
-[NS] [U585][15] dma_half_count=322
-[NS] [U585][15] dma_full_count=322
-[NS] [U585][15] dma_csr=131072
-[NS] [U585][15] dor=1300
-[NS] [U585][15] dma_half_count=362
-[NS] [U585][15] dma_full_count=362
-[NS] [U585][15] dma_csr=131072
-[NS] [U585][15] dor=1300
-[NS] [U585][15] dma_half_count=402
-[NS] [U585][15] dma_full_count=402
-[NS] [U585][15] dma_csr=131072
-[NS] [U585][15] dor=1300
-[NS] [U585][15] dma_half_count=442
-[NS] [U585][15] dma_full_count=442
-[NS] [U585][15] dma_csr=131072
-[NS] [U585][15] dor=1300
-[NS] [U585][15] dma_half_count=482
-[NS] [U585][15] dma_full_count=482
 [NS] [U585][15] dma_csr=131072
