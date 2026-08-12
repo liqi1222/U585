@@ -28,19 +28,20 @@ demo=`13`。SPI2 已迁 NonSecure（原 Cube 4-bit 配置改为 **Mode0 / 8-bit 
 原始日志：工程 `docs/superpowers/measured/demo13-com3.txt`。示波器 CPOL/CPHA 波形、WiFi 正式协议仍待补（见 27 篇）。
 """,
     "14": """
-## 上板实测记录（2026-07-12）
+## 上板实测记录（2026-08-08）
 
-demo=`14`。ADC1（`GTZC_PERIPH_ADC12`）已迁 NonSecure；本机先做 **内部通道轮询**（`dma_used=0`）。
+demo=`14`。ADC1（`GTZC_PERIPH_ADC12`）已迁 NonSecure；本次采用 **TIM2 TRGO + GPDMA 循环链表**采集片内 VREFINT。
 
 | 项 | 结果 |
 |----|------|
-| `adc_ready` | **1** |
-| 分辨率 | **12 bit** |
-| `vrefint_raw` | ≈**1482**（稳定） |
-| `vdda_mv` | ≈**3348**（与 ST-LINK 读电压 3.28 V 接近；工厂 `VREFINT_CAL` 在 NS 侧读数异常，已用 1.212 V 近似换算） |
-| `tempsensor_raw` | ≈**930** |
+| `adc_ready` / `timer_ready` / `dma_used` / `dma_started` | **1 / 1 / 1 / 1** |
+| `sample_rate_hz` | **10000** |
+| `vrefint_cal` | **6530** |
+| `vrefint_raw` | ≈**1481–1488** |
+| `vdda_mv` | ≈**3291–3306** |
+| `dma_half` / `dma_full` | **持续同步增长** |
 
-原始日志：工程 `docs/superpowers/measured/demo14-com3.txt`。外部模拟输入 + GPDMA 连续采样仍待补（DMA 搬运见 16 篇）。
+原始日志：工程 `docs/superpowers/measured/demo14-com3.txt`。外部模拟输入、示波器波形和精度对照仍待补。
 """,
     "15": """
 ## 上板实测记录（2026-07-12）
@@ -69,6 +70,8 @@ demo=`16`。`GPDMA1` + Channel0 已迁 NonSecure；通道属性为 **NSEC + PRIV
 | 模式 | 内存到内存，16×word |
 | `xfer_ok` | **1** |
 | `mismatch` | **0**（`src0==dst0`） |
+| `words` | **16** |
+| `src0` / `dst0` | **2768240640 / 2768240640** |
 
 原始日志：工程 `docs/superpowers/measured/demo16-com3.txt`。外设触发 / linked-list 仍待补。
 """,
