@@ -1,5 +1,6 @@
 #include "u585_board.h"
 #include "u585_demo.h"
+#include "u585_fault.h"
 #include "u585_log.h"
 
 #ifndef U585_EXP04_ENABLE_FAULT_TRIGGER
@@ -37,9 +38,8 @@ static void exp04_itm_puts(const char *text)
 static void exp04_trigger_fault(void)
 {
 #if (U585_EXP04_ENABLE_FAULT_TRIGGER != 0)
-  volatile uint32_t *bad_address = (uint32_t *)0xFFFFFFF0UL;
-  volatile uint32_t value = *bad_address;
-  (void)value;
+  /* UsageFault：Thumb 未定义指令（NonSecure 内可控） */
+  __asm volatile(".hword 0xDE00");
 #else
   U585_Log_WriteLine("[U585][04] fault trigger disabled (set U585_EXP04_ENABLE_FAULT_TRIGGER=1)");
 #endif
@@ -48,6 +48,7 @@ static void exp04_trigger_fault(void)
 static void exp04_init(void)
 {
   U585_Board_InitBasicGpio();
+  U585_Fault_EnableConfigurableFaults();
 
   g_u585_exp04_state.magic = 0xA5850004UL;
   g_u585_exp04_state.init_count++;
@@ -92,6 +93,14 @@ static void exp04_loop(void)
   {
     U585_Log_WriteU32("[U585][04] heartbeat=", g_u585_exp04_state.loop_count);
   }
+
+#if (U585_EXP04_ENABLE_FAULT_TRIGGER != 0)
+  if (g_u585_exp04_state.loop_count == 8U)
+  {
+    U585_Log_WriteLine("[U585][04] auto fault trigger (demo capture)");
+    exp04_trigger_fault();
+  }
+#endif
 
   HAL_Delay(250U);
 }

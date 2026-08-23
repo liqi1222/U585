@@ -1,6 +1,6 @@
 ﻿# U585 demo 4 VCP capture
-# port=COM3 baud=115200 seconds=6
-# utc=2026-08-12T15:32:03.1039357Z
+# port=COM3 baud=115200 seconds=8 fault=OFF
+# utc=2026-08-23T12:03:00.4031559Z
 
 [S] Secure world ready
 [NS] [U585][04] SWD/SWO/Fault demo start

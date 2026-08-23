@@ -24,6 +24,7 @@
 /* USER CODE BEGIN Includes */
 #include "u585_adc1.h"
 #include "u585_dac1.h"
+#include "u585_fault.h"
 #include "u585_gpdma.h"
 #include "u585_tim2_trgo.h"
 /* USER CODE END Includes */
@@ -67,13 +68,37 @@
 /******************************************************************************/
 /*           Cortex Processor Interruption and Exception Handlers          */
 /******************************************************************************/
+static uint32_t *u585_get_active_stack_pointer(void)
+{
+  uint32_t *stack_ptr;
+
+  __asm volatile(
+      "tst lr, #4 \n"
+      "ite eq \n"
+      "mrseq %0, msp \n"
+      "mrsne %0, psp \n"
+      : "=r"(stack_ptr));
+
+  return stack_ptr;
+}
+
+void HardFault_Handler(void)
+{
+  U585_Fault_PrintAndHalt("HardFault", u585_get_active_stack_pointer());
+}
+
+void BusFault_Handler(void)
+{
+  U585_Fault_PrintAndHalt("BusFault", u585_get_active_stack_pointer());
+}
+
 /**
   * @brief This function handles Memory management fault.
   */
 void MemManage_Handler(void)
 {
   /* USER CODE BEGIN MemoryManagement_IRQn 0 */
-
+  U585_Fault_PrintAndHalt("MemManage", u585_get_active_stack_pointer());
   /* USER CODE END MemoryManagement_IRQn 0 */
   while (1)
   {
@@ -88,7 +113,7 @@ void MemManage_Handler(void)
 void UsageFault_Handler(void)
 {
   /* USER CODE BEGIN UsageFault_IRQn 0 */
-
+  U585_Fault_PrintAndHalt("UsageFault", u585_get_active_stack_pointer());
   /* USER CODE END UsageFault_IRQn 0 */
   while (1)
   {

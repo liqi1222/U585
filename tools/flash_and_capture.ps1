@@ -3,7 +3,8 @@ param(
   [string]$Port = "COM3",
   [int]$Baud = 115200,
   [int]$Seconds = 6,
-  [string]$Preset = "Performance"
+  [string]$Preset = "Performance",
+  [switch]$EnableFaultTrigger
 )
 
 $ErrorActionPreference = "Stop"
@@ -13,12 +14,21 @@ $secureElf = Join-Path $root "Secure\build\U585_S.elf"
 $nsElf = Join-Path $root "NonSecure\build\U585_NS.elf"
 $outDir = Join-Path $root "docs\superpowers\measured"
 New-Item -ItemType Directory -Force -Path $outDir | Out-Null
-$outFile = Join-Path $outDir ("demo{0:D2}-com3.txt" -f $Demo)
+$outSuffix = if ($EnableFaultTrigger) { "-fault" } else { "" }
+$outFile = Join-Path $outDir ("demo{0:D2}-com3{1}.txt" -f $Demo, $outSuffix)
 
-Write-Host "=== Configure/build demo $Demo ==="
+$buildType = if ($Preset -eq "Performance") { "Performance" } else { "Debug" }
+$faultFlag = if ($EnableFaultTrigger) { "ON" } else { "OFF" }
+
+Write-Host "=== Build Secure + NonSecure demo $Demo (fault=$faultFlag) ==="
 Push-Location $root
-cmake --preset $Preset "-DU585_ACTIVE_DEMO=$Demo" | Out-Host
-cmake --build --preset $Preset | Out-Host
+cmake --preset $Preset "-DU585_ACTIVE_DEMO=$Demo" "-DU585_EXP04_ENABLE_FAULT_TRIGGER=$faultFlag" | Out-Host
+cmake --build --preset $Preset --target U585_S | Out-Host
+cmake -S NonSecure -B NonSecure/build -G Ninja "-DCMAKE_TOOLCHAIN_FILE=$root/gcc-arm-none-eabi.cmake" "-DCMAKE_BUILD_TYPE=$buildType" "-DU585_ACTIVE_DEMO=$Demo" "-DU585_EXP04_ENABLE_FAULT_TRIGGER=$faultFlag" | Out-Host
+cmake --build NonSecure/build | Out-Host
+if ($LASTEXITCODE -ne 0) {
+  throw "Build failed with exit $LASTEXITCODE"
+}
 Pop-Location
 
 Write-Host "=== Flash ==="
@@ -36,7 +46,6 @@ try {
   $sp.DtrEnable = $true
   $sp.RtsEnable = $true
   $sp.Open()
-  # Drop leftover bytes from a previous demo before resetting into the new image.
   Start-Sleep -Milliseconds 100
   try { [void]$sp.ReadExisting() } catch {}
   & $cli -c port=SWD freq=4000 mode=UR -hardRst | Out-Null
@@ -62,7 +71,7 @@ try {
 
 $header = @(
   "# U585 demo $Demo VCP capture",
-  "# port=$Port baud=$Baud seconds=$Seconds",
+  "# port=$Port baud=$Baud seconds=$Seconds fault=$faultFlag",
   "# utc=$([DateTime]::UtcNow.ToString('o'))",
   ""
 )

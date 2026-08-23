@@ -1,6 +1,6 @@
 ﻿# U585 demo 5 VCP capture
-# port=COM3 baud=115200 seconds=3
-# utc=2026-08-12T15:32:29.4687155Z
+# port=COM3 baud=115200 seconds=10
+# utc=2026-08-23T12:00:21.9650280Z
 
 [S] Secure world ready
 [NS] [U585][05] clock tree observation start
@@ -21,8 +21,19 @@
 [NS] [U585][05] HCLK_Hz=160000000
 [NS] [U585][05] PCLK1_Hz=160000000
 [NS] [U585][05] PCLK2_Hz=160000000
-[NS] [U585][05
-] PCLK3_Hz=160000000
+[NS] [U585][05] PCLK3_Hz=160000000
+[NS] [U585][05] FLASH_LATENCY=4
+[NS] [U585][05] voltage_range=196608
+[NS] [U585][05] smps_selected=1
+[NS] [U585][05] icache_enabled=1
+[NS]
+[U585][05] icache_2ways=1
+[NS] [U585][05] SystemCoreClock_Hz=160000000
+[NS] [U585][05] SYSCLK_Hz=160000000
+[NS] [U585][05] HCLK_Hz=160000000
+[NS] [U585][05] PCLK1_Hz=160000000
+[NS] [U585][05] PCLK2_Hz=160000000
+[NS] [U585][05] PCLK3_Hz=160000000
 [NS] [U585][05] FLASH_LATENCY=4
 [NS] [U585][05] voltage_range=196608
 [NS] [U585][05] smps_selected=1
