@@ -1,0 +1,17 @@
+﻿# U585 demo 18 VCP capture
+# port=COM3 baud=115200 seconds=3
+# utc=2026-08-12T15:37:18.5541175Z
+
+[S] Secure world ready
+[NS] [U585][18] LPS22HH pressure/temp
+[NS] [U585][18] i2c_ready=1
+[NS] [U585][18] WHO_AM_I=179
+[NS] [U585][18] who_ok=1
+[NS] [U585][18] raw_press=4103773
+[NS] [U585][18] raw_temp=3509
+[NS] [U585][18] raw_press=4103909
+[NS] [U585][18] raw_temp=3512
+[NS] [U585][18] raw_press=4103651
+[NS] [U585][18] raw_temp=3515
+[NS] [U585][18] raw_press=4103779
+[NS] [U585][18] raw_temp=3516

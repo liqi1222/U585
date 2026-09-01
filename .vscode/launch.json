@@ -1,0 +1,53 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "U585 NonSecure (ST-LINK)",
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "stlink",
+            "interface": "swd",
+            "armToolchainPath": "C:/ST/STM32CubeCLT_1.21.0/GNU-tools-for-STM32/bin",
+            "serverpath": "C:/ST/STM32CubeCLT_1.21.0/STLink-gdb-server/bin/ST-LINK_gdbserver.exe",
+            "stm32cubeprogrammer": "C:/ST/STM32CubeCLT_1.21.0/STM32CubeProgrammer/bin",
+            "serverArgs": [
+                "--frequency",
+                "1000"
+            ],
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/NonSecure/build/U585_NS.elf",
+            "loadFiles": [
+                "${workspaceFolder}/Secure/build/U585_S.elf",
+                "${workspaceFolder}/NonSecure/build/U585_NS.elf"
+            ],
+            "runToEntryPoint": "main",
+            "preLaunchTask": "CMake: build Debug",
+            "postDebugTask": "ST-LINK: reset and release target",
+            "showDevDebugOutput": "none"
+        },
+        {
+            "name": "U585 Secure (ST-LINK)",
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "stlink",
+            "interface": "swd",
+            "armToolchainPath": "C:/ST/STM32CubeCLT_1.21.0/GNU-tools-for-STM32/bin",
+            "serverpath": "C:/ST/STM32CubeCLT_1.21.0/STLink-gdb-server/bin/ST-LINK_gdbserver.exe",
+            "stm32cubeprogrammer": "C:/ST/STM32CubeCLT_1.21.0/STM32CubeProgrammer/bin",
+            "serverArgs": [
+                "--frequency",
+                "1000"
+            ],
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/Secure/build/U585_S.elf",
+            "loadFiles": [
+                "${workspaceFolder}/Secure/build/U585_S.elf",
+                "${workspaceFolder}/NonSecure/build/U585_NS.elf"
+            ],
+            "runToEntryPoint": "main",
+            "preLaunchTask": "CMake: build Debug",
+            "postDebugTask": "ST-LINK: reset and release target",
+            "showDevDebugOutput": "none"
+        }
+    ]
+}

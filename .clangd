@@ -1,0 +1,11 @@
+CompileFlags:
+  CompilationDatabase: NonSecure/build
+If:
+  PathMatch: NonSecure/.*
+
+---
+
+CompileFlags:
+  CompilationDatabase: Secure/build
+If:
+  PathMatch: Secure/.*

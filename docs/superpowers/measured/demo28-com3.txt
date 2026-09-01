@@ -1,0 +1,12 @@
+﻿# U585 demo 28 VCP capture
+# port=COM3 baud=115200 seconds=3
+# utc=2026-08-12T15:39:27.9460364Z
+
+[S] Secure world ready
+[NS] [U585][28] MQTT CONNECT frame only (no broker)
+[NS] [U585][28] blocked on WiFi(27); RTOS out of series scope
+[NS] [U585][28] wifi_ready=0
+[NS] [U585][28] mqtt_ready=0
+[NS] [U585][28] connect_pkt_len=14
+[NS] [U585][28] connect_pkt_ok=1
+[NS] [U585][28] heartbeat=4

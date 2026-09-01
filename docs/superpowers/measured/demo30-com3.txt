@@ -1,0 +1,17 @@
+﻿# U585 demo 30 VCP capture
+# port=COM3 baud=115200 seconds=3
+# utc=2026-08-12T15:35:23.5546283Z
+
+[S] Secure world ready
+[NS] [U585][30] RNG + AES-ECB + PKA ModAdd probe
+[NS] [U585][30] HASH/SAES/TLS pending
+[NS] [U585][30] rng_ok=1
+[NS] [U585][30] r0=3076373870
+[NS] [U585][30] r1=2631672302
+[NS] [U585][30] r2=240936559
+[NS] [U585][30] r3=1741084242
+[NS] [U585][30] aes_ok=1
+[NS] [U585][30] aes_ct0=3297597316
+[NS] [U585][30] pka_ok=1
+[NS] [U585][30] pka_sum0=1
+[NS] [U585][30] heartbeat=4

@@ -1,0 +1,26 @@
+﻿# U585 demo 4 VCP capture
+# port=COM3 baud=115200 seconds=8
+# utc=2026-08-23T12:02:14.9276794Z
+
+[S] Secure world ready
+[NS] [U585][04] SWD/SWO/Fault demo start
+[NS] [U585][04] VCP=USART1 NonSecure direct; ITM/SWO optional
+[NS] [U585][04] itm_trcena=0
+[NS] [U585][04] fault_trigger_enabled=1
+[NS] [U585][04] auto fault trigger (demo capture)
+[NS] [U585][FAULT] UsageFault
+[NS] [U585][FAULT] R0=0x200BFFC8
+[NS] [U585][FAULT] R1=0x81052C3
+[NS] [U585][FAULT] R2=0x200BFF68
+[NS] [U585][FAULT] R3=0x81052C3
+[NS] [U585][FAULT] R12=0x200BFFDC
+[NS] [U585][FAULT] LR=0xFFFFFFA8
+[NS] [U585][FAULT] PC=0x0
+[NS] [U585][FAULT] xPSR=0x40
+[NS] [U585][FAULT] EXC_RETURN=0x81052C3
+[NS] [U585][FAULT] CFSR=0x10000
+[NS] [U585][FAULT] HFSR=0x0
+[NS] [U585][FAULT] BFAR=0x0
+[NS] [U585][FA
+ULT] MMFAR=0x0
+[NS] [U585][FAULT] halted

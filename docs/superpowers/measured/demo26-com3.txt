@@ -1,0 +1,25 @@
+﻿# U585 demo 26 VCP capture
+# port=COM3 baud=115200 seconds=3
+# utc=2026-08-12T15:38:59.3066549Z
+
+[S] Secure world ready
+[NS] [U585][26] UCPD1 Type-C sink CC sense (PA15/PB15)
+[NS] [U585][26] USB FS device stack pending
+[NS] [U585][26] ucpd_ready=1
+[NS] [U585][26] cc1=0
+[NS] [U585][26] cc2=0
+[NS] [U585][26] attached=0
+[NS] [U585][26] sr=0
+[NS] [U585][26] cc1=0
+[NS] [U585][26] cc2=0
+[NS] [U585][26] attached=0
+[NS] [U585][26] sr=0
+[NS] [U585][26] cc1=0
+[NS] [U585][26] cc2=0
+[NS] [U585][26] attached=0
+[NS] [U585][26] sr=0
+[NS] [U585][26] heartbeat=4
+[NS] [U585][26] cc1=0
+[NS] [U585][26] cc2=0
+[NS] [U585][26] attached=0
+[NS] [U585][26] sr=0

@@ -1,0 +1,24 @@
+﻿# U585 demo 10 VCP capture
+# port=COM3 baud=115200 seconds=12 fault=OFF
+# utc=2026-08-23T12:16:12.4551588Z
+
+[S] Secure world ready
+[NS] [U585][10] TIM2 software-PWM on green LED
+[NS] [U585][10] tim_ready=1
+[NS] [U585][10] duty_percent=20
+[NS] [U585][10] NOTE: scope waveform / input-capture -> author follow-up
+[NS] [U585][10] tim_irq=820
+[NS] [U585][10] tim_irq=1827
+[NS] [U585]
+[10] tim_irq=2834
+[NS] [U585][10] tim_irq=3841
+[NS] [U585][10] tim_irq=4848
+[NS] [U585][10] tim_irq=5855
+[NS] [U585][10] tim_irq=6
+862
+[NS] [U585][10] tim_irq=7869
+[NS] [U585][10] tim_irq=8876
+[NS] [U585][10] tim_irq=9883
+[NS] [U585][10
+] tim_irq=10890
+[NS] [U585][10] tim_irq=11897

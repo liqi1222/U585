@@ -1,0 +1,24 @@
+﻿# U585 demo 8 VCP capture
+# port=COM3 baud=115200 seconds=12 fault=OFF
+# utc=2026-08-23T12:14:29.3086229Z
+
+[S] Secure world ready
+[NS] [U585][08] RTC NonSecure calendar/backup demo
+[NS] [U585][08] rtc_ready=1
+[NS] [U585][08] backup0=2776956936
+[NS] [U585][08] NOTE: Stop/Standby wakeup current -> author DMM
+[NS] [U585][08] seconds=0
+[NS] [U585][08] seconds=1
+[NS] [U585][08] seconds=1
+[NS] [U585][08] seconds=2
+[NS] [U585][08] seconds=3
+[NS] [U585][08] seconds=4
+[NS] [U585][08] seconds=5
+[NS] [U585][08] seconds=6
+[NS] [U585][08] seconds=7
+[NS] [U585][08] seconds=8
+[NS] [U585][08] seconds=9
+[NS]
+ [U585][08] seconds=10
+[NS] [U585][0
+8] seconds=11

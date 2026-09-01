@@ -1,0 +1,30 @@
+﻿# U585 demo 20 VCP capture
+# port=COM3 baud=115200 seconds=3
+# utc=2026-08-12T15:37:47.3066501Z
+
+[S] Secure world ready
+[NS] [U585][20] IIS2MDC magnetometer
+[NS] [U585][20] i2c_ready=1
+[NS] [U585][20] WHO_AM_I=64
+[NS] [U585][20] who_ok=1
+[NS] [U585][20] mx=142
+[NS] [U585][20] my=384
+[NS] [U585][20] mz=251
+[NS] [U585][20] mx=148
+[NS] [U585][20] my=379
+[NS] [U585][20] mz=242
+[NS] [U585][20] mx=145
+[NS] [U585][20] my=385
+[NS] [U585][20] mz=248
+[NS] [U585][20] mx=140
+[NS] [U585][20] my=385
+[NS] [U585][20] mz=245
+[NS] [U585][20] mx=147
+[NS] [U585][20] my=385
+[NS] [U585][20] mz=245
+[NS] [U585][20] mx=144
+[NS] [U585][20] my=381
+[NS] [U585][20] mz=246
+[NS] [U585][20] mx=139
+[NS] [U585][20] my=378
+[NS] [U585][20] mz=242

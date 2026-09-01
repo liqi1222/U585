@@ -1,0 +1,10 @@
+﻿# U585 demo 7 VCP capture
+# port=COM3 baud=115200 seconds=15 fault=OFF
+# utc=2026-08-23T12:17:14.6111111Z
+
+[S] Secure world ready
+[NS] [U585][07] low-power hooks start
+[NS] [U585][07] button edge -> short Sleep(WFI); Stop/Standby deferred
+[NS] [U585][07] sleep_enabled=1
+[NS] [U585][07] auto sleep trigger (demo capture)
+[NS] [U585][07] sleep_completed=1
