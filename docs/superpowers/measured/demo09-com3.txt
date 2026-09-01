@@ -1,6 +1,6 @@
 ﻿# U585 demo 9 VCP capture
-# port=COM3 baud=115200 seconds=3
-# utc=2026-08-12T15:32:58.3918842Z
+# port=COM3 baud=115200 seconds=20 fault=OFF
+# utc=2026-08-23T12:19:33.5748641Z
 
 [S] Secure world ready
 [NS] [U585][09] GPIO EXTI demo (PC13 rising/falling)

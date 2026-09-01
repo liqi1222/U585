@@ -1,6 +1,6 @@
 ﻿# U585 demo 15 VCP capture
-# port=COM3 baud=115200 seconds=3
-# utc=2026-08-12T15:37:04.2305443Z
+# port=COM3 baud=115200 seconds=12 fault=OFF
+# utc=2026-08-23T12:52:21.6353950Z
 
 [S] Secure world ready
 [NS] [U585][15] DAC1_OUT1 PA4: TIM2 TRGO + GPDMA circular list
@@ -22,10 +22,11 @@
 [NS] [U585][15] dor=1300
 [NS] [U585][15] dma_half_count=82
 [NS] [U585][15] dma_full_count=82
-[NS] [U585][15] dma_csr=131072
-[NS] [U585][15] dor=1300
-[NS] [U585][1
-5] dma_half_count=122
+[NS] [U585][15] dma_
+csr=131072
+[N
+S] [U585][15] dor=1300
+[NS] [U585][15] dma_half_count=122
 [NS] [U585][15] dma_full_count=122
 [NS] [U585][15] dma_csr=131072
 [NS] [U585][15] dor=1300
@@ -39,4 +40,74 @@
 [NS] [U585][15] dor=1300
 [NS] [U585][15] dma_half_count=242
 [NS] [U585][15] dma_full_count=242
+[NS] [U585][15] dma_csr=131072
+[NS] [U585][15] dor=1300
+[NS] [U585][15] dma_half_count=282
+[NS] [U585][15] dma_full_count=282
+[NS] [U585][15] dma_csr=131072
+[NS] [U585][15] dor=1300
+[NS] [U585][15] dma_half_count=322
+[NS] [U585][15] dma_full_count=322
+[NS] [U585][15] dma_csr=131072
+[NS] [U585][15] dor=1300
+[NS] [U585][15] dma_half_count=362
+[NS] [U585][15] dma_full_count=362
+[NS] [U585][15] dma_csr=131072
+[NS] [U585][15] dor=1300
+[NS] [U585][15] dma_half_count=402
+[NS] [U585][15] dma_full_count=402
+[NS] [U585][15] dma_csr=131072
+[NS] [U585][15] dor=1300
+[NS] [U585][15] dma_half_count=442
+[NS] [U585][15] dma_full_count=442
+[NS] [U585][15] dma_csr=131072
+[NS] [U585][15] dor=1300
+[NS] [U585][15] dma_half_count=482
+[NS] [U585][15] dma_full_count=482
+[NS] [U585][15] dma_csr=131072
+[NS] [U585][15] dor=1300
+[NS] [U585][15] dma_half_count=522
+[NS] [U585][15] dma_full_c
+ount=522
+[NS] [U585][15] dma_csr=131072
+[NS] [U585][15] dor=1300
+[NS] [U585][15] dma_half_count=562
+[NS] [U585][15] dma_full_count=562
+[NS] [U585][15] dma_csr=131072
+[NS] [U585][15] dor=1300
+[NS] [U585][15] dma_half_count=602
+[NS] [U585][15] dma_full_count=602
+[NS] [U585][15] dma_csr=131072
+[NS] [U585][15] dor=1300
+[NS] [U585][15] dma_half_count=642
+[NS] [U585][15] dma_full_count=642
+[NS] [U585][15] dma_csr=131072
+[NS] [U585][15] dor=1300
+[NS] [U585][15] dma_half_count=682
+[NS] [U585][15] dma_full_count=682
+[NS] [U585][15] dma_csr=131072
+[NS] [U585][15] dor=1300
+[NS] [U585][15] dma_half_count=722
+[NS] [U585][15] dma_full_count=722
+[NS] [U585][15] dma_csr=131072
+[NS] [U585][15] dor=1300
+[NS] [U585][15] dma_half_count=762
+[NS] [U585][15] dma_full_count=762
+[NS] [U585][15] dma_csr=131072
+[NS] [U585][15] dor=1300
+[NS] [U585][15] dma_half_count=802
+[NS] [U585][15] dma_full_count=802
+[NS] [U585][15] dma_csr=131072
+[NS] [U585][15] dor=1300
+[NS] [U585][15] dma_half_count=842
+[NS] [U585][15] dma_full_count=842
+[NS] [U585][15] dma_csr=131072
+[NS] [U585][15] dor=1300
+[NS] [U585][15] dma_half_count=882
+[NS] [U585][15] dma_full_count=882
+[NS] [U585][15] dma_csr=131072
+[NS] [U585][15] dor=1300
+[NS] [U585][15] dma_half_count=922
+[NS] [U585][15] dma_full
+_count=922
 [NS] [U585][15] dma_csr=131072

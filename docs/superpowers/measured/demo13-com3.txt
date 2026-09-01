@@ -1,6 +1,6 @@
 ﻿# U585 demo 13 VCP capture
-# port=COM3 baud=115200 seconds=3
-# utc=2026-08-12T15:33:56.0269613Z
+# port=COM3 baud=115200 seconds=12 fault=OFF
+# utc=2026-08-23T12:49:35.1460731Z
 
 [S] Secure world ready
 [NS] [U585][13] SPI2 bus (PD1=SCK PD4=MOSI PD3=MISO PB12=NSS)
@@ -17,3 +17,6 @@
 [NS] [U585][13] rx2=0
 [NS] [U585][13] rx3=255
 [NS] [U585][13] heartbeat=4
+[NS] [U585][13] heartbeat=8
+[NS] [U585][13] heartbeat=12
+[NS] [U585][13] heartbeat=16

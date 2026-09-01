@@ -6,6 +6,10 @@
 #define U585_EXP07_ENABLE_SLEEP 1
 #endif
 
+#ifndef U585_EXP07_AUTO_SLEEP
+#define U585_EXP07_AUTO_SLEEP 0
+#endif
+
 typedef struct
 {
   uint32_t magic;
@@ -64,6 +68,17 @@ static void exp07_loop(void)
     U585_Board_SetRedLed(GPIO_PIN_RESET);
     U585_Log_WriteU32("[U585][07] sleep_completed=", g_u585_exp07_state.sleep_completed);
   }
+#if (U585_EXP07_AUTO_SLEEP != 0)
+  else if ((g_u585_exp07_state.sleep_completed == 0U) && (g_u585_exp07_state.iterations == 6U))
+  {
+    g_u585_exp07_state.sleep_entry_requests++;
+    U585_Log_WriteLine("[U585][07] auto sleep trigger (demo capture)");
+    U585_Board_SetRedLed(GPIO_PIN_SET);
+    exp07_enter_sleep_briefly();
+    U585_Board_SetRedLed(GPIO_PIN_RESET);
+    U585_Log_WriteU32("[U585][07] sleep_completed=", g_u585_exp07_state.sleep_completed);
+  }
+#endif
   last_button = button;
 
   U585_Board_ToggleGreenLed();

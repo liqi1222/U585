@@ -19,17 +19,28 @@ $outFile = Join-Path $outDir ("demo{0:D2}-com3{1}.txt" -f $Demo, $outSuffix)
 
 $buildType = if ($Preset -eq "Performance") { "Performance" } else { "Debug" }
 $faultFlag = if ($EnableFaultTrigger) { "ON" } else { "OFF" }
+$faultBool = if ($EnableFaultTrigger) { "ON" } else { "OFF" }
+$autoSleepFlag = if ($Demo -eq 7) { "ON" } else { "OFF" }
 
-Write-Host "=== Build Secure + NonSecure demo $Demo (fault=$faultFlag) ==="
+Write-Host "=== Build Secure + NonSecure demo $Demo (fault=$faultFlag auto_sleep=$autoSleepFlag) ==="
 Push-Location $root
-cmake --preset $Preset "-DU585_ACTIVE_DEMO=$Demo" "-DU585_EXP04_ENABLE_FAULT_TRIGGER=$faultFlag" | Out-Host
+cmake --preset $Preset "-DU585_ACTIVE_DEMO:STRING=$Demo" "-DU585_EXP04_ENABLE_FAULT_TRIGGER:BOOL=$faultBool" | Out-Host
 cmake --build --preset $Preset --target U585_S | Out-Host
-cmake -S NonSecure -B NonSecure/build -G Ninja "-DCMAKE_TOOLCHAIN_FILE=$root/gcc-arm-none-eabi.cmake" "-DCMAKE_BUILD_TYPE=$buildType" "-DU585_ACTIVE_DEMO=$Demo" "-DU585_EXP04_ENABLE_FAULT_TRIGGER=$faultFlag" | Out-Host
+cmake -S NonSecure -B NonSecure/build -G Ninja "-DCMAKE_TOOLCHAIN_FILE=$root/gcc-arm-none-eabi.cmake" "-DCMAKE_BUILD_TYPE=$buildType" "-DU585_ACTIVE_DEMO:STRING=$Demo" "-DU585_EXP04_ENABLE_FAULT_TRIGGER:BOOL=$faultBool" "-DU585_EXP07_AUTO_SLEEP:BOOL=$autoSleepFlag" | Out-Host
 cmake --build NonSecure/build | Out-Host
 if ($LASTEXITCODE -ne 0) {
   throw "Build failed with exit $LASTEXITCODE"
 }
+$demoTag = "[U585][$('{0:D2}' -f $Demo)]"
+$elfStrings = & arm-none-eabi-strings $nsElf 2>$null
+if (-not ($elfStrings -match [regex]::Escape($demoTag))) {
+  throw "NS elf missing demo tag $demoTag (check U585_ACTIVE_DEMO cache)"
+}
+Write-Host "Verified NS elf contains $demoTag"
 Pop-Location
+
+$secureElf = (Resolve-Path $secureElf).Path
+$nsElf = (Resolve-Path $nsElf).Path
 
 Write-Host "=== Flash ==="
 & $cli -c port=SWD freq=4000 mode=UR -d $secureElf -d $nsElf

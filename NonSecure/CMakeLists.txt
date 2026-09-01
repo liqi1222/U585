@@ -28,6 +28,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
 set(U585_ACTIVE_DEMO "3" CACHE STRING "Active U585 article demo")
 set_property(CACHE U585_ACTIVE_DEMO PROPERTY STRINGS 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33)
 set(U585_EXP04_ENABLE_FAULT_TRIGGER OFF CACHE BOOL "Enable deliberate fault trigger in demo 4")
+set(U585_EXP07_AUTO_SLEEP OFF CACHE BOOL "Auto-trigger one Sleep in demo 7 capture")
 
 # Compiler options
 set(STM32_MCU_FLAGS  "-mcpu=cortex-m33 -mfpu=fpv4-sp-d16 -mfloat-abi=hard " )
@@ -58,6 +59,10 @@ target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
 
 if(U585_EXP04_ENABLE_FAULT_TRIGGER)
     target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE U585_EXP04_ENABLE_FAULT_TRIGGER=1)
+endif()
+
+if(U585_EXP07_AUTO_SLEEP)
+    target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE U585_EXP07_AUTO_SLEEP=1)
 endif()
 
 # Enable CMake support for ASM and C languages
