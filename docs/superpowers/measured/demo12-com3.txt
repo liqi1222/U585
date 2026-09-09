@@ -1,6 +1,6 @@
 ﻿# U585 demo 12 VCP capture
 # port=COM3 baud=115200 seconds=15 fault=OFF
-# utc=2026-08-23T12:49:53.5058825Z
+# utc=2026-09-01T03:21:58.1321290Z
 
 [S] Secure world ready
 [NS] [U585][12] I2C2 bus scan (PH4=SCL PH5=SDA)

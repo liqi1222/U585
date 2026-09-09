@@ -1,6 +1,6 @@
 ﻿# U585 demo 29 VCP capture
-# port=COM3 baud=115200 seconds=3
-# utc=2026-08-12T15:35:08.6313770Z
+# port=COM3 baud=115200 seconds=12 fault=OFF
+# utc=2026-09-01T03:31:50.4945100Z
 
 [S] Secure world ready
 [NS] [U585][29] ICACHE on/off fetch bench (DWT CYCCNT)
@@ -10,8 +10,15 @@
 [NS] [U585][29] cycles_on=1
 [NS] [U585][29] hit_off=0
 [NS] [U585][29] miss_off=0
-[NS] [U585][29] hit_on=260009
-[NS] [U585][29] miss_on=54
+[NS] [U585][29] hit_on=260029
+[NS] [U585][29] miss_on=55
 [NS] [U585][29] faster=0
 [NS] [U585][29] checksum=109396
 [NS] [U585][29] heartbeat=4
+[NS] [U585][29] heartbeat=8
+[NS] [U585][29] heartbeat=12
+[NS] [U585][29
+] heartbeat=16
+[NS] [U585][29
+] heartbeat=20
+[NS] [U585][29] heartbeat=24

@@ -1,6 +1,6 @@
 # U585 实验代码布局
 
-> 下载、构建、烧录入口见根目录 [`README.md`](README.md)。下文是实验边界与 demo 编号对照。
+> 下载、构建、烧录入口见根目录 `[README.md](README.md)`。下文是实验边界与 demo 编号对照。
 
 本项目将面向文章的测试代码放在 NonSecure 应用层，除非某个实验明确与 TrustZone 相关。
 
@@ -12,6 +12,8 @@
 - 第 31 和第 32 篇仍属于 Secure/TF-M 主题。
 - 双镜像布局：`TZEN=1`，`SECBOOTADD0=0x0C000000`，Bank2 NS 位于 `0x08100000`。已验证的 OB：`SECWM2_PSTRT=0x7F SECWM2_PEND=0x0`。
 - LED PH6/PH7 为 NonSecure（`GPIOH->SECCFGR` 清除 SEC6/SEC7）。
+
+
 
 ## 项目基线（第 03 篇）
 
@@ -28,12 +30,14 @@
 
 对于第一个 LED/按键演示，只需要配置以下三个用户可见项目：
 
-| 项目 | 设置 | 说明 |
-| --- | --- | --- |
-| 时钟 | 由 PLL 提供 `SYSCLK = 160 MHz`（MSI 4 MHz，M=1/N=80/R=2） | 保守且稳定；第 05 篇将探索更高/更低的配置。 |
-| 红色 LED | `PH6` = `GPIO_Output`，标签为 `LED_RED`，上拉，高速 | NonSecure 引脚（`CortexM33NS`）。 |
-| 绿色 LED | `PH7` = `GPIO_Output`，标签为 `LED_GREEN`，上拉，高速 | NonSecure 引脚（`CortexM33NS`）。 |
-| 用户按键 | `PC13` = `GPIO_Input`，标签为 `USER_Button`，无上下拉 | NonSecure 引脚；在本开发板上，未按下时读取值为 `0`。 |
+
+| 项目     | 设置                                                  | 说明                                |
+| ------ | --------------------------------------------------- | --------------------------------- |
+| 时钟     | 由 PLL 提供 `SYSCLK = 160 MHz`（MSI 4 MHz，M=1/N=80/R=2） | 保守且稳定；第 05 篇将探索更高/更低的配置。          |
+| 红色 LED | `PH6` = `GPIO_Output`，标签为 `LED_RED`，上拉，高速           | NonSecure 引脚（`CortexM33NS`）。      |
+| 绿色 LED | `PH7` = `GPIO_Output`，标签为 `LED_GREEN`，上拉，高速         | NonSecure 引脚（`CortexM33NS`）。      |
+| 用户按键   | `PC13` = `GPIO_Input`，标签为 `USER_Button`，无上下拉        | NonSecure 引脚；在本开发板上，未按下时读取值为 `0`。 |
+
 
 将 `.ioc` 文件纳入 Git 管理。每次修改 `.ioc` 后都要重新生成代码；手写应用代码应放在 `USER CODE BEGIN/END` 区域或 `NonSecure/App/` 中，以免被重新生成覆盖。
 
@@ -63,6 +67,8 @@ cmake --build --preset Debug
 - 默认闪烁周期：500 ms。
 - 按下用户按键后，在 500 ms 和 100 ms 之间切换周期（边沿检测）。
 - VCP 输出 `led_state=`、`heartbeat=` 和 `button_edge_delay_ms=`。
+
+
 
 ### 第 03 篇实测记录
 
@@ -96,12 +102,16 @@ cmake --build --preset Debug
 
 - **状态**：✅ LED/VCP 循环运行；已确认从本次检出版本执行下载的路径。
 
+
+
 ### 常见基线问题
 
 - **直接编辑生成文件**：始终修改 `.ioc` 后重新生成，或将代码放在 `USER CODE` 标记区域内。
-- **忘记将 `.ioc` 纳入 Git**：没有该文件，就无法在另一台机器上复现配置。
+- **忘记将** `.ioc` **纳入 Git**：没有该文件，就无法在另一台机器上复现配置。
 - **打开子文件夹而不是工作区**：独立打开 `NonSecure` 或 `Secure` 文件夹无法保留所需的构建顺序。
 - **在 Secure 交接前设置 NonSecure 断点**：如果 NS 镜像没有运行，应先调试 Secure 镜像，确认时钟、GTZC 和向量表交接正常。
+
+
 
 ## 典型性能基线（第 05--15 篇）
 
@@ -110,39 +120,41 @@ cmake --build --preset Debug
 
 ## 当前演示映射
 
-| 文章 | 构建值 | 代码文件 | 状态（2026-07-12） |
-| --- | --- | --- | --- |
-| 03 | `U585_ACTIVE_DEMO=3` | `exp03_led_button.c` | 已实测：LED/VCP 正常 |
-| 04 | `4` | `exp04_debug_fault.c` | 已实测：VCP+ITM 探针；故障宏关闭 |
-| 05 | `5` | `exp05_clock_tree.c` | 已实测：160 MHz / 延迟 4 |
-| 06 | `6` | `exp06_power_supply.c` | 已实测：SMPS+VOS1 寄存器 |
-| 07 | `7` | `exp07_low_power_current.c` | Sleep 钩子正常；Stop/Standby 由作者使用 DMM 测量 |
-| 08 | `8` | `exp08_rtc_wakeup_backup.c` | 已实测：NS RTC + 备份 DR0 |
-| 09 | `9` | `exp09_gpio_exti.c` | EXTI 已启用；按键次数由作者测量 |
-| 10 | `10` | `exp10_tim_pwm_input_capture.c` | 已实测：TIM2 中断软件 PWM |
-| 11 | `11` | `exp11_uart_printf_log.c` | 已实测：NS USART1 printf |
-| 12 | `12` | `exp12_i2c_sensor_bus.c` | 已实测：I2C2 扫描发现 7 个地址 |
-| 13 | `13` | `exp13_spi_bus.c` | 已实测：SPI2 Mode0 NS 传输成功标志为 1 |
-| 14 | `14` | `exp14_adc_dma.c` | 已实测：TIM2 TRGO → ADC1 VREFINT → GPDMA1 CH1 环形传输；VCP HT/TC 计数持续增长 |
-| 15 | `15` | `exp15_dac_output.c` | 已实测：TIM2 TRGO → 通过 GPDMA1 CH2 环形传输驱动 DAC1 PA4 阶梯波形（PA4 stepped waveform）；VCP HT/TC + DOR 持续增长；待示波器/DMM 验证 |
-| 16 | `16` | `exp16_gpdma_transfer.c` | 已实测：GPDMA1 CH0 存储器到存储器传输 mismatch=0 |
-| 17 | `17` | `exp17_hts221_sensor.c` | 已实测：WHO_AM_I=0xBC |
-| 18 | `18` | `exp18_lps22hh_sensor.c` | 已实测：LPS22HH WHO_AM_I=0xB3 |
-| 19 | `19` | `exp19_ism330dhcx_imu.c` | 已实测：ISM330DHCX WHO_AM_I=0x6B |
-| 20 | `20` | `exp20_iis2mdc_compass.c` | 已实测：IIS2MDC WHO_AM_I=0x40 |
-| 21 | `21` | `exp21_vl53l5cx_tof.c` | 已实测：LPn PH1 + I2C 0x29 探测/存活；ULD 待验证 |
-| 22 | `22` | `exp22_pdm_microphone.c` | 已实测：ADF1 MIC1 轮询 sample_ok=1 |
-| 23 | `23` | `exp23_ospi_flash_xip.c` | 已实测：OCTOSPI2 JEDEC C2/85/3A（MX25LM51245G） |
-| 24 | `24` | `exp24_ospi_psram_cache.c` | 已实测：OCTOSPI1 初始化 ready=1；SPI 读写/ID 待验证 |
-| 25 | `25` | `exp25_st25dv_nfc.c` | 已实测：未发现 ST25DV；M24256 EEPROM @0x56 rw_ok=1 |
-| 26 | `26` | `exp26_usb_ucpd_device.c` | 已实测：UCPD CC 检测 ucpd_ready=1 |
-| 27 | `27` | `exp27_wifi_emw3080.c` | 已实测：Chip_En/SPI；flow_ok=0 |
-| 28 | `28` | `exp28_mqtt_cloud.c` | 已实测：离线 CONNECT 帧；Wi-Fi 受阻 |
-| 29 | `29` | `exp29_icache_fetch.c` | 复测：ICACHE 命中计数增长；本次 DWT 计时窗口无效（`cycles_off=1`,`cycles_on=1`），性能倍数待修正后再下结论 |
-| 30 | `30` | `exp30_rng_aes_pka.c` | 已实测：RNG/AES/PKA 正常 |
-| 31 | `31` | `exp31_trustzone_gtzc.c` | 已实测：NSC + 双镜像映射 |
-| 32 | `32` | `exp32_tfm_secure_boot.c` | 已实测：TF-M/SBSFU 清单存根 |
-| 33 | `33` | `exp33_ospi_otfdec.c` | 已实测：OSPI PSRAM+Flash OTFDEC all_ok=1 |
+
+| 文章  | 构建值                  | 代码文件                            | 状态（2026-07-12）                                                                                            |
+| --- | -------------------- | ------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| 03  | `U585_ACTIVE_DEMO=3` | `exp03_led_button.c`            | 已实测：LED/VCP 正常                                                                                            |
+| 04  | `4`                  | `exp04_debug_fault.c`           | 已实测：VCP+ITM 探针；故障宏关闭                                                                                      |
+| 05  | `5`                  | `exp05_clock_tree.c`            | 已实测：160 MHz / 延迟 4                                                                                        |
+| 06  | `6`                  | `exp06_power_supply.c`          | 已实测：SMPS+VOS1 寄存器                                                                                         |
+| 07  | `7`                  | `exp07_low_power_current.c`     | Sleep 钩子正常；Stop/Standby 由作者使用 DMM 测量                                                                      |
+| 08  | `8`                  | `exp08_rtc_wakeup_backup.c`     | 已实测：NS RTC + 备份 DR0                                                                                       |
+| 09  | `9`                  | `exp09_gpio_exti.c`             | EXTI 已启用；按键次数由作者测量                                                                                        |
+| 10  | `10`                 | `exp10_tim_pwm_input_capture.c` | 已实测：TIM2 中断软件 PWM                                                                                         |
+| 11  | `11`                 | `exp11_uart_printf_log.c`       | 已实测：NS USART1 printf                                                                                      |
+| 12  | `12`                 | `exp12_i2c_sensor_bus.c`        | 已实测：I2C2 扫描发现 7 个地址                                                                                       |
+| 13  | `13`                 | `exp13_spi_bus.c`               | 已实测：SPI2 Mode0 NS 传输成功标志为 1                                                                               |
+| 14  | `14`                 | `exp14_adc_dma.c`               | 已实测：TIM2 TRGO → ADC1 VREFINT → GPDMA1 CH1 环形传输；VCP HT/TC 计数持续增长                                           |
+| 15  | `15`                 | `exp15_dac_output.c`            | 已实测：TIM2 TRGO → 通过 GPDMA1 CH2 环形传输驱动 DAC1 PA4 阶梯波形（PA4 stepped waveform）；VCP HT/TC + DOR 持续增长；待示波器/DMM 验证 |
+| 16  | `16`                 | `exp16_gpdma_transfer.c`        | 已实测：GPDMA1 CH0 存储器到存储器传输 mismatch=0                                                                       |
+| 17  | `17`                 | `exp17_hts221_sensor.c`         | 已实测：WHO_AM_I=0xBC                                                                                         |
+| 18  | `18`                 | `exp18_lps22hh_sensor.c`        | 已实测：LPS22HH WHO_AM_I=0xB3                                                                                 |
+| 19  | `19`                 | `exp19_ism330dhcx_imu.c`        | 已实测：ISM330DHCX WHO_AM_I=0x6B                                                                              |
+| 20  | `20`                 | `exp20_iis2mdc_compass.c`       | 已实测：IIS2MDC WHO_AM_I=0x40                                                                                 |
+| 21  | `21`                 | `exp21_vl53l5cx_tof.c`          | 已实测：LPn PH1 + I2C 0x29 探测/存活；ULD 待验证                                                                      |
+| 22  | `22`                 | `exp22_pdm_microphone.c`        | 已实测：ADF1 MIC1 轮询 sample_ok=1                                                                              |
+| 23  | `23`                 | `exp23_ospi_flash_xip.c`        | 已实测：OCTOSPI2 JEDEC C2/85/3A（MX25LM51245G）                                                                 |
+| 24  | `24`                 | `exp24_ospi_psram_cache.c`      | 已实测：OCTOSPI1 初始化 ready=1；SPI 读写/ID 待验证                                                                    |
+| 25  | `25`                 | `exp25_st25dv_nfc.c`            | 已实测：未发现 ST25DV；M24256 EEPROM @0x56 rw_ok=1                                                                |
+| 26  | `26`                 | `exp26_usb_ucpd_device.c`       | 已实测：UCPD CC 检测 ucpd_ready=1                                                                               |
+| 27  | `27`                 | `exp27_wifi_emw3080.c`          | 已实测：Chip_En/SPI；flow_ok=0                                                                                 |
+| 28  | `28`                 | `exp28_mqtt_cloud.c`            | 已实测：离线 CONNECT 帧；Wi-Fi 受阻                                                                                 |
+| 29  | `29`                 | `exp29_icache_fetch.c`          | 复测：ICACHE 命中计数增长；本次 DWT 计时窗口无效（`cycles_off=1`,`cycles_on=1`），性能倍数待修正后再下结论                                 |
+| 30  | `30`                 | `exp30_rng_aes_pka.c`           | 已实测：RNG/AES/PKA 正常                                                                                        |
+| 31  | `31`                 | `exp31_trustzone_gtzc.c`        | 已实测：NSC + 双镜像映射                                                                                           |
+| 32  | `32`                 | `exp32_tfm_secure_boot.c`       | 已实测：TF-M/SBSFU 清单存根                                                                                       |
+| 33  | `33`                 | `exp33_ospi_otfdec.c`           | 已实测：OSPI PSRAM+Flash OTFDEC all_ok=1                                                                      |
+
 
 默认演示为 `3`。日志优先使用 NonSecure USART1；如果 NS UART 尚未就绪，则保留 `SECURE_UART1_WriteString` 作为 NSC 回退路径。
 
@@ -163,9 +175,7 @@ powershell -ExecutionPolicy Bypass -File tools/flash_and_capture.ps1 -Demo 5 -Se
 - 故障触发（04）：`U585_EXP04_ENABLE_FAULT_TRIGGER=1`
 - 串口：ST-LINK VCP **COM3**，`115200 8N1`
 
-## 实测数据
 
-请参阅 `docs/superpowers/measured/2026-07-12-phase-ab-summary.md` 和 `demoXX-com3.txt`。
 
 ## 验证
 

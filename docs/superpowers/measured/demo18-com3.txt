@@ -1,17 +1,35 @@
 ﻿# U585 demo 18 VCP capture
-# port=COM3 baud=115200 seconds=3
-# utc=2026-08-12T15:37:18.5541175Z
+# port=COM3 baud=115200 seconds=12 fault=OFF
+# utc=2026-09-01T03:27:18.2240277Z
 
 [S] Secure world ready
 [NS] [U585][18] LPS22HH pressure/temp
 [NS] [U585][18] i2c_ready=1
 [NS] [U585][18] WHO_AM_I=179
 [NS] [U585][18] who_ok=1
-[NS] [U585][18] raw_press=4103773
-[NS] [U585][18] raw_temp=3509
-[NS] [U585][18] raw_press=4103909
-[NS] [U585][18] raw_temp=3512
-[NS] [U585][18] raw_press=4103651
-[NS] [U585][18] raw_temp=3515
-[NS] [U585][18] raw_press=4103779
-[NS] [U585][18] raw_temp=3516
+[NS] [U585][18] raw_press=4138940
+[NS] [U585][18] raw_temp=3895
+[NS] [U585][18] raw_press=4138477
+[NS] [U585][18] raw_temp=3897
+[NS] [U585][18] raw_press=4139044
+[NS] [U585][18] raw_temp=3898
+[NS] [U585][18] raw_press=4138586
+[NS] [U585][18] raw_temp=3900
+[NS] [U585][18] raw_press=4139214
+[NS] [U585][18] raw_temp=3900
+[NS] [U585][18] raw_press=4138999
+[NS] [U585][18] raw_temp=3901
+[NS] [U585][18] raw_press=4138559
+[NS] [U585][18] raw_temp=3901
+[NS] [U585][18] raw_press=4138796
+[NS] [U585][18] raw_temp=3901
+[NS] [U585][18] raw_press=4138712
+[NS] [U585][18] raw_temp=3901
+[NS] [U585][18] raw_press=4138698
+[NS] [U585][18] raw_temp=3902
+[NS] [U585][18] raw_press=4138480
+[NS] [U585][18] raw_temp=3903
+[NS] [U585][18] raw_press=4138578
+[NS] [U585][18] raw_temp=3902
+[NS] [U585][18] raw_press=4138716
+[NS] [U585][18] raw_temp=3900

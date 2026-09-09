@@ -1,6 +1,6 @@
 ﻿# U585 demo 26 VCP capture
-# port=COM3 baud=115200 seconds=3
-# utc=2026-08-12T15:38:59.3066549Z
+# port=COM3 baud=115200 seconds=10 fault=OFF
+# utc=2026-09-01T03:30:36.1523776Z
 
 [S] Secure world ready
 [NS] [U585][26] UCPD1 Type-C sink CC sense (PA15/PB15)
@@ -23,3 +23,37 @@
 [NS] [U585][26] cc2=0
 [NS] [U585][26] attached=0
 [NS] [U585][26] sr=0
+[NS] [U585][26] cc1=0
+[NS] [U585][26] cc2=0
+[NS] [U585][26] attached=0
+[NS] [U585][26] sr=0
+[NS] [U585][26] heartbeat=8
+[NS] [U585][26] cc1=0
+[NS] [U585][26] cc2=0
+[NS] [U585][26] attached=0
+[NS] [U585][26] sr=0
+[NS] [U585][26] cc1=0
+[NS] [U585][26] cc2=0
+[NS] [U585][26] attached=0
+[NS] [U585][26] sr=0
+[NS] [U585][26] heartbeat=12
+[NS] [U585][26] cc1=0
+[NS] [U585][26] cc2=0
+[NS] [U585][26] attached=0
+[NS] [U585][26] sr=0
+[NS] [U585][26] cc1=0
+[NS] [U585][26] cc2=0
+[NS] [U585][26] attached=0
+[NS] [U585][26] sr=0
+[NS] [U585][26] heartbeat=16
+[NS]
+ [U585][26] cc1=0
+[NS] [U585][26] cc2=0
+[NS] [U585][26] attached=0
+[NS] [U585][26] sr=0
+[NS] [U585][26]
+ cc1=0
+[NS] [U585][26] cc2=0
+[NS] [U585][26] attached=0
+[NS] [U585][26] sr=0
+[NS] [U585][26] heartbeat=20

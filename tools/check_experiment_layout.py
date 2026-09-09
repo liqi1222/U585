@@ -286,7 +286,7 @@ def main():
             "Flash script must derive the project root from its own location")
     require('[string]$Preset = "Performance"' in flash_script,
             "Flash script must default to the performance build preset")
-    require('cmake --preset $Preset "-DU585_ACTIVE_DEMO=$Demo"' in flash_script,
+    require('cmake --preset $Preset "-DU585_ACTIVE_DEMO:STRING=$Demo"' in flash_script,
             "Flash script must configure the selected preset")
     require('$line = $line.TrimEnd()' in flash_script,
             "Flash script must trim serial line trailing whitespace before saving logs")

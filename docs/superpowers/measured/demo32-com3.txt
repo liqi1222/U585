@@ -1,6 +1,6 @@
 ﻿# U585 demo 32 VCP capture
-# port=COM3 baud=115200 seconds=3
-# utc=2026-08-12T15:35:52.5815464Z
+# port=COM3 baud=115200 seconds=10 fault=OFF
+# utc=2026-09-01T03:33:02.7652842Z
 
 [S] Secure world ready
 [NS] [U585][32] TF-M / Secure Boot status (read-only)
@@ -12,3 +12,7 @@
 [NS] [U585][32] nsc_ok=1
 [NS] [U585][32] series_end=1
 [NS] [U585][32] heartbeat=4
+[NS] [U585][32] heartbeat=8
+[NS] [U585][32] heartbeat=12
+[NS] [U585][32] heartbeat=16
+[NS] [U585][32] heartbeat=20

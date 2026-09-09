@@ -1,6 +1,6 @@
 ﻿# U585 demo 33 VCP capture
-# port=COM3 baud=115200 seconds=3
-# utc=2026-08-12T15:36:07.9057172Z
+# port=COM3 baud=115200 seconds=12 fault=OFF
+# utc=2026-09-01T03:33:27.8105676Z
 
 [NS] [U585][33] flash_cipher_ok=1
 [NS] [U585][33] flash_cip0=4111707066
@@ -11,27 +11,7 @@
 [NS] [U585][33] flash_plain_ok=1
 [NS] [U585][33] flash_rd0=2837789903
 [NS] [U585][33] flash_rd1=29656035
-[NS] [U585][33] flash_want0=2837789903
-[NS] [U585][33] flash_cipher_visible_ok=1
-[NS] [U585][33] psram_mm_ok=1
-[NS] [U585][33] psram_mm_fail_step=0
-[NS] [U585][33] psram_mm_rw_ok=1
-[NS] [U585][33] psram_cipher_ok=1
-[NS] [U585][33] psram_cip0=3847441010
-[NS] [U585][33] psram_sw_match=1
-[NS] [U585][33] psram_cvis0=3847441010
-[NS] [U585][33] psram_cvis1=1133850655
-[NS] [U585][33] psram_cipher_visible_ok=1
-[NS] [U585][33] otf1_cr=0
-[NS] [U585][33] otf1_cfgr=501793
-[NS] [U585][33] otf2_cr=0
-[NS] [U585][33] otf2_cfgr=501793
-[NS] [U585][33] psram_plain_ok=1
-[NS] [U585][33] psram_rd0=2837789903
-[NS] [U585][33] psram_rd1=29656035
-[NS] [U585][33] psram_want0=2837789903
-[NS] [U585][33] all_ok=1
-[S] Secure world ready
+[NS] [U?[S] Secure world ready
 [NS] [U585][33] OSPI PSRAM+Flash OTFDEC test (octal DTR + memory-mapped)
 [NS] [U585][33] OTFDEC2 region @0x70000000 flash, OTFDEC1 region @0x90000000 PSRAM
 [NS] [U585][33] flash_spi_ready=1
@@ -81,3 +61,8 @@
 [NS] [U585][33] psram_want0=2837789903
 [NS] [U585][33] all_ok=1
 [NS] [U585][33] heartbeat=4
+[NS] [U585][33] heartbeat=8
+[NS] [U585][33] heartbeat=12
+[NS] [U585][33] heartbeat=16
+[NS] [U585][33] heartbeat=20
+[NS] [U585][33] heartbeat=24

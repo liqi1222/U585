@@ -1,6 +1,6 @@
 ﻿# U585 demo 23 VCP capture
-# port=COM3 baud=115200 seconds=3
-# utc=2026-08-12T15:34:53.7190806Z
+# port=COM3 baud=115200 seconds=10 fault=OFF
+# utc=2026-09-01T03:29:25.4779320Z
 
 [S] Secure world ready
 [NS] [U585][23] OCTOSPI2 MX25LM51245G JEDEC 0x9F
@@ -11,3 +11,8 @@
 [NS] [U585][23] id1=133
 [NS] [U585][23] id2=58
 [NS] [U585][23] heartbeat=4
+[NS] [U585][23] heartbeat=8
+[NS] [U585][23] heartbeat=12
+[NS] [U585
+][23] heartbeat=16
+[NS] [U585][23] heartbeat=20

@@ -1,10 +1,12 @@
 ﻿# U585 demo 4 VCP capture
-# port=COM3 baud=115200 seconds=8 fault=OFF
-# utc=2026-08-23T12:03:00.4031559Z
+# port=COM3 baud=115200 seconds=10 fault=OFF
+# utc=2026-09-01T03:17:55.7395051Z
 
 [S] Secure world ready
 [NS] [U585][04] SWD/SWO/Fault demo start
 [NS] [U585][04] VCP=USART1 NonSecure direct; ITM/SWO optional
 [NS] [U585][04] itm_trcena=0
 [NS] [U585][04] fault_trigger_enabled=0
-[NS] [U585][04] heartbeat=20
+[NS] [U585][04] he
+artbeat=20
+[NS] [U585][04] heartbeat=40

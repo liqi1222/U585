@@ -1,6 +1,6 @@
 ﻿# U585 demo 27 VCP capture
-# port=COM3 baud=115200 seconds=3
-# utc=2026-08-12T15:39:13.8321679Z
+# port=COM3 baud=115200 seconds=12 fault=OFF
+# utc=2026-09-01T03:31:00.4211601Z
 
 [S] Secure world ready
 [NS] [U585][27] EMW3080 bring-up (SPI2 + Chip_En/FLOW/NOTIFY)
@@ -30,3 +30,43 @@
 [NS] [U585][27] notify=0
 [NS] [U585][27] flow_ok=0
 [NS] [U585][27] heartbeat=4
+[NS] [U585][27] chip_en=1
+[NS] [U585][27] flow=0
+[NS] [U585][27] notify=0
+[NS] [U585][27] flow_ok=0
+[NS] [U585][27] chip_en=1
+[NS] [U585][27] flow=0
+[NS] [U585][27] notify=0
+[NS] [U585][27] flow_ok=0
+[NS] [U585][27] heartbeat=8
+[NS] [U585][27] chip_en=1
+[NS] [U585][27] flow=0
+[NS] [U585][27] notify=0
+[NS] [U585][27] flow_ok=0
+[NS] [U585][27] chip_en=1
+[NS] [U585][27] flow=0
+[NS] [U585][27] notify=0
+[NS] [U585][27] flow_ok=0
+[NS] [U585][27] heartbeat=12
+[NS] [U585][27] chip_en=1
+[NS] [U585][27] flow=0
+[NS] [U585][27] notify=0
+[NS] [U585][27] flow_ok=0
+[NS] [U585][27] chip_en=1
+[NS] [U585][27] flow=0
+[NS] [U585][27] notify=0
+[NS] [U585][27] flow_ok=0
+[NS] [U585][27] heartbeat=16
+[NS] [U585][27] chip_en=1
+[NS] [U585][27] flow=0
+[NS] [U585][27] notify=0
+[NS] [U585][27] flow_ok=0
+[NS] [U585][27] chip_en=1
+[NS] [U585][27] flow=0
+[NS] [U585][27] notify=0
+[NS] [U585][27] flow_ok=0
+[NS] [U585][27] heartbeat=20
+[NS] [U585][27] chip_en=1
+[NS] [U585][27] flow=0
+[NS] [U585][27] notify=0
+[NS] [U585][27] flow_ok=0

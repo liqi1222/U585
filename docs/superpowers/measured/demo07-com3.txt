@@ -1,6 +1,6 @@
 ﻿# U585 demo 7 VCP capture
 # port=COM3 baud=115200 seconds=15 fault=OFF
-# utc=2026-08-23T12:17:14.6111111Z
+# utc=2026-09-01T03:19:42.6777220Z
 
 [S] Secure world ready
 [NS] [U585][07] low-power hooks start

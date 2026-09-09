@@ -1,6 +1,6 @@
 ﻿# U585 demo 22 VCP capture
-# port=COM3 baud=115200 seconds=3
-# utc=2026-08-12T15:38:16.2756479Z
+# port=COM3 baud=115200 seconds=12 fault=OFF
+# utc=2026-09-01T03:29:01.9296390Z
 
 [S] Secure world ready
 [NS] [U585][22] ADF1 MIC1 PE9=CCK0 PE10=SDI0
@@ -8,7 +8,22 @@
 [NS] [U585][22] adf_ready=1
 [NS] [U585][22] dma_used=0
 [NS] [U585][22] sample_ok=1
-[NS] [U585][22] sample=4293488896
+[NS] [U585][22] sample=4294290176
 [NS] [U585][22] heartbeat=4
 [NS] [U585][22] sample_ok=1
-[NS] [U585][22] sample=505600
+[NS] [U585][22] sample=4294045440
+[NS] [U585][22] heartbeat=8
+[NS] [U585][22] sample_ok=1
+[NS] [U585][22] sample=1209600
+[NS] [U585][22] heartbeat=12
+[NS] [U585][22] sample_ok=1
+[NS] [U585][22] sample=54016
+[NS] [U585][22] heartbeat=16
+[NS] [U585][22] sample_ok=1
+[NS] [U585][22] sample=403712
+[NS] [U585][22] heartbeat=20
+[NS] [U585][22] sample_ok=1
+[NS] [U585][22] sample=209152
+[NS] [U585][22] heartbeat=24
+[NS] [U585][22] sample_ok=1
+[NS] [U585][22] sample=1106176

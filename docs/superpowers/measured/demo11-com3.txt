@@ -1,6 +1,6 @@
 ﻿# U585 demo 11 VCP capture
 # port=COM3 baud=115200 seconds=10 fault=OFF
-# utc=2026-08-23T12:49:17.1556392Z
+# utc=2026-09-01T03:21:30.4686737Z
 
 [S] Secure world ready
 [NS] [U585][11] UART printf/log on NonSecure USART1
@@ -8,11 +8,14 @@
 [NS] [U585][11] baud=115200 8N1 ST-LINK VCP
 [NS] [U585][11] printf heartbeat=1 tick=11
 [NS] [U585][11] printf heartbeat=2 tick=1016
-[NS] [U585][11] printf heartbeat=3 tick=2021
+[NS] [U585][1
+1] printf heartbeat=3 tick=2021
 [NS] [U585][11] printf heartbeat=4 tick=3026
 [NS] [U585][11] printf heartbeat=5 tick=4031
 [NS] [U585][11] printf heartbeat=6 tick=5036
-[NS] [U585][11] printf heartbeat=7 tick=6041
+[NS] [U585][11] printf heartbea
+t=7 tick=6041
 [NS] [U585][11] printf heartbeat=8 tick=7046
 [NS] [U585][11] printf heartbeat=9 tick=8051
 [NS] [U585][11] printf heartbeat=10 tick=9056
+[NS] [U585][11] printf heartbeat=11 tick=10061

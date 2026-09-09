@@ -1,8 +1,11 @@
 ﻿# U585 demo 21 VCP capture
-# port=COM3 baud=115200 seconds=3
-# utc=2026-08-12T15:38:01.9390387Z
+# port=COM3 baud=115200 seconds=12 fault=OFF
+# utc=2026-09-01T03:28:37.0677124Z
 
-85][21] is_alive=1
+h=1
+[NS] [U585][21] i2c_ready=1
+[NS] [U585][21] probe_ok=1
+[NS] [U585][21] is_alive=1
 [NS] [U585][21] device_id=1
 [NS] [U585][21] revision_id=240
 [NS] [U585][21] uld_ready=0
@@ -17,3 +20,8 @@
 [NS] [U585][21] revision_id=240
 [NS] [U585][21] uld_ready=0
 [NS] [U585][21] heartbeat=4
+[NS] [U585][21] heartbeat=8
+[NS] [U585][21] heartbeat=12
+[NS] [U585][21] heartbeat=16
+[NS] [U585][21] heartbeat=20
+[NS] [U585][21] heartbeat=24

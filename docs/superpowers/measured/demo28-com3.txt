@@ -1,6 +1,6 @@
 ﻿# U585 demo 28 VCP capture
-# port=COM3 baud=115200 seconds=3
-# utc=2026-08-12T15:39:27.9460364Z
+# port=COM3 baud=115200 seconds=10 fault=OFF
+# utc=2026-09-01T03:31:22.6800057Z
 
 [S] Secure world ready
 [NS] [U585][28] MQTT CONNECT frame only (no broker)
@@ -10,3 +10,7 @@
 [NS] [U585][28] connect_pkt_len=14
 [NS] [U585][28] connect_pkt_ok=1
 [NS] [U585][28] heartbeat=4
+[NS] [U585][28] heartbeat=8
+[NS] [U585][28] heartbeat=12
+[NS] [U585][28] heartbeat=16
+[NS] [U585][28] heartbeat=20
