@@ -45,3 +45,7 @@ __pycache__/
 Thumbs.db
 Desktop.ini
 .DS_Store
+
+# Local planning and specifications
+/docs/superpowers/plans/
+/docs/superpowers/specs/
