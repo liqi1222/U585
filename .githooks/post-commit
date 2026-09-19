@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# Publish completed local main commits to the public GitHub develop branch.
+branch="$(git symbolic-ref --quiet --short HEAD 2>/dev/null || true)"
+
+if [ "$branch" != "main" ]; then
+    exit 0
+fi
+
+if ! git remote get-url github >/dev/null 2>&1; then
+    echo "GitHub publish skipped: remote 'github' is not configured." >&2
+    echo "Configure it, then retry with: git push github main:develop" >&2
+    exit 0
+fi
+
+if ! git push github HEAD:refs/heads/develop; then
+    echo "GitHub publish failed; the local commit was kept unchanged." >&2
+    echo "Resolve the remote issue, then retry with: git push github main:develop" >&2
+fi

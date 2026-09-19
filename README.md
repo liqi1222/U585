@@ -11,6 +11,20 @@ GitHub 公开只读（仅本工程，不含手册 PDF）：https://github.com/li
 git clone -b develop https://github.com/liqi1222/U585.git
 ```
 
+## 本地提交自动发布到 GitHub
+
+本地 Gitea 继续作为 `origin`；GitHub 是额外的 SSH 远端 `github`。启用仓库内的 hook 后，每次在本地 `main` 成功提交都会自动执行 `git push github HEAD:refs/heads/develop`，将 GitHub 的 `develop` 更新到该提交。
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File tools/setup_github_publish.ps1
+```
+
+该安装程序可重复执行，会配置 `github` 远端和 hooks；若历史已分叉则拒绝继续，绝不覆盖远端历史。自动推送失败不会改写历史，也不会丢失本地提交。排除网络或权限问题后，可手动重试：
+
+```powershell
+git push github main:develop
+```
+
 ## 你需要什么
 
 | 项 | 说明 |
