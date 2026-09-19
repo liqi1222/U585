@@ -48,3 +48,7 @@ Desktop.ini
 
 # 官方手册 PDF 不随 GitHub 公开仓发布
 docs/B-U585I-IOT02A-官方资料/
+
+# Local planning and specifications
+/docs/superpowers/plans/
+/docs/superpowers/specs/
