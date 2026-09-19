@@ -46,6 +46,9 @@ Thumbs.db
 Desktop.ini
 .DS_Store
 
+# Official manuals are not published with the GitHub project
+docs/B-U585I-IOT02A-官方资料/
+
 # Local planning and specifications
 /docs/superpowers/plans/
 /docs/superpowers/specs/
