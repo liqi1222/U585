@@ -132,7 +132,7 @@ cmake --build --preset Debug
 | 09  | `9`                  | `exp09_gpio_exti.c`             | EXTI 已启用；按键次数由作者测量                                                                                        |
 | 10  | `10`                 | `exp10_tim_pwm_input_capture.c` | 已实测：TIM2 中断软件 PWM                                                                                         |
 | 11  | `11`                 | `exp11_uart_printf_log.c`       | 已实测：NS USART1 printf                                                                                      |
-| 12  | `12`                 | `exp12_i2c_sensor_bus.c`        | 已实测：I2C2 扫描发现 7 个地址                                                                                       |
+| 12  | `12`                 | `exp12_i2c_sensor_bus.c`        | 已实测：PF11=1、PH1=1 后 I2C2 扫描发现 9 个地址（含 0x20、0x29）                                                      |
 | 13  | `13`                 | `exp13_spi_bus.c`               | 已实测：SPI2 Mode0 NS 传输成功标志为 1                                                                               |
 | 14  | `14`                 | `exp14_adc_dma.c`               | 已实测：TIM2 TRGO → ADC1 VREFINT → GPDMA1 CH1 环形传输；VCP HT/TC 计数持续增长                                           |
 | 15  | `15`                 | `exp15_dac_output.c`            | 已实测：TIM2 TRGO → 通过 GPDMA1 CH2 环形传输驱动 DAC1 PA4 阶梯波形（PA4 stepped waveform）；VCP HT/TC + DOR 持续增长；待示波器/DMM 验证 |

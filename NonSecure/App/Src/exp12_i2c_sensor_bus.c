@@ -18,6 +18,31 @@ volatile U585_Exp12State g_u585_exp12_state;
 
 static uint8_t found_addrs[16];
 
+/* U16 RESET is active-low on MB1551; PF11=1 releases it.
+ * U27 LPn / VL53_xshut is PH1, high to leave shutdown.
+ */
+static void exp12_enable_gated_devices(void)
+{
+  GPIO_InitTypeDef gpio = {0};
+
+  __HAL_RCC_GPIOF_CLK_ENABLE();
+  gpio.Pin = GPIO_PIN_11;
+  gpio.Mode = GPIO_MODE_OUTPUT_PP;
+  gpio.Pull = GPIO_NOPULL;
+  gpio.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOF, &gpio);
+  HAL_GPIO_WritePin(GPIOF, GPIO_PIN_11, GPIO_PIN_SET);
+  HAL_Delay(10U);
+
+  __HAL_RCC_GPIOH_CLK_ENABLE();
+  gpio.Pin = GPIO_PIN_1;
+  HAL_GPIO_Init(GPIOH, &gpio);
+  HAL_GPIO_WritePin(GPIOH, GPIO_PIN_1, GPIO_PIN_RESET);
+  HAL_Delay(20U);
+  HAL_GPIO_WritePin(GPIOH, GPIO_PIN_1, GPIO_PIN_SET);
+  HAL_Delay(100U);
+}
+
 static void exp12_scan(void)
 {
   uint8_t addr7;
@@ -54,8 +79,11 @@ static void exp12_init(void)
   g_u585_exp12_state.scan_done = 0U;
   g_u585_exp12_state.i2c_ready = (U585_I2C2_Init() == HAL_OK) ? 1U : 0U;
 
+  exp12_enable_gated_devices();
+
   U585_Log_WriteLine("");
   U585_Log_WriteLine("[U585][12] I2C2 bus scan (PH4=SCL PH5=SDA)");
+  U585_Log_WriteLine("[U585][12] stsafe_reset PF11=1; vl53_lpn PH1=1");
   U585_Log_WriteU32("[U585][12] i2c_ready=", g_u585_exp12_state.i2c_ready);
 
   if (g_u585_exp12_state.i2c_ready != 0U)

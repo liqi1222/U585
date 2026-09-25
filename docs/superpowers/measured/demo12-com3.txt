@@ -1,15 +1,31 @@
 ﻿# U585 demo 12 VCP capture
 # port=COM3 baud=115200 seconds=15 fault=OFF
-# utc=2026-09-01T03:21:58.1321290Z
+# utc=2026-09-25T16:37:31.7950517Z
 
-[S] Secure world ready
-[NS] [U585][12] I2C2 bus scan (PH4=SCL PH5=SDA)
+I2C2 bus scan (PH4=SCL PH5=SDA)
+[NS] [U585][12] stsafe_reset PF11=1; vl53_lpn PH1=1
 [NS] [U585][12] i2c_ready=1
 [NS] [U585][12] found_addr7=16
 [NS] [U585][12] found_addr7=30
+[NS] [U585][12] found_addr7=32
+[NS] [U585][12] found_addr7=41
 [NS] [U585][12] found_addr7=86
 [NS] [U585][12] found_addr7=93
 [NS] [U585][12] found_addr7=94
 [NS] [U585][12] found_addr7=95
 [NS] [U585][12] found_addr7=107
-[NS] [U585][12] found_count=7
+[NS] [U585][12] found_count=9
+[S] Secure world ready
+[NS] [U585][12] I2C2 bus scan (PH4=SCL PH5=SDA)
+[NS] [U585][12] stsafe_reset PF11=1; vl53_lpn PH1=1
+[NS] [U585][12] i2c_ready=1
+[NS] [U585][12] found_addr7=16
+[NS] [U585][12] found_addr7=30
+[NS] [U585][12] found_addr7=32
+[NS] [U585][12] found_addr7=41
+[NS] [U585][12] found_addr7=86
+[NS] [U585][12] found_addr7=93
+[NS] [U585][12] found_addr7=94
+[NS] [U585][12] found_addr7=95
+[NS] [U585][12] found_addr7=107
+[NS] [U585][12] found_count=9
