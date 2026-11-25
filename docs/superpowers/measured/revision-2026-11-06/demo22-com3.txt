@@ -1,0 +1,34 @@
+# U585 article revision revalidation
+# demo=22 preset=Performance port=COM3 baud=115200 seconds=10
+# utc_start=2026-11-06T14:08:03.4361058Z
+# capture=raw chunks concatenated; analyze after final Secure world ready banner
+
+22] ADF1 MIC1 PE9=CCK0 PE10=SDI0
+[NS] [U585][22] mode=poll SINC4 decim=24 dma_used=0
+[NS] [U585][22] adf_ready=1
+[NS] [U585][22] dma_used=0
+[NS] [U585][22] sample_ok=1
+[NS] [U585][22] sample=4294314240
+[S] Secure world ready
+
+[NS] [U585][22] ADF1 MIC1 PE9=CCK0 PE10=SDI0
+[NS] [U585][22] mode=poll SINC4 decim=24 dma_used=0
+[NS] [U585][22] adf_ready=1
+[NS] [U585][22] dma_used=0
+[NS] [U585][22] sample_ok=1
+[NS] [U585][22] sample=4294135040
+[NS] [U585][22] heartbeat=4
+[NS] [U585][22] sample_ok=1
+[NS] [U585][22] sample=4294641920
+[NS] [U585][22] heartbeat=8
+[NS] [U585][22] sample_ok=1
+[NS] [U585][22] sample=4294655744
+[NS] [U585][22] heartbeat=12
+[NS] [U585][22] sample_ok=1
+[NS] [U585][22] sample=4294683392
+[NS] [U585][22] heartbeat=16
+[NS] [U585][22] sample_ok=1
+[NS] [U585][22] sample=562944
+[NS] [U585][22] heartbeat=20
+[NS] [U585][22] sample_ok=1
+[NS] [U585][22] sample=681728

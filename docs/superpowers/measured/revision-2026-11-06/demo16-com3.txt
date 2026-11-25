@@ -1,0 +1,25 @@
+# U585 article revision revalidation
+# demo=16 preset=Performance port=COM3 baud=115200 seconds=8
+# utc_start=2026-11-06T14:01:21.2872689Z
+# capture=raw chunks concatenated; no per-chunk line splitting
+
+_CH0 memory-to-memory
+[NS] [U585][16] dma_ready=1
+[NS] [U585][16] xfer_ok=1
+[NS] [U585][16] words=16
+[NS] [U585][16] mismatch=0
+[NS] [U585][16] src0=2768240640
+[NS] [U585][16] dst0=2768240640
+[S] Secure world ready
+
+[NS] [U585][16] GPDMA1_CH0 memory-to-memory
+[NS] [U585][16] dma_ready=1
+[NS] [U585][16] xfer_ok=1
+[NS] [U585][16] words=16
+[NS] [U585][16] mismatch=0
+[NS] [U585][16] src0=2768240640
+[NS] [U585][16] dst0=2768240640
+[NS] [U585][16] heartbeat=4
+[NS] [U585][16] heartbeat=8
+[NS] [U585][16] heartbeat=12
+[NS] [U585][16] heartbeat=16

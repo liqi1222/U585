@@ -1,0 +1,30 @@
+# U585 article revision revalidation
+# demo=21 preset=Performance port=COM3 baud=115200 seconds=10
+# utc_start=2026-11-06T14:07:39.2699807Z
+# capture=raw chunks concatenated; analyze after final Secure world ready banner
+
+Pn)
+[NS] [U585][21] addr7=0x29 uld_ready=0
+[NS] [U585][21] lpn_high=1
+[NS] [U585][21] i2c_ready=1
+[NS] [U585][21] probe_ok=1
+[NS] [U585][21] is_alive=1
+[NS] [U585][21] device_id=1
+[NS] [U585][21] revision_id=240
+[NS] [U585][21] uld_ready=0
+[S] Secure world ready
+
+[NS] [U585][21] VL53L5CX ToF (I2C2 + PH1 LPn)
+[NS] [U585][21] addr7=0x29 uld_ready=0
+[NS] [U585][21] lpn_high=1
+[NS] [U585][21] i2c_ready=1
+[NS] [U585][21] probe_ok=1
+[NS] [U585][21] is_alive=1
+[NS] [U585][21] device_id=1
+[NS] [U585][21] revision_id=240
+[NS] [U585][21] uld_ready=0
+[NS] [U585][21] heartbeat=4
+[NS] [U585][21] heartbeat=8
+[NS] [U585][21] heartbeat=12
+[NS] [U585][21] heartbeat=16
+[NS] [U585][21] heartbeat=20

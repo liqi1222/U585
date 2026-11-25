@@ -1,0 +1,32 @@
+# U585 article revision revalidation
+# demo=12 preset=Performance port=COM3 baud=115200 seconds=10
+# utc_start=2026-11-06T14:07:13.7741136Z
+# capture=raw chunks concatenated; analyze after final Secure world ready banner
+
+
+[NS] [U585][12] I2C2 bus scan (PH4=SCL PH5=SDA)
+[NS] [U585][12] stsafe_reset PF11=1; vl53_lpn PH1=1
+[NS] [U585][12] i2c_ready=1
+[NS] [U585][12] found_addr7=16
+[NS] [U585][12] found_addr7=30
+[NS] [U585][12] found_addr7=32
+[NS] [U585][12] found_addr7=41
+[NS] [U585][12] found_addr7=86
+[NS] [U585][12] found_addr7=93
+[NS] [U585][12] found_addr7=94
+[NS] [U585][12] found_addr7=95
+[S] Secure world ready
+
+[NS] [U585][12] I2C2 bus scan (PH4=SCL PH5=SDA)
+[NS] [U585][12] stsafe_reset PF11=1; vl53_lpn PH1=1
+[NS] [U585][12] i2c_ready=1
+[NS] [U585][12] found_addr7=16
+[NS] [U585][12] found_addr7=30
+[NS] [U585][12] found_addr7=32
+[NS] [U585][12] found_addr7=41
+[NS] [U585][12] found_addr7=86
+[NS] [U585][12] found_addr7=93
+[NS] [U585][12] found_addr7=94
+[NS] [U585][12] found_addr7=95
+[NS] [U585][12] found_addr7=107
+[NS] [U585][12] found_count=9

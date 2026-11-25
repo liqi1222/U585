@@ -1,0 +1,34 @@
+# U585 article revision revalidation
+# demo=29 preset=Performance port=COM3 baud=115200 seconds=10
+# utc_start=2026-11-06T14:09:17.1281752Z
+# capture=raw chunks concatenated; analyze after final Secure world ready banner
+
+CACHE on/off fetch bench (DWT CYCCNT)
+[NS] [U585][29] internal Flash workload (OSPI XIP contrast later)
+[NS] [U585][29] icache_ready=1
+[NS] [U585][29] cycles_off=1
+[NS] [U585][29] cycles_on=1
+[NS] [U585][29] hit_off=0
+[NS] [U585][29] miss_off=0
+[NS] [U585][29] hit_on=260026
+[NS] [U585][29] miss_on=55
+[NS] [U585][29] faster=0
+[NS] [U585][29] checksum=109396
+[S] Secure world ready
+
+[NS] [U585][29] ICACHE on/off fetch bench (DWT CYCCNT)
+[NS] [U585][29] internal Flash workload (OSPI XIP contrast later)
+[NS] [U585][29] icache_ready=1
+[NS] [U585][29] cycles_off=1
+[NS] [U585][29] cycles_on=1
+[NS] [U585][29] hit_off=0
+[NS] [U585][29] miss_off=0
+[NS] [U585][29] hit_on=260029
+[NS] [U585][29] miss_on=55
+[NS] [U585][29] faster=0
+[NS] [U585][29] checksum=109396
+[NS] [U585][29] heartbeat=4
+[NS] [U585][29] heartbeat=8
+[NS] [U585][29] heartbeat=12
+[NS] [U585][29] heartbeat=16
+[NS] [U585][29] heartbeat=20

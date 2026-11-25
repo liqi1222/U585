@@ -1,0 +1,24 @@
+# U585 article revision revalidation
+# demo=24 preset=Performance port=COM3 baud=115200 seconds=10
+# utc_start=2026-11-06T14:08:53.0859540Z
+# capture=raw chunks concatenated; analyze after final Secure world ready banner
+
+24] OCTOSPI1 APS6408 PSRAM @0x90000000
+[NS] [U585][24] mode=SPI write/read (octal/MM pending)
+[NS] [U585][24] ospi_psram_ready=1
+[NS] [U585][24] memtest_ok=0
+[NS] [U585][24] id_or_wrote=0
+[NS] [U585][24] readback=0
+[S] Secure world ready
+
+[NS] [U585][24] OCTOSPI1 APS6408 PSRAM @0x90000000
+[NS] [U585][24] mode=SPI write/read (octal/MM pending)
+[NS] [U585][24] ospi_psram_ready=1
+[NS] [U585][24] memtest_ok=0
+[NS] [U585][24] id_or_wrote=0
+[NS] [U585][24] readback=0
+[NS] [U585][24] heartbeat=4
+[NS] [U585][24] heartbeat=8
+[NS] [U585][24] heartbeat=12
+[NS] [U585][24] heartbeat=16
+[NS] [U585][24] heartbeat=20
